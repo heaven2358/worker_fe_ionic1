@@ -1,0 +1,71 @@
+.jdb-select-popup {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    .popup-buttons .button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -moz-box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: block;
+        min-height: 45px;
+        border-radius: 2px;
+        line-height: 20px;
+        &.button-default {
+            color: #666;
+            border: 1px solid #ececec;
+            &.activated {
+                background-color: #f8f8f8;
+            }
+        }
+        &.button-positive {
+            border: 1px solid #435c95;
+            background: #435c95;
+            color: #fff;
+        }
+    }
+}
+.jdb-select-popup .popup{
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.jdb-select-popup .popup-buttons{
+    box-sizing: border-box;
+}
+
+.selectors-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    // background-color: #fff;
+    overflow: hidden;
+}
+
+.selector-container {
+    //flex: 1; */
+    width: 50%;
+    display: inline-block;
+    flex:1;
+    -webkit-flex: 1;
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), black, rgba(0, 0, 0, 0.2));
+
+}
+.selector-mask {
+    left: 0;
+    top: 55px;
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    z-index: 0;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    background: white;
+    pointer-events: none;
+}
+
+
+
+

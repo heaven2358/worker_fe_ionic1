@@ -1,0 +1,12 @@
+{
+    
+    //获取用户状态
+    "getUserStatusApi": {
+        "serve": "loadingPage/userStatus.json",
+        "dev": "http://rrc.dev.jiedaibao.com/zrrc/collector/user/status",
+        "test": "http://rrc.test.jiedaibao.com/zrrc/collector/user/status",
+        "beta": "http://beta-rrcapi.jiedaibao.com/zrrc/collector/user/status",
+        "prod": "https://rrcapi.jiedaibao.com/zrrc/collector/user/status"
+    }
+
+}

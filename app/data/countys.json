@@ -1,0 +1,13 @@
+{
+   "error": {
+        "returnCode": "0",
+        "returnMessage": "操作成功！",
+        "returnUserMessage": "操作成功！"
+    },
+    "data": [
+        { "id" : "460", "name" : "长安区" },
+        { "id" : "461", "name" : "桥东区" },
+        { "id" : "462", "name" : "齐齐哈尔" },
+        { "id" : "463", "name" : "乌鲁木齐" }
+    ]
+}

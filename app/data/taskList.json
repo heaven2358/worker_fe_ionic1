@@ -1,0 +1,63 @@
+{
+    "error": {
+        "returnCode": 0,
+        "returnMessage": "success",
+        "returnUserMessage": "操作成功"
+    },
+    "data": {
+        "pager": {
+            "total": 1,
+            "pn": 1
+        },
+        "list": [{
+            "id": "157",
+            "debtor": "**四",
+            "task_id": "379",
+            "addr": "某地址",
+            "debt_amount": "441.20",
+            "reward": "88.24",
+            "overdue": "100",
+            "overdue_fee": "0.44",
+            "collector_level": 3,
+            "status": 1,
+            "current_deposit": "1.00"
+        }, {
+            "id": "157",
+            "debtor": "**四",
+            "task_id": "379",
+            "addr": "某地址",
+            "debt_amount": "441.20",
+            "reward": "88.24",
+            "overdue": "100",
+            "overdue_fee": "0.44",
+            "collector_level": 3,
+            "status": 1,
+            "current_deposit": "1.00"
+        }, {
+            "id": "275",
+            "debtor": "**六",
+            "task_id": "384",
+            "addr": "某地址",
+            "debt_amount": "441.92",
+            "reward": "88.38",
+            "overdue": "100",
+            "overdue_fee": "0.88",
+            "collector_level": 3,
+            "status": 0,
+            "current_deposit": "1.00"
+        }, {
+            "id": "274",
+            "debtor": "**九",
+            "task_id": "383",
+            "addr": "某地址",
+            "debt_amount": "442.64",
+            "reward": "88.52",
+            "overdue": "100",
+            "overdue_fee": "1.32",
+            "collector_level": 3,
+            "status": 0,
+            "current_deposit": "1.00"
+        }],
+        "task_num": 1
+    }
+}

@@ -1,0 +1,29 @@
+<ion-view >
+    <div class="ngLargeImg">
+        <div class="closeImg" ng-click="closePhoto();">
+        </div>
+        <ion-slide-box show-pager="false" active-slide="activeIndex">
+            <ion-slide ng-repeat="item in data.imgArr track by $index" >
+                <div class="photo-detail" ng-click="closePhoto();" ng-show="showPhoto">
+                    <ion-content>
+                        <div class="photo-bg"></div>
+                        <div class="photo-content-con">
+                            <span>
+                                <a>
+                                    <img ng-src="{{item.url || item}}">
+                                </a>
+                            </span>
+                        </div>
+                    </ion-content>
+                    <div class="tabs pager">
+                        {{$index + 1}}/{{data.imgArr.length}}
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+        <!-- <div class="pager">
+         {{1}}/{{data.Arr.length}}
+        </div>  -->
+    </div>
+</ion-view>
+

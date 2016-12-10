@@ -1,0 +1,13 @@
+{
+   "error": {
+        "returnCode": "0",
+        "returnMessage": "操作成功！",
+        "returnUserMessage": "操作成功！"
+    },
+    "data": [
+        { "id" : "38", "name" : "石家庄" },
+        { "id" : "39", "name" : "唐山" },
+        { "id" : "48", "name" : "秦皇岛市" },
+        { "id" : "49", "name" : "邯郸市" }
+    ]
+}

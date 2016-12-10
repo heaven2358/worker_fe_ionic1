@@ -1,0 +1,39 @@
+.select-item {
+    display    : inline-block;
+    height     : 30px;
+    width      : 100%;
+    text-align : center;
+    font-size  : 16px;
+    line-height: 30px;
+}
+
+.selector {
+    width     : 100%;
+    position  : relative;
+    height    : 90px;
+    margin    : 0;
+    /*background: white;*/
+    /* overflow: hidden; */
+    margin-top: 60px;
+}
+
+.selector-wrap {
+    height  : 150px;
+    margin  : 0;
+    width   : 100%;
+    position: relative;
+    /*background: white;*/
+    overflow: hidden;
+}
+
+.item-container {
+    position: relative;
+    top     : 0;
+    left    : 0;
+    height  : 150px;
+    width   : 100%;
+}
+
+.item-container.animating {
+    transition: top 0.2s;
+}

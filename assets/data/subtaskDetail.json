@@ -1,0 +1,66 @@
+{
+	"error": {
+		"returnCode": 0,
+		"returnMessage": "success",
+		"returnUserMessage": "操作成功"
+	},
+	"data": {
+		"debtor": {
+			"id": "320",
+			"memberId": "593591397050305440",
+			"name": "催二六",
+			"portrait": "http:\/\/rrc.dev.jiedaibao.com\/static\/rrc\/common\/static\/img\/default.png",
+			"gender": "男",
+			"cardID": "11010519680801393X",
+			"phone": "18600000126",
+			"addressID": "北京市北京市朝阳区详细地址",
+			"addressLBS": "",
+			"addressIP": "",
+			"addressHome": "",
+			"usualAddress": "",
+			"companyAddress": "",
+			"companyName": "",
+			"companyTel": "",
+			"platContactTel": "15810614344",
+			"createTime": "2016-08-30 15:32:50",
+			"relatives": [],
+			"friend_num": 0,
+			"companyCount": 0,
+			"usualCount": 1,
+			"cardCount": 0,
+			"addInfo": []
+		},
+		"task": {
+			"returnRatio": "0%",
+			"isFinish": false,
+			"originDebt": "2453.98",
+			"debtRatio": "245.40",
+			"payedDebt": "0.00",
+			"unpayedDebt": "2453.98",
+			"totalReword": "61.34",
+			"unpayReword": "61.34",
+			"payedReword": "0.00",
+			"totalDebt": 1,
+			"debt_number": 1,
+			"longestDebt": 124,
+			"taskDays": 46,
+			"takeTaskTime": "2016-09-22",
+			"expiredTime": "2016-10-30",
+			"endTime": "2016-10-30",
+			"remainingDays": 38,
+			"id": "130",
+			"taskNO": "1474512981100000000130",
+			"delayRecord": [{
+				"recordId": "51"
+			}],
+			"needFile": 1,
+			"awardRatio": "25%",
+			"newAwardRatio": "2.5%",
+			"divideRate": "10%",
+			"assistPhone": "18600000118",
+			"type": 2,
+			"outTime": 1,
+			"fileSign": "F77C848581E1FD3"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.fancy-select-items {
+    ion-header-bar {
+        background: #edeef0;
+        h1{
+            color: #7d7e80;
+        }
+    }
+    .item-text-wrap{
+        color: #666;
+        background: #fff;
+    }
+    .item-text-wrap.activated{
+        color: #ff7e28;
+    }
+}
+.platform-android {
+    .fancy-select-items {
+        .bar {
+            .title {
+                padding-left: 6px;
+                font-size: 16px;
+            }
+        }
+        .item {
+            border-color: #efefef;
+        }
+    }
+}

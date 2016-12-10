@@ -1,0 +1,13 @@
+<div class="selectors-container" ng-init='init()'>
+    <div class="selector-container" ng-repeat="selector in selectors">
+        <div class="selector-mask"></div>
+        <jdb-scroll-selector
+            items='selector.items'
+            inner-ctl='selectors[$index].innerCtl'
+            value='values[$index]'
+            title='selector.title'
+            text='texts[$index]'
+            default-value='defaultValues[$index]'
+        ></jdb-roll-selector>
+    </div>
+</div>

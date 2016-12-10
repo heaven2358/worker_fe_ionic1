@@ -1,0 +1,56 @@
+.worker_bottom{
+    background: #0f0f0f;
+    color:white;
+    font-size: 12px;
+    .ion-offer{
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 32px;
+            left: 0px;
+            background-image: url(./../images/normal/offer.png);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-color: white;
+            left: 50%;
+            margin-left: -10px;
+        }
+    }
+    .ion-porject{
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 32px;
+            left: 0px;
+            background-image: url(./../images/normal/project.png);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-color: white;
+            left: 50%;
+            margin-left: -10px;
+        }
+    }
+    .ion-user{
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 32px;
+            left: 0px;
+            background-image: url(./../images/normal/user.png);
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-color: white;
+            left: 50%;
+            margin-left: -10px;
+        }
+    }
+}

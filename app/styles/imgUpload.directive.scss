@@ -1,0 +1,58 @@
+img-upload-directive{
+    font-size: 10%;
+    text-align: right;
+        div {
+            float: left;
+            width: 14.5%;
+            height: 50px;
+            margin-right: 1.86%;
+            /* border: 1px solid #ececec; */
+            width: 13.8vw;
+            height: 13.8vw;
+            /* max-width: 56px; */
+            max-height: 57px; 
+            width: 15.1%;
+            background-size: 100%;
+            background-position-y: 50%;
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+
+        .upload-img {
+            overflow: hidden;
+
+            img {
+                border: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .upload-btn {
+            position: relative;
+            margin-right: 0px;
+            width: 14.5%;
+            border: 1px solid #ececec;
+            i.before {
+                position: absolute;
+                left: 50%;
+                top: 15%;
+                width: 1px;
+                height: 70%;
+                background: #ececec;
+            }
+
+            i.after {
+                position: absolute;
+                left: 15%;
+                top: 50%;
+                width: 70%;
+                height: 1px;
+                background: #ececec;
+
+            }
+        }
+    
+
+}
