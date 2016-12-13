@@ -12,7 +12,7 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
     } );
 
     $scope.$on( '$ionicView.loaded', function(event, data){
-        $scope.init();
+        //$scope.init();
     } );
 
     $scope.init = function() {
@@ -35,5 +35,9 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
         //     }
         // });
     };
+
+    $scope.inviteSomebody = function() {
+        $location.path('/inviteWorker');
+    }
 
 }]);

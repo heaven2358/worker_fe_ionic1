@@ -36,6 +36,8 @@ require('./controllers/wantOffer.controller.js');
 require('./controllers/managePro.controller.js');
 require('./controllers/user.controller.js');
 require('./controllers/certificationCon.controller.js');
+require('./controllers/inviteWorker.controller.js');
+
 
 /* controllers end*/
 

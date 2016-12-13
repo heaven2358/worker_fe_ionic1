@@ -25,6 +25,12 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             templateUrl: 'views/certificationCon/certificationCon.html',
             controller: 'certificationConCtrl'
         })
+        //邀请
+        .state('inviteWorker', {
+            url: '/inviteWorker',
+            templateUrl: 'views/inviteWorker/inviteWorker.html',
+            controller: 'inviteWorkerCtrl'
+        })
         .state('user', {
             url: '/user',
             templateUrl: 'views/user/user.html',
