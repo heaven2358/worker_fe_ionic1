@@ -38,6 +38,7 @@ require('./controllers/user.controller.js');
 require('./controllers/certificationCon.controller.js');
 require('./controllers/inviteWorker.controller.js');
 require('./controllers/publishPro.controller.js');
+require('./controllers/finishPro.controller.js');
 
 /* controllers end*/
 

@@ -1,0 +1,91 @@
+.finishPro{
+    .weekDays{
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        font-size: 0px;
+        border-bottom: 1px solid #f4f4f4;
+        background: white;
+        span{
+            display: inline-block;
+            font-size: 15px;
+            width: 1.4rem;
+        }
+    }
+    .workerCountList{
+        h3{
+            font-size: 15px;
+            color: #010101;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        ul{
+            background: white;
+            font-size: 15px;
+            color: #333232;
+            li{
+                height: 43px;
+                line-height: 43px;
+                border-bottom: 1px solid #f7f7f7;
+                position: relative;
+                &:last-child{
+                    border-bottom: 0px;
+                }
+                label{
+                    margin-left: 4%;
+                }
+                span{
+                    position: absolute;
+                    left: 50%;
+                    display: inline-block;
+                    width: 3.5rem;
+                    overflow: hidden;
+                    height: 43px;
+                    word-break: break-all;
+                    font-size: 13px;
+                    font-size: 0.034093rem;
+                }
+                button{
+                    position: absolute;
+                    right: 4%;
+                    display: inline-block;
+                    width: 60px;
+                    width: 1.52rem;
+                    height: 20px;
+                    line-height: 20px;
+                    background: #ffe04e;
+                    border: none;
+                    font-size: 13px;
+                    border-radius: 12px;
+                    top: 50%;
+                    margin-top: -10px;
+                    padding: 0px;
+                }
+            }
+        }
+        .noMore{
+            font-size: 13px;
+            text-align: center;
+            margin-top: 10px;
+            color: grey;
+        }
+    }
+    .bottomButton{
+        background: #1d1d1d;
+        padding: 4px 0px;
+        height: 40px;
+        button{
+            display: inline-block;
+            background: #ffe04e;
+            border-radius: 8px;
+            color: #1d1d1d;
+            font-size: 18px;
+            height: 38px;
+            line-height: 38px;
+            padding: 0px;
+            width: 88%;
+            border: none;
+        }
+    }
+}

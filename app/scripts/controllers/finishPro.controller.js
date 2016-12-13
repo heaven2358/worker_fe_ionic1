@@ -1,4 +1,4 @@
-angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$location','$state','apiService', function($scope, $rootScope, $location, $state, apiService) {
+angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$location','$state','apiService', function($scope, $rootScope, $location, $state, apiService) {
     $scope.busy = false;
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
@@ -7,7 +7,7 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
     } );
 
     $scope.$on( '$ionicView.leave', function(event, data) {
-        //$rootScope.bottomBtnType = 0;
+        $rootScope.bottomBtnType = 0;
     } );
 
     $scope.$on( '$ionicView.loaded', function(event, data){
@@ -15,7 +15,7 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
     } );
 
     $scope.init = function() {
-        $rootScope.rootTap = true;
+        $rootScope.rootTap = false;
         // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
         //     if( data.error.returnCode != 0 ) {
         //         window.toastError( data.error.returnUserMessage );
@@ -35,8 +35,8 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
         // });
     };
 
-    $scope.toFinishPro = function() {
-        $location.path('/finishPro');
+    $scope.roleChoose = function(ret) {
+        // ret 1 劳务员 0 砖工
+        $location.path('wantOffer');
     }
-
 }]);
