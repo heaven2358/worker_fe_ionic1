@@ -3,6 +3,7 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         window.tools.setNativeTitle( '人人催' );
+        $scope.init();
 
     } );
 
@@ -15,6 +16,7 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
     } );
 
     $scope.init = function() {
+        $rootScope.rootTap = true;
         // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
         //     if( data.error.returnCode != 0 ) {
         //         window.toastError( data.error.returnUserMessage );

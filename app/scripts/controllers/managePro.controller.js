@@ -3,18 +3,19 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         window.tools.setNativeTitle( '人人催' );
-
-    } );
-
-    $scope.$on( '$ionicView.leave', function(event, data) {
-        $rootScope.bottomBtnType = 0;
-    } );
-
-    $scope.$on( '$ionicView.loaded', function(event, data){
         $scope.init();
     } );
 
+    $scope.$on( '$ionicView.leave', function(event, data) {
+        //$rootScope.bottomBtnType = 0;
+    } );
+
+    $scope.$on( '$ionicView.loaded', function(event, data){
+        //$scope.init();
+    } );
+
     $scope.init = function() {
+        $rootScope.rootTap = true;
         // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
         //     if( data.error.returnCode != 0 ) {
         //         window.toastError( data.error.returnUserMessage );

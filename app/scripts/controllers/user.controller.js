@@ -3,7 +3,7 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         window.tools.setNativeTitle( '人人催' );
-
+        $scope.init();
     } );
 
     $scope.$on( '$ionicView.leave', function(event, data) {
@@ -11,10 +11,11 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
     } );
 
     $scope.$on( '$ionicView.loaded', function(event, data){
-        $scope.init();
+        //$scope.init();
     } );
 
     $scope.init = function() {
+        $rootScope.rootTap = true;
         // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
         //     if( data.error.returnCode != 0 ) {
         //         window.toastError( data.error.returnUserMessage );
@@ -33,5 +34,10 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
         //     }
         // });
     };
+
+    $scope.toCertification = function() {
+
+        $location.path('/certificationCon');
+    }
 
 }]);

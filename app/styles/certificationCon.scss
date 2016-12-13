@@ -1,0 +1,70 @@
+
+.certificationCon{
+    .topContainer{
+        // background:-webkit-gradient(linear, 0% 2%, 0% 100%,from(#ffe04e), to(#faedb0));
+        // background: -webkit-gradient(linear, 0% 2%, 0% 100%, from(#f9da4a), to(#faedb0));
+        background: -webkit-gradient(linear, 0% 2%, 0% 100%, from(#fbe061), to(#faedb0));
+        margin-top: -1px;
+        text-align: center;
+        padding-bottom: 14px;
+        .imgCon{
+            margin-top: 18px;
+            display: inline-block;
+            img{
+                width:67px;
+                height: 67px;
+            }
+        }
+        .peoName{
+            margin-top: 10px;
+            font-size: 15px;
+            color: #2e2d2d;
+        }
+        .peoRole{
+            margin-top: 13px;
+            font-size: 15px;
+            color: #aaa9a9;
+        }
+    }
+    .formCon{
+        background: #f9f9f9;
+        padding: 8px 4% 23px 4%;
+        margin-bottom: 60px;
+        .innerDiv{
+            border-radius: 8px;
+            background: white;
+            ul{
+                li{
+                    padding: 15px 0px;
+                    border-bottom: 1px solid #f9f9f9;
+                    label{
+                        font-size: 14px;
+                        font-size: 0.373rem;
+                        color: #969595;
+                        margin-left: 0.666rem;
+                        display: inline-block;
+                        min-width:78px;
+                        min-width:2.08rem;
+                    }
+                }
+            }
+        }
+    }
+    .bottomButton{
+        background: #1d1d1d;
+        padding: 4px 0px;
+        height: 40px;
+        button{
+            display: inline-block;
+            background: #ffe04e;
+            border-radius: 8px;
+            color: #1d1d1d;
+            font-size: 18px;
+            height: 38px;
+            line-height: 38px;
+            padding: 0px;
+            width: 88%;
+            border: none;
+        }
+    }
+}

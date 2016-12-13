@@ -19,11 +19,19 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             templateUrl: 'views/managePro/managePro.html',
             controller: 'manageProCtrl'
         })
+        //认证
+        .state('certificationCon', {
+            url: '/certificationCon',
+            templateUrl: 'views/certificationCon/certificationCon.html',
+            controller: 'certificationConCtrl'
+        })
         .state('user', {
             url: '/user',
             templateUrl: 'views/user/user.html',
             controller: 'userCtrl'
         });
+
+
 
     $urlRouterProvider.otherwise('/index');
 }]);
