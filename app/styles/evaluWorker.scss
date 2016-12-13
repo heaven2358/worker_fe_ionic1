@@ -1,0 +1,174 @@
+
+.evaluWorker{
+    .topContainer{
+        // background:-webkit-gradient(linear, 0% 2%, 0% 100%,from(#ffe04e), to(#faedb0));
+        // background: -webkit-gradient(linear, 0% 2%, 0% 100%, from(#f9da4a), to(#faedb0));
+        background: -webkit-gradient(linear, 0% 2%, 0% 100%, from(#fbe061), to(#faedb0));
+        margin-top: -1px;
+        text-align: center;
+        padding-bottom: 14px;
+        .imgCon{
+            margin-top: 18px;
+            display: inline-block;
+            img{
+                width:67px;
+                height: 67px;
+            }
+        }
+        .peoName{
+            margin-top: 10px;
+            font-size: 15px;
+            color: #2e2d2d;
+        }
+        .peoRole{
+            margin-top: 13px;
+            font-size: 15px;
+            color: #aaa9a9;
+            .span{
+                margin-left: 10px;
+            }
+        }
+    }
+    .countInfo{
+        ul{
+            li{
+                padding: 20px 70px 20px 20px;
+                color: #5e5e5d;
+                font-size: 12px;
+                border-bottom: 1px solid #f1f1f1;
+                position: relative;
+                .itemName{
+                    position: relative;
+                    padding-left: 45px;
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/workerProfesion.png);
+                        background-size: 100%;
+                            position: absolute;
+                        left: -20px;
+                        top: 6px;
+                    }
+                }
+                .countNo{
+                    // float: right;
+                    // margin-top: 10px;
+                    position: absolute;
+                    right: 6%;
+                    display: inline-block;
+                    font-size: 10px;
+                    top: 50%;
+                    margin-top: -10px;
+                    img{
+                        display: inline-block;
+                    }
+                    .red{
+                        background: #fd0202;
+                    }
+                }
+                .workerProfe{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/workerProfesion.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+                .speed{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/speed.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+                .integrity{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/integrity.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+                .quality{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/quality.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+    }
+    .evaluation{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 80px;
+        h3{
+            color: #2f2f2f;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+
+        }
+        .detailEvaluation{
+            background: white;
+            // padding-top: 10px;
+            // padding-left: 15px;
+            // padding-bottom: 25px;
+            p{
+                font-size: 13px;
+                line-height: 20px;
+                color: #7f7f7d;
+            }
+            textarea{
+                width: 100%;
+                display: inline-block;
+                height: 96px;
+                overflow: hidden;
+            }
+
+        }
+    }
+
+    .bottomButton{
+        background: #1d1d1d;
+        padding: 4px 0px;
+        height: 40px;
+        button{
+            display: inline-block;
+            background: #ffe04e;
+            border-radius: 8px;
+            color: #1d1d1d;
+            font-size: 18px;
+            height: 38px;
+            line-height: 38px;
+            padding: 0px;
+            width: 88%;
+            border: none;
+        }
+    }
+}

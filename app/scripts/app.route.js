@@ -43,6 +43,12 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             templateUrl: 'views/finishPro/finishPro.html',
             controller: 'finishProCtrl'
         })
+        //评价催客
+        .state('evaluWorker', {
+            url: '/evaluWorker',
+            templateUrl: 'views/evaluWorker/evaluWorker.html',
+            controller: 'evaluWorkerCtrl'
+        })
         .state('user', {
             url: '/user',
             templateUrl: 'views/user/user.html',
