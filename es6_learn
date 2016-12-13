@@ -1,0 +1,36 @@
+
+
+1. let const 不存在变量声明提升
+
+const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变
+
+对象冻结
+Object.freeze
+
+
+从ES6开始，全局变量将逐步与顶层对象的属性脱钩。let const 与 window
+
+const itemsCopy = [...items];
+const foo = document.querySelectorAll('.foo');
+Object.assign() 方法可以把任意多个的 源对象 自身的可枚举属性 拷贝给目标对象,然后返回目标对象。
+
+使用Array.from方法，将类似数组的对象转为数组。
+
+简单的、单行的、不会复用的函数，建议采用箭头函数。如果函数体较为复杂，行数较多，还是应该采用传统的函数写法。
+
+所有配置项都应该集中在一个对象，放在最后一个参数，布尔值不可以直接作为参数。
+要在函数体内使用arguments变量，使用rest运算符（...）代替。因为rest运算符显式表明你想要获取参数，而且arguments是一个类似数组的对象，而rest运
+算符可以提供一个真正的数组
+
+使用extends实现继承，因为这样更简单，不会有破坏instanceof运算的危险。
+
+class PeekableQueue extends Queue {
+  peek() {
+    return this._queue[0];
+  }
+}
+
+
+首先，Module语法是JavaScript模块的标准写法，坚持使用这种写法。使用import取代require。
+
+首先，Module语法是JavaScript模块的标准写法，坚持使用这种写法。使用import取代require。

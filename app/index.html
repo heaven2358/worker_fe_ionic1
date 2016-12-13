@@ -15,15 +15,15 @@
 
         <ion-nav-view></ion-nav-view>
         <div class="tabs tabs-icon-top worker_bottom">
-          <a class="tab-item" href="#/wantOffer">
+          <a class="tab-item" ng-click="changeTab('/wantOffer')" >
             <i class="icon ion-offer"></i>
             求职
           </a>
-          <a class="tab-item" href="#/managePro">
+          <a class="tab-item" ng-click="changeTab('/managePro')">
             <i class="icon ion-porject"></i>
             项目管理
           </a>
-          <a class="tab-item" href="#/user">
+          <a class="tab-item" ng-click="changeTab('/user')">
             <i class="icon ion-user"></i>
             我的
           </a>

@@ -56,40 +56,40 @@ angular.module('worker').run([
         }
 
         //异步发送请求，更新本地存储状态。
-        apiService.getData('{{getUserStatusApi}}', {}).success(function(data) {
-            if (data.error.returnCode != 0) {
-                toastError(data.error.returnUserMessage);
-                return;
-            }
-
-            var value = data.data,
-                tmpStatus = window.applyStatus.status;
-
-            //更新本地存储状态
-            $rootScope.saveStatusToDevice(angular.extend({}, value));
-
-            //更新windows上变量，有可能status不变其他参数改变，但不用强制跳转的情况
-            window.applyStatus = value;
-
-            if (tmpStatus != value.status) {
-
-                var nowUrl = window.location.href;
-
-                //如果当前页面不是逾期债权页面
-                if (nowUrl.indexOf('#/myOverdueDebt') == -1) {
-                    //如果当前页非loading页,弹框提示后跳转页面
-                    if (nowUrl.indexOf('#/loadingPage') == -1 && !window.tools.endsWith(nowUrl, '#/')) {
-                        toastError($rootScope.changeStatusMsg, function($rootScope) {
-                            return function() {
-                                $rootScope.rrcPage();
-                            }
-                        }($rootScope), 3000);
-                    } else { //如果是loadnig页即刻刷新
-                        $rootScope.rrcPage();
-                    }
-                }
-            }
-        });
+        // apiService.getData('{{getUserStatusApi}}', {}).success(function(data) {
+        //     if (data.error.returnCode != 0) {
+        //         toastError(data.error.returnUserMessage);
+        //         return;
+        //     }
+        //
+        //     var value = data.data,
+        //         tmpStatus = window.applyStatus.status;
+        //
+        //     //更新本地存储状态
+        //     $rootScope.saveStatusToDevice(angular.extend({}, value));
+        //
+        //     //更新windows上变量，有可能status不变其他参数改变，但不用强制跳转的情况
+        //     window.applyStatus = value;
+        //
+        //     if (tmpStatus != value.status) {
+        //
+        //         var nowUrl = window.location.href;
+        //
+        //         //如果当前页面不是逾期债权页面
+        //         if (nowUrl.indexOf('#/myOverdueDebt') == -1) {
+        //             //如果当前页非loading页,弹框提示后跳转页面
+        //             if (nowUrl.indexOf('#/loadingPage') == -1 && !window.tools.endsWith(nowUrl, '#/')) {
+        //                 toastError($rootScope.changeStatusMsg, function($rootScope) {
+        //                     return function() {
+        //                         $rootScope.rrcPage();
+        //                     }
+        //                 }($rootScope), 3000);
+        //             } else { //如果是loadnig页即刻刷新
+        //                 $rootScope.rrcPage();
+        //             }
+        //         }
+        //     }
+        // });
 
         $rootScope.saveStatusToDevice = function(statusObj) {
             if (statusObj && (statusObj.status || statusObj.status === 0) ) {
@@ -134,67 +134,13 @@ angular.module('worker').run([
             }
         }
 
-        $rootScope.overdueLink = function() {
-            $location.path('/myOverdueDebt');
-        }
+        // $rootScope.overdueLink = function() {
+        //     $location.path('/myOverdueDebt');
+        // }
 
-        $rootScope.rrcLink = function() {
-            var realStatus = parseInt(window.applyStatus.status),
-                rrcUrl;
-
-            if ($rootScope.linkStatus != realStatus) {
-                rrcUrl = {
-                    path: '/taskList'
-                };
-                switch (realStatus) {
-                case codeMap.NO_STATUS: { //未获取到状态
-                    rrcUrl = {
-                        path: '/loadingPage'
-                    };
-                    break;
-                }
-                case codeMap.UN_REGIST: { //未注册
-                    rrcUrl = {
-                        path: '/about'
-                    };
-                    break;
-                }
-                case codeMap.FORBIDDEN: { //被禁用
-                    rrcUrl = {
-                        path: '/forbidden',
-                        param: {
-                            reason: window.applyStatus.reason
-                        }
-                    };
-                    break;
-                }
-                case codeMap.NO_PASS: { //无作业区审核通过
-                    rrcUrl = {
-                        path: '/taskList',
-                        param: {
-                            status: 0
-                        }
-                    };
-                    break;
-                }
-                case codeMap.PART_PASS: { //全部或部分作业区审核通过
-                    rrcUrl = {
-                        path: '/taskList'
-                    };
-                    break;
-                }
-                }
-                $rootScope.rrcUrl = angular.extend({}, rrcUrl);
-                $rootScope.linkStatus = realStatus;
-            } else {
-                rrcUrl = $rootScope.rrcUrl;
-            }
-
-            $location.path(rrcUrl.path).search(rrcUrl.param || {});
-        }
 
         //初始化获取localStorge存储状态
-        getStatusToDevice();
+        // getStatusToDevice();
 
         //处理老板机滑动不能问题
         $rootScope.fixCantScroll = function() {
@@ -234,6 +180,11 @@ angular.module('worker').run([
             //移除弹窗相关dom
             $rootScope.$broadcast( 'closeLargeImg' );
         });
+
+
+        $rootScope.changeTab = function (viewState) {
+            $location.path(viewState);
+        }
 
      //    $ionicPlatform.ready(function() {
      //        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {

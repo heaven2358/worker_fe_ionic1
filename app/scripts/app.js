@@ -33,8 +33,8 @@ require('./app.run.js');
 
 require('./controllers/index.controller.js');
 require('./controllers/wantOffer.controller.js');
-
-
+require('./controllers/managePro.controller.js');
+require('./controllers/user.controller.js');
 /* controllers end*/
 
 // require('./directive/fancySelect.directive.js');

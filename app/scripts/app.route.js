@@ -13,6 +13,16 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             url: '/wantOffer',
             templateUrl: 'views/wantOffer/wantOffer.html',
             controller: 'wantOfferCtrl'
+        })
+        .state('managePro', {
+            url: '/managePro',
+            templateUrl: 'views/managePro/managePro.html',
+            controller: 'manageProCtrl'
+        })
+        .state('user', {
+            url: '/user',
+            templateUrl: 'views/user/user.html',
+            controller: 'userCtrl'
         });
 
     $urlRouterProvider.otherwise('/index');
