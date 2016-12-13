@@ -1,0 +1,145 @@
+.publishPro{
+    .form_Pro{
+        padding-bottom: 50px;
+        .inputList_con{
+            background: white;
+            ul{
+                li{
+                    height: 53px;
+                    line-height: 53px;
+                    .table_cell{
+                        display: table-cell;
+                        vertical-align: middle;
+                        label{
+                            width: 100px;
+                            width: 2.666rem;
+                            text-align: right;
+                            display: inline-block;
+                        }
+                        .inputItem{
+                            display: inline-block;
+                            height: 30px;
+                            // border: 1px solid black;
+                            vertical-align: middle;
+                            display: inline-block;
+                            line-height: 30px;
+                            border: 1px solid #939191;
+                            border-radius: 8px;
+                            width: 5.14rem;
+                            margin-left: 1.066rem;
+                            background: white;
+                            input{
+                                width: 90%;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .imgList{
+            h3{
+                color: #232322;
+                font-size: 15px;
+                padding-left: 4%;
+                height:35px;
+                line-height: 35px;
+                font-weight:500;
+            }
+            .imgsCon{
+                padding-left: 4%;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background: white;
+                font-size: 0px;
+                *{
+                    margin-right: 20px;
+                }
+                img{
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                }
+                .addImg{
+                    background: #fad318;
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 0px;
+                    position: relative;
+                    &:before{
+                        content: '';
+                        width: 16px;
+                        height: 1px;
+                        display: inline-block;
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -8px;
+                        top: 50%;
+                        background: black;
+                    }
+                    &:after{
+                        content: '';
+                        width: 16px;
+                        height: 1px;
+                        display: inline-block;
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -8px;
+                        top: 50%;
+                        background: black;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+        .otherInfo{
+            h3{
+                color: #232322;
+                font-size: 15px;
+                padding-left: 4%;
+                height: 35px;
+                line-height: 35px;
+                font-weight: 500;
+            }
+            .textCon{
+                padding-left: 4%;
+                padding-bottom: 30px;
+                textarea{
+                    height: 75px;
+                    width: 92%;
+                }
+            }
+        }
+    }
+    .bottomButton{
+        background: #1d1d1d;
+        font-size: 0px;
+        /* height: 40px; */
+        padding: 0px;
+        height: auto;
+        button{
+            display: inline-block;
+            background: #ffe04e;
+            // border-radius: 8px;
+            color: #1d1d1d;
+            font-size: 18px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0px;
+            width: 88%;
+            border: none;
+
+        }
+        .yellow{
+            width: 6.26rem;
+        }
+        .share{
+            width: 3.74rem;
+            background: #1d1d1d;
+            color: white;
+        }
+    }
+}

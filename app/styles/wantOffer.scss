@@ -54,7 +54,7 @@
         }
     }
     .worker_list{
-        padding-bottom: 50px;
+        // padding-bottom: 50px;
         h3{
             background: #f9f9f9;
             height: 30px;
@@ -115,6 +115,23 @@
                     margin-top: -17px;
                 }
             }
+        }
+    }
+    .publishProBut{
+        margin-bottom: 50px;
+        height: 80px;
+        text-align: center;
+        padding-top: 15px;
+        button{
+            width: 150px;
+            font-size: 15px;
+            display: inline-block;
+            color: #171717;
+            background: #fad318;
+            height: 35px;
+            line-height: 35px;
+            border: none;
+            border-radius: 19px;
         }
     }
 }

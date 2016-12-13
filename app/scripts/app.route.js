@@ -25,11 +25,17 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             templateUrl: 'views/certificationCon/certificationCon.html',
             controller: 'certificationConCtrl'
         })
-        //邀请
+        //邀请工人
         .state('inviteWorker', {
             url: '/inviteWorker',
             templateUrl: 'views/inviteWorker/inviteWorker.html',
             controller: 'inviteWorkerCtrl'
+        })
+        //发布项目
+        .state('publishPro', {
+            url: '/publishPro',
+            templateUrl: 'views/publishPro/publishPro.html',
+            controller: 'publishProCtrl'
         })
         .state('user', {
             url: '/user',

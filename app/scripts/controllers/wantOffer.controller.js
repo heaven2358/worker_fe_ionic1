@@ -39,5 +39,8 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
     $scope.inviteSomebody = function() {
         $location.path('/inviteWorker');
     }
+    $scope.toPublishPro = function() {
+        $location.path('/publishPro');
+    }
 
 }]);
