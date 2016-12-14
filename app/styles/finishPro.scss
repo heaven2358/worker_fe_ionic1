@@ -35,16 +35,17 @@
                 label{
                     margin-left: 4%;
                 }
-                span{
+                span,a{
                     position: absolute;
                     left: 50%;
                     display: inline-block;
+                    width: 100px;
                     width: 3.5rem;
                     overflow: hidden;
                     height: 43px;
                     word-break: break-all;
                     font-size: 13px;
-                    font-size: 0.034093rem;
+                    font-size: 0.34093rem;
                 }
                 button{
                     position: absolute;

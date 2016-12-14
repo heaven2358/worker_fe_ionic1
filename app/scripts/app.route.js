@@ -2,7 +2,7 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
     // $ionicConfigProvider.views.maxCache(100); //on cache page
     // $ionicConfigProvider.views.transition('none');
 
-    // $ionicConfigProvider.views.swipeBackEnabled(true);//禁止侧滑返回操作
+    $ionicConfigProvider.views.swipeBackEnabled(false);//禁止侧滑返回操作
     $stateProvider
         .state('index', {
             url: '/index',
@@ -17,6 +17,7 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
         .state('managePro', {
             url: '/managePro',
             templateUrl: 'views/managePro/managePro.html',
+            cache: false,
             controller: 'manageProCtrl'
         })
         //认证

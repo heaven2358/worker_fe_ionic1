@@ -3,7 +3,7 @@
         <div class="worker_topTitle">
             项目管理
         </div>
-        <div class="worker_list">
+        <div class="worker_list" ng-if="pageType == 'laborSupervision'">
             <h3>
                 项目列表
             </h3>
@@ -62,7 +62,7 @@
             </ul>
         </div>
 
-        <div class="worker_list">
+        <div class="worker_list" ng-if="pageType == 'laborSupervision'">
             <h3>
                 意向工人
             </h3>
@@ -135,6 +135,25 @@
                 </li>
             </ul>
         </div>
+        <div class="worker_submit" ng-if="pageType == 'worker'">
+            <h3>两江公馆</h3>
+            <div class="dateDiv">
+                <a>
+                    2016年11月3日
+                </a>
+            </div>
+            <div class="input_Detail">
+                <p class="inputPa">
+                    今日完成<input >㎡
+                </p>
+                <p class="noPa">
+                    当前项目累计完成<span>20</span>㎡
+                </p>
 
+                <button>
+                    立即提交
+                </button>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

@@ -37,6 +37,8 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
 
     $scope.roleChoose = function(ret) {
         // ret 1 劳务员 0 砖工
+        console.log(ret);
+        $rootScope.rootRole = ret;
         $location.path('wantOffer');
     }
 }]);

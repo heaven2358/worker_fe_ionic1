@@ -111,5 +111,57 @@
             }
         }
     }
+    .worker_submit{
+        text-align: center;
+        h3{
+            font-size: 15px;
+            color: #6c6c6c;
+            height: 30px;
+            line-height: 30px;
+            background: #f9f9f9;
 
+        }
+        .dateDiv{
+            background: white;
+            color: #010101;
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .input_Detail{
+            padding-top: 50px;
+            p{
+                font-size: 15px;
+                color: #747474;
+            }
+            .inputPa{
+                input{
+                    height: 15px;
+                    width: 45px;
+                    border: 1px solid gray;
+                    background: white;
+                    outline: none;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    display: inline-block;
+                }
+            }
+            .noPa{
+                margin-top: 16px;
+                span{
+                    color:#ffe04e;
+                }
+            }
+            button{
+                display: inline-block;
+                background: #fad318;
+                width: 145px;
+                height: 35px;
+                line-height: 35px;
+                border: none;
+                border-radius: 30px;
+                margin-top:75px;
+            }
+        }
+    }
 }
