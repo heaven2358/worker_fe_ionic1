@@ -80,16 +80,7 @@ gulp.task('addOnePage', function() {
 
 /*var Stream = require('stream');
 var through = require('through2');
-
+*/
 gulp.task('test', function() {
-    gulp.src('app/scripts/app.js')
-        .pipe(function () {
-            return through.obj(function (file, enc, cb) {
-                console.log(file);
-                // 主体实现忽略若干行
-                this.push(file);
 
-                cb();
-            })
-        });
-});*/
+});

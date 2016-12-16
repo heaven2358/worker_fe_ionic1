@@ -1,3 +1,3 @@
 (function() {
-        module.exports = ['/wantOffer', '/managePro', '/user'];
+    module.exports = ['/wantOffer', '/managePro', '/user'];
 })()

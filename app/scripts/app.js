@@ -37,6 +37,8 @@
     require('./controllers/publishPro.controller.js');
     require('./controllers/finishPro.controller.js');
     require('./controllers/evaluWorker.controller.js');
+    require('./controllers/applyWork.controller.js');
+    
     /* controllers end*/
 
     // require('./directive/fancySelect.directive.js');
@@ -57,3 +59,13 @@
     require('./services/share.service.js');
 
     require('./app.filter.js');
+
+    // function count(m, n) {
+    //     if(m == 0 || n == 0) {
+    //         return 0;
+    //     }
+    //     if(m == 1 ||  n == 1) {
+    //         return 1;
+    //     }
+    //     return count(n, m - 1) + count(n- 1, m);
+    // }

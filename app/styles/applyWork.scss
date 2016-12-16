@@ -1,0 +1,194 @@
+.applyWork{
+    .topContainer{
+        // background:-webkit-gradient(linear, 0% 2%, 0% 100%,from(#ffe04e), to(#faedb0));
+        // background: -webkit-gradient(linear, 0% 2%, 0% 100%, from(#f9da4a), to(#faedb0));
+        // background: -webkit-gradient(linear, 0% 2%, 0% 100%, from(#fbe061), to(#faedb0));
+        background:#f9f9f9;
+        margin-top: -1px;
+        text-align: center;
+        // padding-bottom: 14px;
+        .imgCon{
+            /* margin-top: 18px; */
+            display: inline-block;
+            width: 92%;
+            img{
+                // width:67px;
+                height: 60px;
+                width: 100%;
+            }
+        }
+        .peoName{
+            margin-top: 10px;
+            font-size: 15px;
+            color: #2e2d2d;
+        }
+        .proName{
+            margin-top: 8px;
+            font-size: 15px;
+            color: #2e2d2d;
+            span{
+                color: #b9b8b6;
+                font-size: 11px;
+            }
+        }
+        p{
+            color: #b5b4b4;
+            font-size: 12px;
+            line-height: 20px;
+        }
+        .peopleInfo{
+            color: #2e2d2d;
+            font-size: 0px;
+            span{
+                display: inline-block;
+                text-align: center;
+                font-size: 14px;
+                width: 23%;
+            }
+        }
+        // .peoRole{
+        //     margin-top: 13px;
+        //     font-size: 15px;
+        //     color: #aaa9a9;
+        //     .span{
+        //         margin-left: 10px;
+        //     }
+        // }
+    }
+    .countInfo{
+        background: white;
+        ul{
+            li{
+                padding: 20px 70px 20px 20px;
+                color: #5e5e5d;
+                font-size: 12px;
+                border-bottom: 1px solid #f1f1f1;
+                .itemName{
+                    position: relative;
+                    padding-left: 45px;
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/workerProfesion.png);
+                        background-size: 100%;
+                            position: absolute;
+                        left: -20px;
+                        top: 6px;
+                    }
+                }
+                .countNo{
+                    float: right;
+                    // margin-top: 10px;
+                }
+                .workerProfe{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/workerProfesion.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+                .speed{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/speed.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+                .integrity{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/integrity.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+                .quality{
+                    &:before{
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        background: url(./../images/inviteWorker/quality.png);
+                        background-size: 100%;
+                        position: absolute;
+                        top: -3px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+    }
+    .evaluation{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 80px;
+        h3{
+            color: #2f2f2f;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+
+        }
+        .detailEvaluation{
+            background: white;
+            padding-top: 10px;
+            padding-left: 15px;
+            padding-bottom: 25px;
+            p{
+                font-size: 13px;
+                line-height: 20px;
+                color: #7f7f7d;
+            }
+
+        }
+    }
+
+    .bottomButton{
+        background: #1d1d1d;
+        font-size: 0px;
+        /* height: 40px; */
+        padding: 0px;
+        height: auto;
+        button{
+            display: inline-block;
+            background: #ffe04e;
+            // border-radius: 8px;
+            color: #1d1d1d;
+            font-size: 18px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0px;
+            width: 88%;
+            border: none;
+
+        }
+        .yellow{
+            width: 6.26rem;
+        }
+        .share{
+            width: 3.74rem;
+            background: #1d1d1d;
+            color: white;
+        }
+    }
+
+}

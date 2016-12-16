@@ -50,6 +50,12 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             templateUrl: 'views/evaluWorker/evaluWorker.html',
             controller: 'evaluWorkerCtrl'
         })
+        //申请工作
+        .state('applyWork', {
+            url: '/applyWork',
+            templateUrl: 'views/applyWork/applyWork.html',
+            controller: 'applyWorkCtrl'
+        })
         .state('user', {
             url: '/user',
             templateUrl: 'views/user/user.html',

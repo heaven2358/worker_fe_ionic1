@@ -105,16 +105,16 @@ angular.module('worker').run([
                 console.log(24);
                 $rootScope.rootTap = true;
             }
-            // var backView = $ionicHistory.backView();
-            // if( window.ShowCloseButton ) {
-            //     if( $rootScope.closeBtnShown && !backView ) {
-            //         ShowCloseButton.showCloseButton( '0', function(){}, function(){} );
-            //         $rootScope.closeBtnShown = !$rootScope.closeBtnShown;
-            //     } else if( !$rootScope.closeBtnShown && backView ) {
-            //         ShowCloseButton.showCloseButton( '1', function(){}, function(){} );
-            //         $rootScope.closeBtnShown = !$rootScope.closeBtnShown;
-            //     }
-            // }
+            var backView = $ionicHistory.backView();
+            if( window.ShowCloseButton ) {
+                if( $rootScope.closeBtnShown && !backView ) {
+                    ShowCloseButton.showCloseButton( '0', function(){}, function(){} );
+                    $rootScope.closeBtnShown = !$rootScope.closeBtnShown;
+                } else if( !$rootScope.closeBtnShown && backView ) {
+                    ShowCloseButton.showCloseButton( '1', function(){}, function(){} );
+                    $rootScope.closeBtnShown = !$rootScope.closeBtnShown;
+                }
+            }
             //移除弹窗相关dom
             $rootScope.$broadcast( 'closeLargeImg' );
         });
@@ -123,7 +123,7 @@ angular.module('worker').run([
 
         if(tabConfig.indexOf($location['$$path']) > -1 ) {
             $rootScope.rootTap = true;
-         }
+        }
 
         $rootScope.changeTab = function (viewState) {
             $location.path(viewState);
