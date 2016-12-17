@@ -144,9 +144,9 @@
         //百度打点
     window._hmt = window._hmt || [];
     (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?2c51dea2abf30365f9569dd0ba201ef8";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
+        // var hm = document.createElement("script");
+        // hm.src = "https://hm.baidu.com/hm.js?2c51dea2abf30365f9569dd0ba201ef8";
+        // var s = document.getElementsByTagName("script")[0];
+        // s.parentNode.insertBefore(hm, s);
     })();
 })();

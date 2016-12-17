@@ -1,10 +1,11 @@
-var gulpTasks = require('@JDB/build');
+// var gulpTasks = require('@JDB/build');
 var gulp = require('gulp');
 var filePaths = require('filepaths');
 
 var fs = require('fs');
 
 var gulpReplace = require('gulp-replace');
+var del = require('del');
 
 gulp.task('addRequireJs', function() {
 
@@ -83,4 +84,25 @@ var through = require('through2');
 */
 gulp.task('test', function() {
 
+});
+
+
+
+gulp.task('prepare', function () {
+    return del([
+        './dist'
+    ], {
+        dot: true
+    });
+});
+
+gulp.task('images', function () {
+    return gulp.src(config.images.src)
+        .pipe(rename(function (_path) {
+            var dirArr = _path.dirname.split(path.sep);
+            if (dirArr[1] === 'images') {
+                _path.dirname = dirArr.slice(2).join(path.sep) || '.';
+            }
+        }))
+        .pipe(gulp.dest(config.images.dest));
 });

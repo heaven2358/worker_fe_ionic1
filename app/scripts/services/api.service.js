@@ -113,9 +113,9 @@ angular.module('worker').service('apiService', [
                 }
             } else {
                 //处理翻页导致老板机不滑动问题
-                if (result.data.pager && result.data.pager.pn && result.data.pager.pn > 1) {
-                    $rootScope.fixCantScroll();
-                }
+                // if (result.data.pager && result.data.pager.pn && result.data.pager.pn > 1) {
+                //     $rootScope.fixCantScroll();
+                // }
             }
         }
 
