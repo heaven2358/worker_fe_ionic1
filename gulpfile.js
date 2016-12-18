@@ -11,7 +11,7 @@ var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var handleErrors = require('../util/handle-errors');
-var config = require('../config').styles;
+var config = require('../config');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 
@@ -113,7 +113,7 @@ gulp.task('serve', ['prepare'], function () {
 
 
 gulp.task('styles', function() {
-    return gulp.src(config.src)
+    return gulp.src(config.styles.src)
         .pipe(concat('main.css'))
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -122,5 +122,14 @@ gulp.task('styles', function() {
         .pipe(autoprefixer({
             browsers: ['last 2 version']
         }))
+        .pipe(gulp.dest(config.dest));
+});
+
+gulp.task('images', function () {
+    return gulp.src(config.src)
+        .pipe(changed(config.dest)) // Ignore unchanged files
+        // TODO 据说这个压缩对png压缩不好，待考证
+        .pipe(imagemin([imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()])) // Optimize
+        .pipe(fileSizeCheck(50 * 1024))
         .pipe(gulp.dest(config.dest));
 });
