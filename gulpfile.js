@@ -87,22 +87,29 @@ gulp.task('test', function() {
 });
 
 
+//
+// gulp.task('prepare', function () {
+//     return del([
+//         './dist'
+//     ], {
+//         dot: true
+//     });
+// });
 
-gulp.task('prepare', function () {
-    return del([
-        './dist'
-    ], {
-        dot: true
-    });
-});
-
-gulp.task('images', function () {
-    return gulp.src(config.images.src)
-        .pipe(rename(function (_path) {
-            var dirArr = _path.dirname.split(path.sep);
-            if (dirArr[1] === 'images') {
-                _path.dirname = dirArr.slice(2).join(path.sep) || '.';
-            }
-        }))
-        .pipe(gulp.dest(config.images.dest));
-});
+// gulp.task('images', function () {
+//     return gulp.src(config.images.src)
+//         .pipe(rename(function (_path) {
+//             var dirArr = _path.dirname.split(path.sep);
+//             if (dirArr[1] === 'images') {
+//                 _path.dirname = dirArr.slice(2).join(path.sep) || '.';
+//             }
+//         }))
+//         .pipe(gulp.dest(config.images.dest));
+// });
+//
+// gulp.task('prod', ['prepare'], function () {
+//     gulp.start('images', 'scripts-cordova', 'styles', 'copy', 'version:prod');
+// });
+// gulp.task('local', ['prepare'], function () {
+//     gulp.start('images:local', 'scripts:local', 'styles:local', 'copy:local');
+// });
