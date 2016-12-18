@@ -6,9 +6,19 @@
     // console.log(123);
     // require('../lib/easeljs-0.8.2.min');
     require('../lib/ionic');
+    require('../lib/zepto');
+    require('./common/dialog');
+    require('./common/toast');
     document.documentElement.style.fontSize = (document.documentElement.offsetWidth / 10) + 'px';
     angular.element(document).ready(function () {
-        window.extHeader = {};
+        try{
+            console.log(JSON.parse(window.tools.getCookie('auth_resp')));
+            window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
+        }catch(e) {
+            window.extHeader = {};
+            console.log(e);
+        }
+
         // {productID:"5815919718275566320001",JDBID:"BF712413-77B7-4767-8129-47FF58925877",tradeType:"3",deviceType:"iPhone 5S",proxyType:"http",memberID:"550357453066215428",channel:"appstore",h:"1136",appKey:"fb371c48e9a9b2a1174ed729ae888513",udid:"298b613a4b5c1a2e369d6a5b91299b9e80a21e80",w:"640",accessToken:"ACCESS_TOKEN5503574530662154281459335278960",deviceID:"B4541559-B800-4343-87E2-03E01DFCA1B7",platform:"iOS",clientVersion:"2.1.0",phoneVen:"1",jailbreak:0,network:"5",systemVersion:"8.3",traceID:"9954E8A1-DEE2-4830-B5CC-01055031D183",companyName:"人人行",companyId:"123123"};
         try{
             angular.bootstrap(document, ['worker']);
@@ -38,7 +48,7 @@
     require('./controllers/finishPro.controller.js');
     require('./controllers/evaluWorker.controller.js');
     require('./controllers/applyWork.controller.js');
-    
+
     /* controllers end*/
 
     // require('./directive/fancySelect.directive.js');

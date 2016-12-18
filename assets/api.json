@@ -14,6 +14,12 @@
         "test": "http://www.whatsmax.com:3001/getWeixinConfig.data",
         "beta": "http://www.whatsmax.com:3001/getWeixinConfig.data",
         "prod": "http://www.whatsmax.com:3001/getWeixinConfig.data"
+    },
+    "chooseRoleApi":{
+        "serve": "chooseRole.json",
+        "dev": "http://www.whatsmax.com/mhome",
+        "test": "http://www.whatsmax.com/mhome",
+        "beta": "http://www.whatsmax.com/mhome",
+        "prod": "http://api.whatsmax.com/mhome"
     }
-
 }

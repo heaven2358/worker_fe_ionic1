@@ -73,8 +73,20 @@ angular.module('worker').service('apiService', [
                     return getHttpData(url, data);
                 }
 
+                console.log(data);
+                // return $http({
+                //     url:url,
+                //     method:'POST',
+                //     data:data
+                // })
+                // .success(function(data,header,config,status){
+                // //响应成功
+                //
+                // }).error(function(data,header,config,status){
+                // //处理响应失败
+                // });
                 return $http.post(url, data).success(function(res) {
-                    ajaxCommonLogic(res);
+                    // ajaxCommonLogic(res);
                 }).error(function(e) {
                     window.toastError('请求接口出现错误，请稍后再试！');
                 });

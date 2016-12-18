@@ -38,8 +38,21 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
     $scope.roleChoose = function(ret) {
         // ret 1 劳务员 0 砖工
         console.log(ret);
-        $rootScope.rootRole = ret;
-        $location.path('wantOffer');
+        console.log({
+            weixinId: window.extHeader.weixinId || '234',
+            weixinNick:window.extHeader.userNick || 'seser',
+            role: ret * 1 == 1 ? 1 : 2
+        });
+        apiService.getData('{{chooseRoleApi}}', {
+            weixinId: window.extHeader.weixinId || '234',
+            weixinNick:window.extHeader.userNick || 'seser',
+            role: ret * 1 == 1 ? 1 : 2
+        }).success(function(res) {
+            console.log(res);
+            $rootScope.rootRole = ret;
+            $location.path('wantOffer');
+        });
+
     }
 
     window.wx.getLocation({

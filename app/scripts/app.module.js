@@ -3,7 +3,7 @@ angular.module('worker', [ 'ionic'], ['$httpProvider',function($httpProvider) {
 	// Use x-www-form-urlencoded Content-Type
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-
+    // $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
     /**
      * The workhorse; converts an object to x-www-form-urlencoded serialization.
      * @param {Object} obj
@@ -38,9 +38,13 @@ angular.module('worker', [ 'ionic'], ['$httpProvider',function($httpProvider) {
         return query.length ? query.substr(0, query.length - 1) : query;
     };
 
-    // Override $http service's default transformRequest
+    //Override $http service's default transformRequest
     $httpProvider.defaults.transformRequest = [function(data) {
         return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
     }];
+
+    // $httpProvider.defaults.transformRequest = [function(data) {
+    //     return angular.isObject(data) && String(data) !== '[object File]' ? data : data;
+    // }];
 
 }]);

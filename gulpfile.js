@@ -1,4 +1,4 @@
-// var gulpTasks = require('@JDB/build');
+ var gulpTasks = require('@JDB/build');
 var gulp = require('gulp');
 var filePaths = require('filepaths');
 
@@ -6,6 +6,15 @@ var fs = require('fs');
 
 var gulpReplace = require('gulp-replace');
 var del = require('del');
+var gulp = require('gulp');
+var browserSync = require('browser-sync');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var handleErrors = require('../util/handle-errors');
+var config = require('../config').styles;
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+
 
 gulp.task('addRequireJs', function() {
 
@@ -88,28 +97,30 @@ gulp.task('test', function() {
 
 
 //
-// gulp.task('prepare', function () {
-//     return del([
-//         './dist'
-//     ], {
-//         dot: true
-//     });
-// });
+gulp.task('prepare', function () {
+    return del([
+        './dist'
+    ], {
+        dot: true
+    });
+});
+gulp.task('serve', ['prepare'], function () {
+    gulp.start( 'styles', 'images', 'markup', 'watch', function () {
+        gulp.start('hint', ['check'], function () {});
+    });
 
-// gulp.task('images', function () {
-//     return gulp.src(config.images.src)
-//         .pipe(rename(function (_path) {
-//             var dirArr = _path.dirname.split(path.sep);
-//             if (dirArr[1] === 'images') {
-//                 _path.dirname = dirArr.slice(2).join(path.sep) || '.';
-//             }
-//         }))
-//         .pipe(gulp.dest(config.images.dest));
-// });
-//
-// gulp.task('prod', ['prepare'], function () {
-//     gulp.start('images', 'scripts-cordova', 'styles', 'copy', 'version:prod');
-// });
-// gulp.task('local', ['prepare'], function () {
-//     gulp.start('images:local', 'scripts:local', 'styles:local', 'copy:local');
-// });
+});
+
+
+gulp.task('styles', function() {
+    return gulp.src(config.src)
+        .pipe(concat('main.css'))
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .on('error', handleErrors)
+        .pipe(sourcemaps.write())
+        .pipe(autoprefixer({
+            browsers: ['last 2 version']
+        }))
+        .pipe(gulp.dest(config.dest));
+});
