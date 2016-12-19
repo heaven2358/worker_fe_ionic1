@@ -1,27 +1,28 @@
 {
-    "name": "worker",
-    "version": "1.0.0",
-    "description": "人人催hybrid开发",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/greypants/gulp-starter.git"
-    },
-    "browser": {},
-    "browserify": {
-        "transform": [
-            "browserify-shim"
-        ]
-    },
-    "browserify-shim": {
-        "./app/lib/easeljs-0.8.2.min.js": "createjs"
-    },
-    "devDependencies": {
-        "browserify-shim": "^3.8.12",
-        "@JDB/build": "^0.1.0",
-        "filepaths": "^0.2.0",
-        "gulp": "^3.9.1",
-        "gulp-replace": "^0.5.4",
-        "yargs": "^4.8.1"
-    },
-    "dependencies": {}
+  "name": "worker",
+  "version": "1.0.0",
+  "description": "人人催hybrid开发",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/greypants/gulp-starter.git"
+  },
+  "browser": {},
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "./app/lib/easeljs-0.8.2.min.js": "createjs"
+  },
+  "devDependencies": {
+    "@JDB/build": "^0.1.0",
+    "browserify-shim": "^3.8.12",
+    "filepaths": "^0.2.0",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-replace": "^0.5.4",
+    "yargs": "^4.8.1"
+  },
+  "dependencies": {}
 }
