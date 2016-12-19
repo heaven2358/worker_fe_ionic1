@@ -17,6 +17,9 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
 
     $scope.init = function() {
         $rootScope.rootTap = true;
+
+        $scope.data = apiService.getCache('tempRes'); 
+
         // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
         //     if( data.error.returnCode != 0 ) {
         //         window.toastError( data.error.returnUserMessage );

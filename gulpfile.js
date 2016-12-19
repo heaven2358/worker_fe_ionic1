@@ -35,7 +35,6 @@ const imagemin = require('gulp-imagemin');
 const minifycss = require('gulp-minify-css');
 const ba = {};
 ba.isSourceMapping = true;
-
 ba.apiType = 'serve';
 
 gulp.task('addRequireJs', function() {
@@ -119,6 +118,7 @@ gulp.task('test', function() {
 
 
 //
+
 gulp.task('prepare', function () {
     // gulp.src('./app/index.html')
     //     .pipe(gulp.dest('./dist/worker'));
@@ -128,7 +128,6 @@ gulp.task('prepare', function () {
         dot: true
     });
 });
-
 gulp.task('default', ['serve']);
 
 gulp.task('serve', ['prepare'], function () {
