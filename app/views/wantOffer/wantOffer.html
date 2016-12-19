@@ -23,57 +23,24 @@
                 求职信息
             </h3>
             <ul>
-                <li>
-                    <img src="./images/tempSrc/temp_pro.png">
+                <li ng-repeat = "item in data.pList">
+                    <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.pic}}">
                     <div class="info">
                         <p class="name">
-                            东方不败
+                            <!-- 东方不败 -->{{item.projectName}}
                         </p>
                         <p class="workeType">
-                            砌体工
+                            {{item.workerTypeName}}
                         </p>
                         <p class="evaluation">
                             综合评价：<i>4.9</i>
                         </p>
                     </div>
-                    <button ng-click="inviteSomebody()">
+                    <button ng-click="inviteSomebody(item.id)">
                         邀请
                     </button>
                 </li>
-                <li>
-                    <img src="./images/tempSrc/temp_pro.png">
-                    <div class="info">
-                        <p class="name">
-                            东方不败
-                        </p>
-                        <p class="workeType">
-                            砌体工
-                        </p>
-                        <p class="evaluation">
-                            综合评价：<i>4.9</i>
-                        </p>
-                    </div>
-                    <button>
-                        邀请
-                    </button>
-                </li>
-                <li>
-                    <img src="./images/tempSrc/temp_pro.png">
-                    <div class="info">
-                        <p class="name">
-                            东方不败
-                        </p>
-                        <p class="workeType">
-                            砌体工
-                        </p>
-                        <p class="evaluation">
-                            综合评价：<i>4.9</i>
-                        </p>
-                    </div>
-                    <button ng-click="">
-                        邀请
-                    </button>
-                </li>
+
             </ul>
         </div>
 
