@@ -2,56 +2,67 @@
     background: #0f0f0f;
     color:white;
     font-size: 12px;
-    .ion-offer{
+    .ion-offer,.ion-porject,.ion-user{
         position: relative;
-        &:before{
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 32px;
-            left: 0px;
-            background-image: url(./../images/normal/offer.png);
-            background-size: 20px;
-            background-repeat: no-repeat;
-            background-position: 50%;
-            background-color: white;
-            left: 50%;
-            margin-left: -10px;
+        position: relative;
+        background: #0f0f0f;
+        span{
+            width: 25px;
+            height:25px;
+            display: inline-block;
+            background: #ffe04e;
+            img{
+                width: 100%;
+            }
         }
+        // &:before{
+        //     content: '';
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 32px;
+        //     left: 0px;
+        //     background-image: url(./../images/normal/offer.png);
+        //     background-size: 20px;
+        //     background-repeat: no-repeat;
+        //     background-position: 50%;
+        //     background-color: white;
+        //     left: 50%;
+        //     margin-left: -10px;
+        // }
     }
     .ion-porject{
         position: relative;
-        &:before{
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 32px;
-            left: 0px;
-            background-image: url(./../images/normal/project.png);
-            background-size: 20px;
-            background-repeat: no-repeat;
-            background-position: 50%;
-            background-color: white;
-            left: 50%;
-            margin-left: -10px;
-        }
+        // &:before{
+        //     content: '';
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 32px;
+        //     left: 0px;
+        //     background-image: url(./../images/normal/project.png);
+        //     background-size: 20px;
+        //     background-repeat: no-repeat;
+        //     background-position: 50%;
+        //     background-color: white;
+        //     left: 50%;
+        //     margin-left: -10px;
+        // }
     }
     .ion-user{
         position: relative;
-        &:before{
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 32px;
-            left: 0px;
-            background-image: url(./../images/normal/user.png);
-            background-size: 20px;
-            background-repeat: no-repeat;
-            background-position: 50%;
-            background-color: white;
-            left: 50%;
-            margin-left: -10px;
-        }
+        // &:before{
+        //     content: '';
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 32px;
+        //     left: 0px;
+        //     background-image: url(./../images/normal/user.png);
+        //     background-size: 20px;
+        //     background-repeat: no-repeat;
+        //     background-position: 50%;
+        //     background-color: white;
+        //     left: 50%;
+        //     margin-left: -10px;
+        // }
     }
 }
 .hide_Tab{

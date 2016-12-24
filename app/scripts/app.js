@@ -1,10 +1,3 @@
-    // try{
-    //   var ck = require('createjs');
-    // }catch(e){
-    //     console.log(e);
-    // }
-    // console.log(123);
-    // require('../lib/easeljs-0.8.2.min');
     require('../lib/ionic');
     require('../lib/zepto');
     require('./common/dialog');
