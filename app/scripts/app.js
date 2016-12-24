@@ -6,7 +6,16 @@
     angular.element(document).ready(function () {
         try{
             console.log(JSON.parse(window.tools.getCookie('auth_resp')));
-            window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
+            if(window.localStorage.worker_app_userinfo ) {
+                window.extHeader = JSON.parse(window.localStorage.worker_app_userinfo);
+            }else{
+                window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
+                window.localStorage.worker_app_userinfo = JSON.stringify(window.extHeader);
+            }
+            if(!window.extHeader.id){
+                console.log('todo--get');
+            }
+
         }catch(e) {
             window.extHeader = {};
             console.log(e);

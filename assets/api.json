@@ -15,11 +15,36 @@
         "beta": "http://www.whatsmax.com:3001/getWeixinConfig.data",
         "prod": "http://www.whatsmax.com:3001/getWeixinConfig.data"
     },
+    //角色选择
     "chooseRoleApi":{
         "serve": "chooseRole.json",
         "dev": "http://www.whatsmax.com/mhome",
         "test": "http://www.whatsmax.com/mhome",
         "beta": "http://www.whatsmax.com/mhome",
         "prod": "http://api.whatsmax.com/mhome"
+    },
+    //项目列表
+    "projectListApi":{
+        "serve": "projectList.json",
+        "dev": "http://www.whatsmax.com/project/plist",
+        "test": "http://www.whatsmax.com/project/plist",
+        "beta": "http://www.whatsmax.com/project/plist",
+        "prod": "http://api.whatsmax.com/project/plist"
+    },
+    //项目详情
+    "projectDetailApi":{
+        "serve": "projectDetail.json",
+        "dev": "http://www.whatsmax.com/project/pdetail",
+        "test": "http://www.whatsmax.com/project/pdetail",
+        "beta": "http://www.whatsmax.com/project/pdetail",
+        "prod": "http://api.whatsmax.com/project/pdetail"
+    },
+    //发布项目
+    "projectSubmitApi":{
+        "serve": "projectSubmit.json",
+        "dev": "http://www.whatsmax.com/project/fabu",
+        "test": "http://www.whatsmax.com/project/fabu",
+        "beta": "http://www.whatsmax.com/project/fabu",
+        "prod": "http://api.whatsmax.com/project/fabu"
     }
 }

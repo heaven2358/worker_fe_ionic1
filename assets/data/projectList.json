@@ -8,6 +8,38 @@
             "pic":"http://www.baidu.com",
             "wokerType":"1",
             "wokerTypeName":"起专工",
+            "bossScore":"起专工",
+            "address1":"地址1",
+            "address2":"地址二",
+            "workerCount":"123",
+            "quantity":"20000",
+            "price":"200"
+        },
+        {
+            "id":"sdfs1d23234",
+            "projectName":"园博园公馆",
+            "pic":"http://www.baidu.com",
+            "wokerType":"1",
+            "wokerTypeName":"起专工",
+            "bossScore":"起d专工",
+            "address1":"地址1",
+            "address2":"地址二",
+            "workerCount":"123",
+            "quantity":"20000",
+            "price":"400"
+        },
+        {
+            "id":"sdfs123d234",
+            "projectName":"园博园d公馆",
+            "pic":"http://www.baidu.com",
+            "wokerType":"1",
+            "wokerTypeName":"起专工",
+            "bossScore":"起专工",
+            "address1":"地址1",
+            "address2":"地址d二",
+            "workerCount":"123",
+            "quantity":"20000",
+            "price":"500"
         }
     ]
 }

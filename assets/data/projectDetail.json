@@ -1,0 +1,34 @@
+{
+    "code":1,
+    "msg":"23ddd",
+    "project":{
+        "id":"23ddd",
+        "projectName":"3sfs万科城",
+        "address1":"照母山万科城",
+        "address2":"23d照母山万科城2dd",
+        "workerCount":"2344",
+        "workType":"1",
+        "quantity":"10000",
+        "price":"100",
+        "pic":"http://www.baidu.com",
+        "bossScore":"35"
+    },
+    "user":{
+        "id":"sdfsdf",
+        "nick":"sb逗比",
+        "authState":"1",
+        "id":"sdfsdf",
+        "id":"sdfsdf",
+    },
+    "uex":{
+        "id":"sdfsdf",
+        "moralScore":"2",
+        "payScore":"1",
+        "temperScore":"5",
+        "manageScore":"344",
+    },
+    "comment":{
+        "id":"232423",
+        "content":"2是粉色是"
+    }
+}
