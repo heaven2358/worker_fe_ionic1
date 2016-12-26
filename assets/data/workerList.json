@@ -1,10 +1,10 @@
 {
     "code":1,
     "msg":"23ddd",
-    "pList":[
+    "wList":[
         {
             "id":"sdfs123234",
-            "projectName":"园博园公馆",
+            "workerName":"园博园公馆",
             "pic":"./images/tempSrc/temp_pro.png",
             "wokerType":"1",
             "wokerTypeName":"起专工",

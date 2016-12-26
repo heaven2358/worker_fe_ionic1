@@ -3,7 +3,6 @@ angular.module('worker').controller('applyWorkCtrl',['$scope','$rootScope','$loc
     $scope.busy = false;
     console.log(12344);
     $scope.$on( '$ionicView.afterEnter', function(event, data){
-        window.tools.setNativeTitle( '人人催' );
         $scope.init();
     });
 
@@ -17,10 +16,35 @@ angular.module('worker').controller('applyWorkCtrl',['$scope','$rootScope','$loc
 
     $scope.init = function() {
         $rootScope.rootTap = false;
+        console.log($location.search());
+        apiService.getData( '{{projectDetailApi}}', {
+            pId: $location.search().pid
+        } ).success( function( data ) {
+            if( data.code * 1 != 1) {
+                console.log('error');
+                window.toastError( data.msg || '数据错误');
+                return;
+            }
+            console.log(data);
+            $scope.data = data;
+            // $scope.status = resObj.status;
+
+            // if( resObj.status != window.applyStatus.status ) {
+            //     window.applyStatus = resObj;
+            //     $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
+            // }
+
+
+
+        });
     };
 
     $scope.toCertification = function() {
         $location.path('/toCertification');
     }
 
+
+    $scope.applySubmit = function() {
+        console.log('applySubmiting');
+    }
 }]);

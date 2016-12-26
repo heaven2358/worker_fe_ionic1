@@ -56,7 +56,11 @@ angular.module('worker').service('apiService', [
             if(window.location.href.indexOf(':8080') > -1 ) {
                 opt.method = 'get';
             }
+
             if (opt.method == 'get') {
+                if(data.headimgUrl) {
+                    delete data.headimgUrl;
+                }
                 return $http.get(
                     url + '?' + json2url(data)
                 ).success(function(res) {
@@ -66,8 +70,12 @@ angular.module('worker').service('apiService', [
                 });
             } else {
                 var extHeader = window.extHeader;
+
                 if (extHeader) {
                     data = angular.extend({}, extHeader, data);
+                }
+                if(data.headimgUrl) {
+                    delete data.headimgUrl;
                 }
                 if (opt.dataCache) {
                     return getHttpData(url, data);

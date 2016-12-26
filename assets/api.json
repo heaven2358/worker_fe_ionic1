@@ -46,5 +46,13 @@
         "test": "http://www.whatsmax.com/project/fabu",
         "beta": "http://www.whatsmax.com/project/fabu",
         "prod": "http://api.whatsmax.com/project/fabu"
+    },
+    //工人列表
+    "workerListApi":{
+        "serve": "workerList.json",
+        "dev": "http://www.whatsmax.com/worker/wlist",
+        "test": "http://www.whatsmax.com/worker/wlist",
+        "beta": "http://www.whatsmax.com/worker/wlist",
+        "prod": "http://api.whatsmax.com/worker/wlist"
     }
 }

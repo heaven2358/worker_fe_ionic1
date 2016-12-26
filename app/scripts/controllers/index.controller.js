@@ -37,6 +37,7 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
 
     $scope.roleChoose = function(ret) {
         // ret 1 劳务员 0 砖工
+        //角色，1=劳务员 2=工人
         console.log(ret);
         apiService.getData('{{chooseRoleApi}}', {
             weixinId: window.extHeader.weixinId || '234',
@@ -51,6 +52,7 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
             console.log('dd');
             apiService.setCache('tempRes',res);
             $rootScope.rootRole = ret;
+            window.localStorage.rootRole = $rootScope.rootRole;
             $location.path('wantOffer');
         });
 

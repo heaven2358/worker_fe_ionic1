@@ -2,33 +2,33 @@
 <ion-view class="applyWork">
     <ion-content>
         <div class="worker_topTitle">
-            邀请
+            申请
         </div>
         <div class="topContainer">
             <div class="imgCon">
-                <img src="./images/tempSrc/temp_pro.png">
+                <img src="./images/tempSrc/temp_pro.png" ng-src="{{data.project.pic}}">
             </div>
             <p class="proName">
-                两江公馆
-                <span>重庆/江北</span>
+                {{data.project.projectName}}
+                <span>{{data.project.address1}}/{{data.project.address2}}</span>
             </p>
             <!-- <p class="peoRole">
                 劳务员 <span> 未认证</span>
             </p> -->
             <p>
-                砌体工10人   2000m
+                {{['','砌体工'][data.project.workType]}}{{data.project.workerCount}}人   {{data.project.quantity}}m
             </p>
-            <p>单价：200元／m
+            <p>单价：{{data.project.price}}元／m
             </p>
             <p class="peopleInfo">
                 <span>
                     劳务员
                 </span>
                 <span>
-                    沟里有春天
+                    {{data.user.nick}}
                 </span>
                 <span>
-                    未认证
+                    {{['未认证', '已认证'][data.user.authState]}}
                 </span>
             </p>
         </div>
@@ -40,34 +40,34 @@
                         职业道德
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.moralScore}}分
                     </span>
                 </li>
                 <li>
 
                     <span class="itemName speed">
-                        干活速度
+                        结账速度
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.payScore}}分
                     </span>
                 </li>
                 <li>
 
                     <span class="itemName integrity">
-                        诚信评分
+                        性格分
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.temperScore}}分
                     </span>
                 </li>
                 <li>
 
                     <span class="itemName quality">
-                        质量评分
+                        管理水平
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.manageScore}}分
                     </span>
                 </li>
             </ul>
@@ -76,18 +76,17 @@
             <h3>收到的评价
             </h3>
             <div class="detailEvaluation">
-                <p>东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。
+                <p>{{data.comment.content}}</p>
+                <!-- <p>东方不败：干活老实，不挑肥拣瘦。
                 </p>
                 <p>东方不败：干活老实，不挑肥拣瘦。
-                </p>
-                <p>东方不败：干活老实，不挑肥拣瘦。
-                </p>
+                </p> -->
             </div>
         </div>
 
     </ion-content>
     <div class="tabs bottomButton">
-        <button class="yellow">立即申请</button>
+        <button class="yellow" ng-click="applySubmit()">立即申请</button>
         <button class="share">分享</button>
     </div>
 </ion-view>

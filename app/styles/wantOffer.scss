@@ -68,7 +68,7 @@
             li{
                 padding: 13px 0px;
                 padding-left: 40px;
-                padding-left: 1.066rem;
+                padding-left: 0.533rem;
                 border-bottom: 1px solid #f3f3f3;
                 position: relative;
                 img{
@@ -79,7 +79,7 @@
                 }
                 .info{
                     display: inline-block;
-                    margin-left: 20px;
+                    margin-left: 12px;
                     p{
                         color: #8d8d8d;
                         font-size: 13px;
@@ -134,4 +134,16 @@
             border-radius: 19px;
         }
     }
+    .project_list{
+        ul{
+            li{
+                padding-left: 0.32rem;
+                img{
+                    border-radius: 0px;
+                }
+            }
+        }
+
+    }
+
 }

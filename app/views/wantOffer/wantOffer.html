@@ -18,16 +18,16 @@
                 江北区<i></i>
             </div>
         </div>
-        <div class="worker_list" ng-if="false">
+        <div class="worker_list" ng-if="rootRole * 1 == 1">
             <h3>
                 求职信息
             </h3>
             <ul>
-                <li ng-repeat = "item in data.pList">
+                <li ng-repeat = "item in data.wList">
                     <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.pic}}">
                     <div class="info">
                         <p class="name">
-                            <!-- 东方不败 -->{{item.projectName}}
+                            <!-- 东方不败 -->{{item.workerName}}
                         </p>
                         <p class="workeType">
                             {{item.workerTypeName}}
@@ -43,7 +43,7 @@
 
             </ul>
         </div>
-        <div class="worker_list">
+        <div class="worker_list project_list" ng-if="rootRole * 1 == 2">
             <h3>
                 招工信息
             </h3>
@@ -61,7 +61,7 @@
                             综合评价：<i>bossScore</i>
                         </p>
                     </div>
-                    <button ng-click="inviteSomebody(item.id)">
+                    <button ng-click="applyWork(item.id)">
                         申请
                     </button>
                 </li>

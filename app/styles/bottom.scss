@@ -5,12 +5,12 @@
     .ion-offer,.ion-porject,.ion-user{
         position: relative;
         position: relative;
-        background: #0f0f0f;
+        // background: white;
         span{
-            width: 25px;
-            height:25px;
+            width: 24px;
+            height: 24px;
             display: inline-block;
-            background: #ffe04e;
+            background: white;
             img{
                 width: 100%;
             }
@@ -63,6 +63,14 @@
         //     left: 50%;
         //     margin-left: -10px;
         // }
+    }
+    .active_worker{
+        color: #ffe04e;
+        .icon{
+            span{
+                background: #ffe04e;
+            }
+        }
     }
 }
 .hide_Tab{

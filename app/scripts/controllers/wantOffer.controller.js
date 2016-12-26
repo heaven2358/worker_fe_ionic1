@@ -19,19 +19,30 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
         $rootScope.rootTap = true;
 
         // $scope.data = apiService.getCache('tempRes');
+        var initUrl = '{{projectListApi}}';
+        if($rootScope.rootRole * 1 == 1) {
+            initUrl = '{{workerListApi}}';
+        }
 
-        apiService.getData( '{{projectListApi}}', {
+        apiService.getData( initUrl, {
             address1: '重庆市',
             address2:'江北区',
             pageNum: 1,
-            pageNum: 10
+            pageSize: 10
         } ).success( function( data ) {
             if( data.code * 1 != 1) {
-                window.toastError( data.msg );
+                console.log('error');
+                window.toastError( data.msg || '数据错误');
                 return;
             }
             console.log(data);
-            $scope.data.pList = data.pList;
+            if($rootScope.rootRole * 1 == 1) {
+                $scope.data.wList = data.wList;
+                console.log($scope.data.wList );
+            }else {
+                $scope.data.pList = data.pList;
+            }
+
             console.log($scope.data.pList );
             // $scope.status = resObj.status;
 
@@ -51,5 +62,16 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
     $scope.toPublishPro = function() {
         $location.path('/publishPro');
     }
+
+    $scope.inviteSomebody = function(id) {
+        $location.path('/inviteWorker');
+    }
+    $scope.applyWork = function(id) {
+        $location.path('/applyWork')
+            .search({
+                pid : id
+            });
+    }
+
 
 }]);
