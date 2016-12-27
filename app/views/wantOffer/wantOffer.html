@@ -24,7 +24,8 @@
             </h3>
             <ul>
                 <li ng-repeat = "item in data.wList">
-                    <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.pic}}">
+                    <img  ng-src="{{item.head}}">
+                    <!-- <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.head}}"> -->
                     <div class="info">
                         <p class="name">
                             <!-- 东方不败 -->{{item.workerName}}
@@ -33,10 +34,10 @@
                             {{item.workerTypeName}}
                         </p>
                         <p class="evaluation">
-                            综合评价：<i>bossScore</i>
+                            综合评价：<i>{{item.bossScore}}</i>
                         </p>
                     </div>
-                    <button ng-click="inviteSomebody(item.id)">
+                    <button ng-click="inviteSomebody(item)">
                         邀请
                     </button>
                 </li>

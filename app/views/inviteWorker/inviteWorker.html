@@ -6,13 +6,13 @@
         </div>
         <div class="topContainer">
             <div class="imgCon">
-                <img src="./images/normal/defaultUser2.png">
+                <img  ng-src="{{data.user.head}}">
             </div>
             <p class="peoName">
-                沟里有春天
+                {{data.user.userName}}
             </p>
             <p class="peoRole">
-                劳务员 <span> 未认证</span>
+                {{data.user.workTypeName || '砌砖工'}} <span> {{data.user.authState * 1 == 1 ? '已认证' :'未认证' }}</span>
             </p>
         </div>
         <div class="countInfo">
@@ -59,12 +59,8 @@
             <h3>收到的评价
             </h3>
             <div class="detailEvaluation">
-                <p>东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。东方不败：干活老实，不挑肥拣瘦。
-                </p>
-                <p>东方不败：干活老实，不挑肥拣瘦。
-                </p>
-                <p>东方不败：干活老实，不挑肥拣瘦。
-                </p>
+                <p>{{data.comment.content}}</p>
+
             </div>
         </div>
 

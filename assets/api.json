@@ -50,9 +50,17 @@
     //工人列表
     "workerListApi":{
         "serve": "workerList.json",
-        "dev": "http://www.whatsmax.com/worker/wlist",
-        "test": "http://www.whatsmax.com/worker/wlist",
-        "beta": "http://www.whatsmax.com/worker/wlist",
-        "prod": "http://api.whatsmax.com/worker/wlist"
+        "dev": "http://www.whatsmax.com/user/wlist",
+        "test": "http://www.whatsmax.com/user/wlist",
+        "beta": "http://www.whatsmax.com/user/wlist",
+        "prod": "http://api.whatsmax.com/user/wlist"
+    },
+    //工人详情
+    "workerDetailApi":{
+        "serve": "workerDetail.json",
+        "dev": "http://www.whatsmax.com/user/detail",
+        "test": "http://www.whatsmax.com/user/detail",
+        "beta": "http://www.whatsmax.com/user/detail",
+        "prod": "http://api.whatsmax.com/user/detail"
     }
 }

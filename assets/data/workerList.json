@@ -1,45 +1,28 @@
 {
     "code":1,
     "msg":"23ddd",
-    "wList":[
+     "curPage": 1,
+    "userList":[
         {
-            "id":"sdfs123234",
-            "workerName":"园博园公馆",
-            "pic":"./images/tempSrc/temp_pro.png",
-            "wokerType":"1",
-            "wokerTypeName":"起专工",
-            "bossScore":"起专工",
-            "address1":"地址1",
-            "address2":"地址二",
-            "workerCount":"123",
-            "quantity":"20000",
-            "price":"200"
-        },
-        {
-            "id":"sdfs1d23234",
-            "projectName":"园博园公馆",
-            "pic":"./images/tempSrc/temp_pro.png",
-            "wokerType":"1",
-            "wokerTypeName":"起专工",
-            "bossScore":"起d专工",
-            "address1":"地址1",
-            "address2":"地址二",
-            "workerCount":"123",
-            "quantity":"20000",
-            "price":"400"
-        },
-        {
-            "id":"sdfs123d234",
-            "projectName":"园博园d公馆",
-            "pic":"./images/tempSrc/temp_pro.png",
-            "wokerType":"1",
-            "wokerTypeName":"起专工",
-            "bossScore":"起专工",
-            "address1":"地址1",
-            "address2":"地址d二",
-            "workerCount":"123",
-            "quantity":"20000",
-            "price":"500"
+            "id": 44297646592516,
+            "state": 0,
+            "head": "http://api.whatsmax.com:8081/1612/17/20161218181200.png",
+            "role": 0,
+            "userName": "fff",
+            "nick": "fff",
+            "birth": null,
+            "company": null,
+            "phone": null,
+            "hasProjects": 0,
+            "hasDays": 0,
+            "hasQuantity": 0,
+            "identy": null,
+            "workType": 0,
+            "idPics": null,
+            "caNum": null,
+            "caPics": null,
+            "authState": 0,
+            "workTypeName": null
         }
     ]
 }

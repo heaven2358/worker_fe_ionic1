@@ -37,7 +37,7 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
             }
             console.log(data);
             if($rootScope.rootRole * 1 == 1) {
-                $scope.data.wList = data.wList;
+                $scope.data.wList = data.userList;
                 console.log($scope.data.wList );
             }else {
                 $scope.data.pList = data.pList;
@@ -63,8 +63,13 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
         $location.path('/publishPro');
     }
 
-    $scope.inviteSomebody = function(id) {
-        $location.path('/inviteWorker');
+    $scope.inviteSomebody = function(item) {
+        $location.path('/inviteWorker')
+            .search({
+                uid : item.id,
+                nick: item.nick,
+                userName:item.userName
+            });
     }
     $scope.applyWork = function(id) {
         $location.path('/applyWork')

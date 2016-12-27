@@ -1,0 +1,30 @@
+{
+    "comment": {
+        "id": 131341,
+        "content": "不错"
+    },
+    "user": {
+        "id": 44297223528452,
+        "state": 0,
+        "head": "http://api.whatsmax.com:8081/1612/17/20161218181200.png",
+        "role": 0,
+        "userName": "eee",
+        "nick": "eee",
+        "birth": null,
+        "company": null,
+        "phone": null,
+        "hasProjects": 0,
+        "hasDays": 0,
+        "hasQuantity": 0,
+        "identy": null,
+        "workType": 0,
+        "idPics": null,
+        "caNum": null,
+        "caPics": null,
+        "authState": 0,
+        "workTypeName": null
+    },
+    "uex": null,
+    "code": 1,
+    "msg": "GET DATA SUCCESS!"
+}
