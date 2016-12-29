@@ -5,42 +5,24 @@
             两江公馆
         </div>
         <div class="weekDays">
-            <span>一</span>
-            <span>二</span>
-            <span>三</span>
-            <span>四</span>
-            <span>五</span>
-            <span>六</span>
-            <span>天</span>
+            <span ng-click="changeShow(1);">一</span>
+            <span ng-click="changeShow(2);">二</span>
+            <span ng-click="changeShow(3);">三</span>
+            <span ng-click="changeShow(4);">四</span>
+            <span ng-click="changeShow(5);">五</span>
+            <span ng-click="changeShow(6);">六</span>
+            <span ng-click="changeShow(0);">天</span>
         </div>
         <div class="workerCountList">
             <h3>
-                2016年11月3日
+                {{showdata.nowTime}}
             </h3>
             <ul>
-                <li>
-                    <label>东方不败
+                <li ng-repeat="item in showdata.workerList">
+                    <label>{{item.nick}}
                     </label>
-                    <span>今日完成32345㎡</span>
-                    <button>决算</button>
-                </li>
-                <li>
-                    <label>东方不败
-                    </label>
-                    <a>今日完成32345</a>
-                    <button>决算</button>
-                </li>
-                <li>
-                    <label>东方不败
-                    </label>
-                    <span>今日完成32345㎡</span>
-                    <button>决算</button>
-                </li>
-                <li>
-                    <label>东方不败
-                    </label>
-                    <span>今日完成32345㎡</span>
-                    <button>决算</button>
+                    <span>今日完成{{item.dayValue}}㎡</span>
+                    <button ng-click="projectBudget(item.id)">决算</button>
                 </li>
             </ul>
             <p class="noMore">没有更多数据</p>

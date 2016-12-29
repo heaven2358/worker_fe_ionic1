@@ -50,10 +50,10 @@
     //工人列表
     "workerListApi":{
         "serve": "workerList.json",
-        "dev": "http://www.whatsmax.com/user/wlist",
+        "dev": "http://www.whatsmax.com/user/list",
         "test": "http://www.whatsmax.com/user/wlist",
         "beta": "http://www.whatsmax.com/user/wlist",
-        "prod": "http://api.whatsmax.com/user/wlist"
+        "prod": "http://api.whatsmax.com/user/list"
     },
     //工人详情
     "workerDetailApi":{
@@ -62,5 +62,64 @@
         "test": "http://www.whatsmax.com/user/detail",
         "beta": "http://www.whatsmax.com/user/detail",
         "prod": "http://api.whatsmax.com/user/detail"
+    },
+    //工人提交单日工作量
+    "workerSubmitProApi":{
+        "serve": "workerSubmitProApi.json",
+        "dev": "http://www.whatsmax.com/user/detail",
+        "test": "http://www.whatsmax.com/user/detail",
+        "beta": "http://www.whatsmax.com/user/detail",
+        "prod": "http://api.whatsmax.com/user/detail"
+    },
+    //工人提交项目
+    "workerSubmitProApi":{
+        "serve": "workerSubmitProApi.json",
+        "dev": "http://www.whatsmax.com/user/detail",
+        "test": "http://www.whatsmax.com/user/detail",
+        "beta": "http://www.whatsmax.com/user/detail",
+        "prod": "http://api.whatsmax.com/user/detail"
+    },
+    //老板管理项目init
+    "bossManaInitApi":{
+        "serve": "bossManaInit.json",
+        "dev": "http://www.whatsmax.com/project/bossmanage",
+        "test": "http://www.whatsmax.com/project/bossmanage",
+        "beta": "http://www.whatsmax.com/project/bossmanage",
+        "prod": "http://api.whatsmax.com/project/bossmanage"
+    },
+    //工人管理项目init
+    "workerManaInitApi":{
+        "serve": "workerManaInit.json",
+        "dev": "http://www.whatsmax.com/project/workermanage",
+        "test": "http://www.whatsmax.com/project/workermanage",
+        "beta": "http://www.whatsmax.com/project/workermanage",
+        "prod": "http://api.whatsmax.com/project/workermanage"
+    },
+    //上工接受或者拒绝
+    "workerDoitApi":{
+        "serve": "workerDoit.json",
+        "dev": "http://www.whatsmax.com/project/doit",
+        "test": "http://www.whatsmax.com/project/doit",
+        "beta": "http://www.whatsmax.com/project/doit",
+        "prod": "http://api.whatsmax.com/project/doit"
+    },
+    //项目详情,完成项目
+    "projectFinInitApi":{
+        "serve": "projectFinInit.json",
+        "dev": "http://www.whatsmax.com/project/finishStats",
+        "test": "http://www.whatsmax.com/project/finishStats",
+        "beta": "http://www.whatsmax.com/project/finishStats",
+        "prod": "http://api.whatsmax.com/project/finishStats"
+    },
+    //工程决算
+    "projectBudgetApi":{
+        "serve": "projectBudget.json",
+        "dev": "http://www.whatsmax.com/project/budget",
+        "test": "http://www.whatsmax.com/project/budget",
+        "beta": "http://www.whatsmax.com/project/budget",
+        "prod": "http://api.whatsmax.com/project/budget"
     }
+
+
+
 }

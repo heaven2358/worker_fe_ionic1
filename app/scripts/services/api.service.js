@@ -94,7 +94,7 @@ angular.module('worker').service('apiService', [
                 // //处理响应失败
                 // });
                 return $http.post(url, data).success(function(res) {
-                    // ajaxCommonLogic(res);
+                     ajaxCommonLogic(res);
                 }).error(function(e) {
                     window.toastError('请求接口出现错误，请稍后再试！');
                 });
@@ -136,6 +136,7 @@ angular.module('worker').service('apiService', [
                 // if (result.data.pager && result.data.pager.pn && result.data.pager.pn > 1) {
                 //     $rootScope.fixCantScroll();
                 // }
+                // window.toastError('请求接口出现错误，请稍后再试！');
             }
         }
 

@@ -4,7 +4,6 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
     $scope.pageType = $rootScope.rootRole ? 'laborSupervision' : 'worker';
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
-        window.tools.setNativeTitle( '人人催' );
         $scope.init();
     } );
 
@@ -18,30 +17,54 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
 
     $scope.init = function() {
         $rootScope.rootTap = true;
-        console.log($rootScope.rootRole);
-        $scope.pageType = $rootScope.rootRole ? 'laborSupervision' : 'worker';
-        console.log($scope.pageType);
-        // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
-        //     if( data.error.returnCode != 0 ) {
-        //         window.toastError( data.error.returnUserMessage );
-        //         return;
-        //     } else {
-        //         var resObj = data.data;
-        //
-        //         $scope.status = resObj.status;
-        //
-        //         if( resObj.status != window.applyStatus.status ) {
-        //             window.applyStatus = resObj;
-        //             $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
-        //         }
-        //
-
-        //     }
-        // });
+        $scope.pageType = $rootScope.rootRole * 1 == 1 ? 'laborSupervision' : 'worker';
+        var initUrl = '{{workerManaInitApi}}';
+        if($rootScope.rootRole * 1 == 1) {
+            initUrl = '{{bossManaInitApi}}';
+        }
+        console.log(initUrl);
+        apiService.getData( initUrl, {
+            userId: window.extHeader.userId
+        } ).success( function( data ) {
+            if( data.code * 1 != 1 ) {
+                window.toastError( data.msg );
+                return;
+            }
+            $scope.data = data;
+        });
     };
 
     $scope.toFinishPro = function() {
         $location.path('/finishPro');
+    }
+
+    $scope.workerSubmit = function() {
+        $scope.workerSubmit.userId = window.extHeader.userId;
+        $scope.workerSubmit.projected = '';
+        $scope.workerSubmit.addTime = '';
+        apiService.getData( '{{workerSubmitProApi}}', $scope.workerSubmit )
+            .success( function( data ) {
+                if( data.code * 1 != 1 ) {
+                    window.toastError( data.error.returnUserMessage );
+                    return;
+                }
+                window.toastSuccess('提交成功');
+            });
+    }
+
+    $scope.dealDoit = function(item, choice) {
+        apiService.getData( '{{workerDoitApi}}', {
+            userId: window.extHeader.weixinId,
+            toUserId: item.id,
+            projectId: item.projectId,
+            doit: choice * 1
+        } ).success( function( data ) {
+                if( data.code * 1 != 1 ) {
+                    window.toastError( data.error.returnUserMessage );
+                    return;
+                }
+                window.toastSuccess('操作成功');
+            });
     }
 
 }]);

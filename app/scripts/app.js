@@ -5,15 +5,23 @@
     document.documentElement.style.fontSize = (document.documentElement.offsetWidth / 10) + 'px';
     angular.element(document).ready(function () {
         try{
-            console.log(JSON.parse(window.tools.getCookie('auth_resp')));
-            if(window.localStorage.worker_app_userinfo ) {
-                window.extHeader = JSON.parse(window.localStorage.worker_app_userinfo);
-            }else{
+            // if(window.localStorage.worker_app_userinfo ) {
+            //     window.extHeader = JSON.parse(window.localStorage.worker_app_userinfo);
+            //     console.log(window.extHeader);
+            // }else{
+            //     if(window.tools.getCookie('auth_resp')) {
+            //         window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
+            //         window.localStorage.worker_app_userinfo = JSON.stringify(window.extHeader);
+            //     }
+            // }
+
+            if(window.tools.getCookie('auth_resp')) {
                 window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
                 window.localStorage.worker_app_userinfo = JSON.stringify(window.extHeader);
             }
-            if(!window.extHeader.id){
-                console.log('todo--get');
+
+            if(!window.extHeader.weixinId){
+                window.extHeader = {};
             }
 
         }catch(e) {

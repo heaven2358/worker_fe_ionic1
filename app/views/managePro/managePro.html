@@ -8,55 +8,21 @@
                 项目列表
             </h3>
             <ul>
-                <li ng-click="toFinishPro()">
-                    <img src="./images/tempSrc/temp_pro.png">
+                <li ng-click="toFinishPro()" ng-repeat="item in data.pList">
+                    <img  ng-src="{{item.pic.split(',')[0]}}">
                     <div class="info">
                         <p class="name">
-                            东方不败
+                            {{item.projectName}}
                         </p>
                         <p class="workeType">
-                            砌体工
+                            {{item.workerTypeName}}
                         </p>
                         <p class="evaluation">
-                            综合评价：<i>4.9</i>
+                            综合评价：<i>{{item.bossScore}}</i>
                         </p>
                     </div>
                     <span class="countNo">
-                        500 m^2
-                    </span>
-                </li>
-                <li ng-click="toFinishPro()">
-                    <img src="./images/tempSrc/temp_pro.png">
-                    <div class="info">
-                        <p class="name">
-                            东方不败
-                        </p>
-                        <p class="workeType">
-                            砌体工
-                        </p>
-                        <p class="evaluation">
-                            综合评价：<i>4.9</i>
-                        </p>
-                    </div>
-                    <span class="countNo">
-                        500m
-                    </span>
-                </li>
-                <li ng-click="toFinishPro()">
-                    <img src="./images/tempSrc/temp_pro.png">
-                    <div class="info">
-                        <p class="name">
-                            东方不败
-                        </p>
-                        <p class="workeType">
-                            砌体工
-                        </p>
-                        <p class="evaluation">
-                            综合评价：<i>4.9</i>
-                        </p>
-                    </div>
-                    <span class="countNo">
-                        500m
+                        {{item.quantity}} m^2
                     </span>
                 </li>
             </ul>
@@ -67,68 +33,24 @@
                 意向工人
             </h3>
             <ul>
-                <li>
-                    <img src="./images/tempSrc/temp_pro.png">
+                <li ng-repeat="item in data.uList">
+                    <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.head}}">
                     <div class="info">
                         <p class="name">
-                            东方不败
+                            {{item.userName}}
                         </p>
                         <p class="workeType">
-                            砌体工
+                            {{item.workTypeName || '砌砖工'}}
                         </p>
                         <p class="evaluation">
-                            综合评价：<i>4.9</i>
+                            综合评价：<i>{{item.score}}</i>
                         </p>
                     </div>
                     <div class="buttonCon">
-                        <button>
+                        <button ng-click="dealDoit(item, 1)">
                             上工
                         </button>
-                        <button>
-                            拒绝
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <img src="./images/tempSrc/temp_pro.png">
-                    <div class="info">
-                        <p class="name">
-                            东方不败
-                        </p>
-                        <p class="workeType">
-                            砌体工
-                        </p>
-                        <p class="evaluation">
-                            综合评价：<i>4.9</i>
-                        </p>
-                    </div>
-                    <div class="buttonCon">
-                        <button>
-                            上工
-                        </button>
-                        <button>
-                            拒绝
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <img src="./images/tempSrc/temp_pro.png">
-                    <div class="info">
-                        <p class="name">
-                            东方不败
-                        </p>
-                        <p class="workeType">
-                            砌体工
-                        </p>
-                        <p class="evaluation">
-                            综合评价：<i>4.9</i>
-                        </p>
-                    </div>
-                    <div class="buttonCon">
-                        <button>
-                            上工
-                        </button>
-                        <button>
+                        <button ng-click="dealDoit(item, 2)">
                             拒绝
                         </button>
                     </div>
@@ -136,7 +58,7 @@
             </ul>
         </div>
         <div class="worker_submit" ng-if="pageType == 'worker'">
-            <h3>两江公馆</h3>
+            <h3>{{data.project.projectName}}</h3>
             <div class="dateDiv">
                 <a>
                     2016年11月3日
@@ -144,13 +66,13 @@
             </div>
             <div class="input_Detail">
                 <p class="inputPa">
-                    今日完成<input >㎡
+                    今日完成<input ng-model="workerSubmit.dayValue">㎡
                 </p>
                 <p class="noPa">
-                    当前项目累计完成<span>20</span>㎡
+                    当前项目累计完成<span>{{data.project.workerCount}}</span>㎡
                 </p>
 
-                <button>
+                <button ng-click="workerSubmit()">
                     立即提交
                 </button>
             </div>

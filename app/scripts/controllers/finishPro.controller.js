@@ -2,12 +2,11 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
     $scope.busy = false;
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
-        window.tools.setNativeTitle( '人人催' );
         $scope.init();
     } );
 
     $scope.$on( '$ionicView.leave', function(event, data) {
-        $rootScope.bottomBtnType = 0;
+        $rootScope.rootTap = true;
     } );
 
     $scope.$on( '$ionicView.loaded', function(event, data){
@@ -16,27 +15,45 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
 
     $scope.init = function() {
         $rootScope.rootTap = false;
-        // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
-        //     if( data.error.returnCode != 0 ) {
-        //         window.toastError( data.error.returnUserMessage );
-        //         return;
-        //     } else {
-        //         var resObj = data.data;
-        //
-        //         $scope.status = resObj.status;
-        //
-        //         if( resObj.status != window.applyStatus.status ) {
-        //             window.applyStatus = resObj;
-        //             $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
-        //         }
-        //
-
-        //     }
-        // });
+        apiService.getData( '{{projectFinInitApi}}', {
+            userId: window.extHeader.userId,
+            projectId: $location.search().projectId
+        }).success( function( data ) {
+                if( data.code * 1 != 1 ) {
+                    window.toastError( data.msg );
+                    return;
+                }
+                $scope.listArr = data.list;
+        });
     };
 
     $scope.roleChoose = function(ret) {
         // ret 1 劳务员 0 砖工
         $location.path('wantOffer');
     }
+
+
+    $scope.projectBudget = function(id) {
+        apiService.getData( '{{projectBudgetApi}}', {
+            userId: window.extHeader.userId,
+            projectId: $location.search().projectId
+        }).success( function( data ) {
+            if( data.code * 1 != 1 ) {
+                window.toastError( data.msg );
+                return;
+            }
+            window.toastSuccess();
+        });
+    }
+
+    $scope.changeShow = function(indexList) {
+        $scope.showdata = {};
+        angular.forEach(function(item, index) {
+            if(index === indexList) {
+                $scope.showdata.nowTime = item.nowTime;
+                $scope.showdata.workerList = item.list;
+            }
+        });
+    }
+
 }]);

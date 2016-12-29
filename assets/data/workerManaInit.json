@@ -1,0 +1,41 @@
+{
+    "count": 0,
+    "project": {
+        "id": 44369064084740,
+        "workerTypeName": "砌体工",
+        "workerType": 1,
+        "bossScore": 0,
+        "pic": "http://api.whatsmax.com:8081/1612/17/20161218181200.png,http://api.whatsmax.com:8081/1612/17/20161218181200.png,",
+        "address1": "重庆市",
+        "address2": "渝北区",
+        "quantity": 1222,
+        "price": 120,
+        "workerCount": 20,
+        "projectName": "渝北新工程"
+    },
+    "user": {
+        "id": 44297223528452,
+        "state": 0,
+        "userName": "eee",
+        "role": 0,
+        "projectId": 0,
+        "workTypeName": null,
+        "nick": "eee",
+        "head": "http://api.whatsmax.com:8081/1612/17/20161218181200.png",
+        "birth": null,
+        "company": null,
+        "phone": null,
+        "score": 0,
+        "hasDays": 0,
+        "identy": null,
+        "workType": 0,
+        "authState": 0,
+        "caNum": null,
+        "idPics": null,
+        "caPics": null,
+        "hasQuantity": 0,
+        "hasProjects": 0
+    },
+    "code": 1,
+    "msg": "get　data success "
+}

@@ -14,7 +14,7 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="两江公馆">
+                                <input placeholder="请输入项目名称" ng-model="data.projectName">
 
                             </span>
                         </div>
@@ -26,7 +26,7 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="两江公馆">
+                                <input placeholder="请选择项目地区" readonly="true" value="重庆市-江北区">
 
                             </span>
                         </div>
@@ -39,7 +39,7 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="两江公馆">
+                                <input placeholder="请选择工种" ng-model="data.workType" readonly="true" value="砌砖工">
 
                             </span>
                         </div>
@@ -51,7 +51,7 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="两江公馆">
+                                <input placeholder="请输入招聘人数" ng-model="data.workerCount">
 
                             </span>
                         </div>
@@ -63,7 +63,7 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="两江公馆">
+                                <input placeholder="请输入单位总量" ng-model="data.quantity">
 
                             </span>
                         </div>
@@ -75,7 +75,7 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="两江公馆">
+                                <input placeholder="请输入单价" ng-model="data.price">
 
                             </span>
                         </div>
@@ -87,7 +87,10 @@
                     现场概况
                 </h3>
                 <div class="imgsCon">
-                    <img src="">
+                    <input type="file" style="
+    border: 1px solid red;
+">
+                    <img  ng-repeat="item in data.pics" ng-src="item">
                     <button class="addImg">
                     </button>
                 </div>
@@ -97,14 +100,14 @@
                     备注
                 </h3>
                 <div class="textCon">
-                    <textarea class="otherText"></textarea>
+                    <textarea class="otherText" ng-model="data.intro"></textarea>
                 </div>
             </div>
         </div>
 
     </ion-content>
     <div class="tabs bottomButton">
-        <button class="yellow">立即发布</button>
+        <button class="yellow" ng-click="publishPro()">立即发布</button>
         <button class="share">分享</button>
     </div>
 </ion-view>
