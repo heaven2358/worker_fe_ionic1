@@ -223,6 +223,7 @@ gulp.task('browserify', function () {
             // apiMock 优先级高于环境选择
             var apiType = ba.apiType;
             // isApiMock ? ba.TASK_TYPES.TASK_SERVE : ba.currentMode;
+            console.log(apiConfig[apiName][apiType]);
             return apiConfig[apiName][apiType];
         }))
         // .pipe(inject.prepend('window.jdbHybridApiConfig = ' + 'JSON.parse(\'' + json.stringify(apiConfig) + '\');\n'))
@@ -275,12 +276,15 @@ function mockApi(req, res, next) {
         // 默认错误信息
         var data = '{"error":"fail to process mock api, please check your code."}';
         var fileName = arr[0];
+        console.log(fileName);
         try {
             data = fs.readFileSync(path.join('./assets/data', fileName), 'utf8');
+            console.log(data);
         } catch (error) {
             handleErrors(new Error('Fail to get api mock data file:, fileName: "' + fileName + '", check your code or json file'));
         }
         res.setHeader('content-type', 'application/json');
+        console.log(data);
         res.end(data);
     } else {
         next();

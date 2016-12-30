@@ -42,18 +42,19 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
                 window.toastError( data.msg );
                 return;
             }
-            window.toastSuccess();
+            window.toastSuccess('决算成功');
         });
     }
 
     $scope.changeShow = function(indexList) {
         $scope.showdata = {};
-        angular.forEach(function(item, index) {
-            if(index === indexList) {
+        angular.forEach($scope.listArr, function(item, index) {
+            if(item.week * 1 === indexList) {
                 $scope.showdata.nowTime = item.nowTime;
                 $scope.showdata.workerList = item.list;
             }
         });
+        console.log($scope.showdata);
     }
 
 }]);

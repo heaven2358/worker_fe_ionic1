@@ -40,4 +40,9 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
         $location.path('/certificationCon');
     }
 
+
+    $scope.pingjia = function() {
+        $location.path('/evaluWorker');
+    }
+
 }]);

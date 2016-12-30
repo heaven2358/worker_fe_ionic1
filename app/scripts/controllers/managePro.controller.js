@@ -34,8 +34,11 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
         });
     };
 
-    $scope.toFinishPro = function() {
-        $location.path('/finishPro');
+    $scope.toFinishPro = function(item) {
+        console.log(item);
+        $location.path('/finishPro').search({
+            projectId: item.id
+        });
     }
 
     $scope.workerSubmit = function() {

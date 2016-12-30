@@ -8,7 +8,7 @@
                 项目列表
             </h3>
             <ul>
-                <li ng-click="toFinishPro()" ng-repeat="item in data.pList">
+                <li ng-repeat="item in data.pList" ng-click="toFinishPro(item)" >
                     <img  ng-src="{{item.pic.split(',')[0]}}">
                     <div class="info">
                         <p class="name">

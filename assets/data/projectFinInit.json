@@ -1,0 +1,61 @@
+{
+    "list": [{
+        "list": [],
+        "week": 4
+    }, {
+        "list": [{
+            "id": 44392535839748,
+            "projectId": 44369064084740,
+            "userId": 44297223528452,
+            "add_time": 1482857941000,
+            "dayValue": 10,
+            "nowTime": 112010000,
+            "nick": "aaa"
+        }],
+        "nowTime": 112010000,
+        "week": 3
+
+    }, {
+        "list": [{
+            "id": 1231231,
+            "projectId": 44369064084740,
+            "userId": 44297223528452,
+            "add_time": 1482768024000,
+            "dayValue": 13,
+            "nowTime": 112010000,
+            "nick": "aaa"
+
+        }],
+        "nowTime": 112010000,
+        "week": 2
+    }, {
+        "list": [{
+            "id": 141414,
+            "projectId": 44369064084740,
+            "userId": 44297223528452,
+            "add_time": 1482681649000,
+            "dayValue": 24,
+            "nowTime": 112010000,
+            "nick": "aaa"
+
+        }],
+        "week": 1
+    }, {
+        "list": [{
+            "id": 151515,
+            "projectId": 44369064084740,
+            "userId": 44297223528452,
+            "add_time": 1482595302000,
+            "dayValue": 22,
+            "nowTime": 112010000,
+            "nick": "aaa"
+        }],
+        "nowTime": 112010000,
+        "week": 0
+    }, {
+        "list": [],
+        "week": 6
+    }],
+    "code": 1,
+    "msg": " 获取记录成功 "
+}
