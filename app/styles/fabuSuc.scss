@@ -1,0 +1,18 @@
+.fabuSuc{
+    background: url(./../images/normal/yellowBackground.png);
+    height: 100%;
+    .allPageCon{
+        height: 100vh;
+        background: url(./../images/normal/yellowBackground.png);
+        background-size: 100%;
+        position: relative;
+        .textImg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6.5rem;
+            margin-left: -3.25rem;
+            margin-top: -28px;
+        }
+    }
+}

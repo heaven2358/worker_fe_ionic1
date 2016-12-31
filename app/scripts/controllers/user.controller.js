@@ -2,7 +2,6 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
     $scope.busy = false;
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
-        window.tools.setNativeTitle( '人人催' );
         $scope.init();
     } );
 

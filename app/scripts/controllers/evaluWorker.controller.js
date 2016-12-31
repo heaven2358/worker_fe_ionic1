@@ -38,8 +38,10 @@ angular.module('worker').controller('evaluWorkerCtrl', ['$scope', '$rootScope', 
                     window.toastError(data.msg);
                     return;
                 }
+                $location.path('pingjiaSuc');
                 window.toastSuccess('提交成功', function() {
-                    window.history.back(-1);
+                    // window.history.back(-1);
+                    $location.path('pingjiaSuc');
                 });
             });
     }

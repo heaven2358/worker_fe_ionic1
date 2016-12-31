@@ -57,6 +57,16 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             templateUrl: 'views/applyWork/applyWork.html',
             controller: 'applyWorkCtrl'
         })
+        //评价成功
+        .state('pingjiaSuc', {
+            url: '/pingjiaSuc',
+            templateUrl: 'views/pingjiaSuc/pingjiaSuc.html'
+        })
+        //发布成功
+        .state('fabuSuc', {
+            url: '/fabuSuc',
+            templateUrl: 'views/fabuSuc/fabuSuc.html'
+        })
         .state('user', {
             url: '/user',
             templateUrl: 'views/user/user.html',

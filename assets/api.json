@@ -138,9 +138,17 @@
     //评价
     "commentSaveaddCommentApi":{
         "serve": "commentSaveaddComment.json",
-        "dev": "http://www.whatsmax.com/user/improveMe",
-        "test": "http://www.whatsmax.com/user/improveMe",
-        "beta": "http://www.whatsmax.com/user/improveMe",
-        "prod": "http://api.whatsmax.com/user/improveMe"
+        "dev": "http://www.whatsmax.com/comment/saveaddComment",
+        "test": "http://www.whatsmax.com/comment/saveaddComment",
+        "beta": "http://www.whatsmax.com/comment/saveaddComment",
+        "prod": "http://api.whatsmax.com/comment/saveaddComment"
+    },
+    //评价
+    "userFabuApi":{
+        "serve": "userFabu.json",
+        "dev": "http://www.whatsmax.com/user/fabu",
+        "test": "http://www.whatsmax.com/user/fabu",
+        "beta": "http://www.whatsmax.com/user/fabu",
+        "prod": "http://api.whatsmax.com/user/fabu"
     }
 }

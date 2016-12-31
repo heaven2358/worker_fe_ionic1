@@ -35,24 +35,12 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
                 window.toastError( data.msg || '数据错误');
                 return;
             }
-            console.log(data);
             if($rootScope.rootRole * 1 == 1) {
                 $scope.data.wList = data.userList;
                 console.log($scope.data.wList );
             }else {
                 $scope.data.pList = data.pList;
             }
-
-            console.log($scope.data.pList );
-            // $scope.status = resObj.status;
-
-            // if( resObj.status != window.applyStatus.status ) {
-            //     window.applyStatus = resObj;
-            //     $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
-            // }
-
-
-
         });
     };
 
@@ -60,7 +48,20 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
         $location.path('/inviteWorker');
     }
     $scope.toPublishPro = function() {
-        $location.path('/publishPro');
+        if($rootScope.rootRole * 1 == 1) {
+            $location.path('/publishPro');
+            return
+        }
+        apiService.getData( '{{userFabuApi}}', {
+
+        } ).success( function( data ) {
+            if( data.code * 1 != 1) {
+                console.log('error');
+                window.toastError( data.msg || '数据错误');
+                return;
+            }
+            $location.path('/fabuSuc');
+        });
     }
 
     $scope.inviteSomebody = function(item) {
