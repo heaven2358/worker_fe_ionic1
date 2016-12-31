@@ -67,6 +67,16 @@
                     .red{
                         background: #fd0202;
                     }
+                    .imgBack{
+                        width: 18px;
+                        height: 18px;
+                        background: url(./../images/inviteWorker/FivePointedStar.png);
+                        display: inline-block;
+                        margin-right: 3px;
+                    }
+                    .redImg{
+                        background: url(./../images/inviteWorker/redStar.png);
+                    }
                 }
                 .workerProfe{
                     &:before{

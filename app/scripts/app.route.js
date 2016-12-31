@@ -48,6 +48,7 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
         .state('evaluWorker', {
             url: '/evaluWorker',
             templateUrl: 'views/evaluWorker/evaluWorker.html',
+            cache: false,
             controller: 'evaluWorkerCtrl'
         })
         //申请工作

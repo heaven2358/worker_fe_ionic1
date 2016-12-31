@@ -22,19 +22,19 @@
                         <label>
                             姓名
                         </label>
-                        <input placeholder="请输入您的姓名">
+                        <input placeholder="请输入您的姓名" ng-model="post.userName">
                     </li>
                     <li>
                         <label>
                             出生
                         </label>
-                        <input placeholder="请输入您的生日">
+                        <input placeholder="请输入您的生日,例如1991-02-27" ng-model="post.birth">
                     </li>
                     <li>
                         <label>
                             身份证
                         </label>
-                        <input placeholder="请输入您的身份证号">
+                        <input placeholder="请输入您的身份证号" ng-model="post.identy">
                     </li>
                     <li>
                         <label>
@@ -51,23 +51,23 @@
                         <label>
                             所属公司
                         </label>
-                        <input placeholder="请输入公司">
+                        <input placeholder="请输入公司" ng-model="post.company">
                     </li>
                     <li>
                         <label>
                             联系电话
                         </label>
-                        <input placeholder="请输入您的电话">
+                        <input placeholder="请输入您的电话" ng-model="post.phone">
                     </li>
                     <li>
                         <label>
                             职业资格证书编号
                         </label>
-                        <input placeholder="非必填">
+                        <input placeholder="非必填" ng-model="post.caNum">
                     </li>
                     <li>
                         <label>
-                            身份证照片
+                            职业资格证书照片
                         </label>
                         <button>
                             点击上传
@@ -88,6 +88,6 @@
 
     </ion-content>
     <div class="tabs bottomButton">
-        <button>提交认证</button>
+        <button ng-click="submitData()">提交认证</button>
     </div>
 </ion-view>

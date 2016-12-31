@@ -16,23 +16,17 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
 
     $scope.init = function() {
         $rootScope.rootTap = true;
-        // apiService.getData( '{{getUserStatusApi}}', {} ).success( function( data ) {
-        //     if( data.error.returnCode != 0 ) {
-        //         window.toastError( data.error.returnUserMessage );
-        //         return;
-        //     } else {
-        //         var resObj = data.data;
-        //
-        //         $scope.status = resObj.status;
-        //
-        //         if( resObj.status != window.applyStatus.status ) {
-        //             window.applyStatus = resObj;
-        //             $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
-        //         }
-        //
-
-        //     }
-        // });
+        $scope.pageType = $rootScope.rootRole * 1 == 1 ? 'laborSupervision' : 'worker';
+        apiService.getData( '{{userMyApi}}', {
+            userId: window.extHeader.userId
+        } ).success( function( data ) {
+            if( data.code * 1 !=1 ) {
+                window.toastError( data.msg);
+                return;
+            }
+            console.log(data);
+            $scope.showdata = data;
+        });
     };
 
     $scope.toCertification = function() {
@@ -41,8 +35,27 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
     }
 
 
-    $scope.pingjia = function() {
-        $location.path('/evaluWorker');
+    $scope.pingjia = function(item) {
+        $location.path('/evaluWorker')
+            .search({
+                touserId: item.id
+            });
+        apiService.setCache('beEvaluedUser', item);
+    }
+
+    $scope.dealWorker = function(item, choice) {
+        apiService.getData( '{{workerDoitApi}}', {
+            userId: window.extHeader.weixinId,
+            toUserId: item.id,
+            projectId: item.projectId,
+            doit: choice * 1
+        } ).success( function( data ) {
+                if( data.code * 1 != 1 ) {
+                    window.toastError( data.error.returnUserMessage );
+                    return;
+                }
+                window.toastSuccess('操作成功');
+            });
     }
 
 }]);

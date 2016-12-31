@@ -118,6 +118,29 @@
         "test": "http://www.whatsmax.com/project/budget",
         "beta": "http://www.whatsmax.com/project/budget",
         "prod": "http://api.whatsmax.com/project/budget"
+    },
+    //个人用户详情
+    "userMyApi":{
+        "serve": "bossUser.json",
+        "dev": "http://www.whatsmax.com/user/my",
+        "test": "http://www.whatsmax.com/user/my",
+        "beta": "http://www.whatsmax.com/user/my",
+        "prod": "http://api.whatsmax.com/user/my"
+    },
+    //个人认证
+    "userImproveMeApi":{
+        "serve": "userImproveMe.json",
+        "dev": "http://www.whatsmax.com/user/improveMe",
+        "test": "http://www.whatsmax.com/user/improveMe",
+        "beta": "http://www.whatsmax.com/user/improveMe",
+        "prod": "http://api.whatsmax.com/user/improveMe"
+    },
+    //评价
+    "commentSaveaddCommentApi":{
+        "serve": "commentSaveaddComment.json",
+        "dev": "http://www.whatsmax.com/user/improveMe",
+        "test": "http://www.whatsmax.com/user/improveMe",
+        "beta": "http://www.whatsmax.com/user/improveMe",
+        "prod": "http://api.whatsmax.com/user/improveMe"
     }
-
 }

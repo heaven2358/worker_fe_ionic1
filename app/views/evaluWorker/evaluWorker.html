@@ -8,68 +8,81 @@
                 <img src="./images/normal/defaultUser2.png">
             </div>
             <p class="peoName">
-                沟里有春天
+                {{beUser.userName}}
             </p>
             <p class="peoRole">
-                劳务员 <span> 未认证</span>
+                {{pageType == 'laborSupervision' ? '工人' : '劳务员'}} <span> {{ beUser.authState * 1 == 1 ? '已认证' :'未认证'}}</span>
             </p>
         </div>
         <div class="countInfo">
             <ul class="">
                 <li>
-
                     <span class="itemName workerProfe">
                         职业道德
                     </span>
                     <span class="countNo">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(1)" ng-class="{true:'red'}[choose >= 1]">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(2)" ng-class="{true:'red'}[choose >= 2]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(3)" ng-class="{true:'red'}[choose >= 3]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(4)" ng-class="{true:'red'}[choose >= 4]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(5)" ng-class="{true:'red'}[choose >= 5]">
-
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('moralScore', index)" ng-class="{true:'redImg'}[post.moralScore >= index]">
+                        </span>
+                        <!-- <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose('moralScore', 1)" ng-class="{true:'red'}[post.moralScore >= 1]">
+                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose('moralScore', 2)" ng-class="{true:'red'}[post.moralScore >= 2]">
+                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose('moralScore', 3)" ng-class="{true:'red'}[post.moralScore >= 3]">
+                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose('moralScore', 4)" ng-class="{true:'red'}[post.moralScore >= 4]">
+                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose('moralScore', 5)" ng-class="{true:'red'}[post.moralScore >= 5]"> -->
                     </span>
                 </li>
-                <li>
-
+                <li ng-if="pageType == 'laborSupervision'">
                     <span class="itemName speed">
                         干活速度
                     </span>
                     <span class="countNo">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(1)" ng-class="{true:'red'}[choose >= 1]">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(2)" ng-class="{true:'red'}[choose >= 2]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(3)" ng-class="{true:'red'}[choose >= 3]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(4)" ng-class="{true:'red'}[choose >= 4]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(5)" ng-class="{true:'red'}[choose >= 5]">
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('workSpeedScore', index)" ng-class="{true:'redImg'}[post.workSpeedScore >= index]">
+                        </span>
 
                     </span>
                 </li>
-                <li>
-
+                <li ng-if="pageType == 'laborSupervision'">
                     <span class="itemName integrity">
                         诚信评分
                     </span>
                     <span class="countNo">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(1)" ng-class="{true:'red'}[choose >= 1]">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(2)" ng-class="{true:'red'}[choose >= 2]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(3)" ng-class="{true:'red'}[choose >= 3]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(4)" ng-class="{true:'red'}[choose >= 4]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(5)" ng-class="{true:'red'}[choose >= 5]">
-
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('honestScore', index)" ng-class="{true:'redImg'}[post.honestScore >= index]">
+                        </span>
                     </span>
                 </li>
-                <li>
-
+                <li ng-if="pageType == 'laborSupervision'">
                     <span class="itemName quality">
                         质量评分
                     </span>
                     <span class="countNo">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(1)" ng-class="{true:'red'}[choose >= 1]">
-                        <img src="./images/inviteWorker/FivePointedStar.png" ng-click="changeChoose(2)" ng-class="{true:'red'}[choose >= 2]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(3)" ng-class="{true:'red'}[choose >= 3]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(4)" ng-class="{true:'red'}[choose >= 4]">
-                        <img src="./images/inviteWorker/FivePointedStar.png"ng-click="changeChoose(5)" ng-class="{true:'red'}[choose >= 5]">
-
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('qualityScore', index)" ng-class="{true:'redImg'}[post.qualityScore >= index]">
+                        </span>
+                    </span>
+                </li>
+                <li ng-if="pageType == 'worker'">
+                    <span class="itemName quality">
+                        结账速度
+                    </span>
+                    <span class="countNo">
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('payScore', index)" ng-class="{true:'redImg'}[post.payScore >= index]">
+                        </span>
+                    </span>
+                </li>
+                <li ng-if="pageType == 'worker'">
+                    <span class="itemName quality">
+                        性格
+                    </span>
+                    <span class="countNo">
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('temperScore', index)" ng-class="{true:'redImg'}[post.temperScore >= index]">
+                        </span>
+                    </span>
+                </li>
+                <li ng-if="pageType == 'worker'">
+                    <span class="itemName quality">
+                        管理水平
+                    </span>
+                    <span class="countNo">
+                        <span class="imgBack" ng-repeat="index in [1,2,3,4,5] " ng-click="changeChoose('manageScore', index)" ng-class="{true:'redImg'}[post.manageScore >= index]">
+                        </span>
                     </span>
                 </li>
             </ul>
@@ -78,12 +91,12 @@
             <h3>评价
             </h3>
             <div class="detailEvaluation">
-                <textarea></textarea>
+                <textarea ng-model="post.content"></textarea>
             </div>
         </div>
 
     </ion-content>
     <div class="tabs bottomButton">
-        <button class="yellow">完成</button>
+        <button class="yellow" ng-click="submitData();">提交</button>
     </div>
 </ion-view>
