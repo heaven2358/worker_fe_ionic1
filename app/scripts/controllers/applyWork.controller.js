@@ -46,5 +46,27 @@ angular.module('worker').controller('applyWorkCtrl',['$scope','$rootScope','$loc
 
     $scope.applySubmit = function() {
         console.log('applySubmiting');
+
+        apiService.getData( '{{projectWantedApi}}', {
+            projectId: $location.search().pid
+        } ).success( function( data ) {
+            if( data.code * 1 != 1) {
+                console.log('error');
+                window.toastError( data.msg || '数据错误');
+                return;
+            }
+            window.toastError( '求职成功');
+            $location.path('/applyWorkSuc');
+            // $scope.status = resObj.status;
+
+            // if( resObj.status != window.applyStatus.status ) {
+            //     window.applyStatus = resObj;
+            //     $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
+            // }
+
+
+
+        });
+
     }
 }]);

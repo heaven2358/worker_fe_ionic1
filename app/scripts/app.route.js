@@ -67,6 +67,11 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
             url: '/fabuSuc',
             templateUrl: 'views/fabuSuc/fabuSuc.html'
         })
+        //申请上工成功
+        .state('applyWorkSuc', {
+            url: '/applyWorkSuc',
+            templateUrl: 'views/applyWorkSuc/applyWorkSuc.html'
+        })
         .state('user', {
             url: '/user',
             templateUrl: 'views/user/user.html',

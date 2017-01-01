@@ -20,10 +20,10 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
 
         // $scope.data = apiService.getCache('tempRes');
         var initUrl = '{{projectListApi}}';
+        // alert($rootScope.rootRole);
         if($rootScope.rootRole * 1 == 1) {
             initUrl = '{{workerListApi}}';
         }
-
         apiService.getData( initUrl, {
             address1: '重庆市',
             address2:'江北区',

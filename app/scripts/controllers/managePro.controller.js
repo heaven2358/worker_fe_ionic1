@@ -43,12 +43,12 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
 
     $scope.workerSubmit = function() {
         $scope.workerSubmit.userId = window.extHeader.userId;
-        $scope.workerSubmit.projected = '';
-        $scope.workerSubmit.addTime = '';
+        $scope.workerSubmit.projectId = $scope.data.project.id;
+        $scope.workerSubmit.addTime = new Date().getTime();
         apiService.getData( '{{workerSubmitProApi}}', $scope.workerSubmit )
             .success( function( data ) {
                 if( data.code * 1 != 1 ) {
-                    window.toastError( data.error.returnUserMessage );
+                    window.toastError( data.msg );
                     return;
                 }
                 window.toastSuccess('提交成功');

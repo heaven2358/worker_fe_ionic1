@@ -17,7 +17,9 @@
 
             if(window.tools.getCookie('auth_resp')) {
                 window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
+                // alert(JSON.stringify(window.extHeader));
                 window.localStorage.worker_app_userinfo = JSON.stringify(window.extHeader);
+                window.localStorage.rootRole = window.extHeader.role;
             }
 
             if(!window.extHeader.weixinId){
@@ -60,7 +62,7 @@
     require('./controllers/applyWork.controller.js');
 
     /* controllers end*/
-
+    require('./directive/fileModel.directive.js');
     // require('./directive/fancySelect.directive.js');
     // require('./directive/imgUpload.directive.js');
     // require('./directive/jdbScrollPicker.directive.js');

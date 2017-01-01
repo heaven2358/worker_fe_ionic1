@@ -24,6 +24,9 @@ angular.module('worker').controller('certificationConCtrl',['$scope','$rootScope
     }
 
     $scope.submitData = function() {
+
+        $scope.post.idPics = $scope.post.idPics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
+        $scope.post.caPics = $scope.post.caPics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
         apiService.getData( '{{userImproveMeApi}}',
             $scope.post
         ).success( function( data ) {

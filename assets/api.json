@@ -66,18 +66,10 @@
     //工人提交单日工作量
     "workerSubmitProApi":{
         "serve": "workerSubmitProApi.json",
-        "dev": "http://www.whatsmax.com/user/detail",
-        "test": "http://www.whatsmax.com/user/detail",
-        "beta": "http://www.whatsmax.com/user/detail",
-        "prod": "http://api.whatsmax.com/user/detail"
-    },
-    //工人提交项目
-    "workerSubmitProApi":{
-        "serve": "workerSubmitProApi.json",
-        "dev": "http://www.whatsmax.com/user/detail",
-        "test": "http://www.whatsmax.com/user/detail",
-        "beta": "http://www.whatsmax.com/user/detail",
-        "prod": "http://api.whatsmax.com/user/detail"
+        "dev": "http://www.whatsmax.com/project/makeRecord",
+        "test": "http://www.whatsmax.com/project/makeRecord",
+        "beta": "http://www.whatsmax.com/project/makeRecord",
+        "prod": "http://api.whatsmax.com/project/makeRecord"
     },
     //老板管理项目init
     "bossManaInitApi":{
@@ -143,12 +135,28 @@
         "beta": "http://www.whatsmax.com/comment/saveaddComment",
         "prod": "http://api.whatsmax.com/comment/saveaddComment"
     },
-    //评价
+    //工人。发布求职信息
     "userFabuApi":{
         "serve": "userFabu.json",
         "dev": "http://www.whatsmax.com/user/fabu",
         "test": "http://www.whatsmax.com/user/fabu",
         "beta": "http://www.whatsmax.com/user/fabu",
         "prod": "http://api.whatsmax.com/user/fabu"
+    },
+    //工人请求上工
+    "projectWantedApi":{
+        "serve": "projectWanted.json",
+        "dev": "http://www.whatsmax.com/project/wanted",
+        "test": "http://www.whatsmax.com/project/wanted",
+        "beta": "http://www.whatsmax.com/project/wanted",
+        "prod": "http://api.whatsmax.com/project/wanted"
+    },
+    //图片上传
+    "picUploadApi":{
+        "serve": "picUpload.json",
+        "dev": "http://www.whatsmax.com/pic/upload",
+        "test": "http://www.whatsmax.com/pic/upload",
+        "beta": "http://www.whatsmax.com/pic/upload",
+        "prod": "http://api.whatsmax.com/pic/upload"
     }
 }

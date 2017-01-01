@@ -44,13 +44,13 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
 
     $scope.dealWorker = function(item, choice) {
         apiService.getData( '{{workerDoitApi}}', {
-            userId: window.extHeader.weixinId,
+            userId: window.extHeader.userId,
             toUserId: item.id,
             projectId: item.projectId,
             doit: choice * 1
         } ).success( function( data ) {
                 if( data.code * 1 != 1 ) {
-                    window.toastError( data.error.returnUserMessage );
+                    window.toastError( data.msg );
                     return;
                 }
                 window.toastSuccess('操作成功');

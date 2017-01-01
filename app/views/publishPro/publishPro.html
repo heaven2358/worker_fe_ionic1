@@ -87,9 +87,8 @@
                     现场概况
                 </h3>
                 <div class="imgsCon">
-                    <input type="file" style="
-    border: 1px solid red;
-">
+                    <input type="file" style="border: 1px solid red;" file-model="" >
+                    <!-- ng-change = "testChange($event)" ng-model="data.testFile" -->
                     <img  ng-repeat="item in data.pics" ng-src="item">
                     <button class="addImg">
                     </button>

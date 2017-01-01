@@ -53,9 +53,11 @@ angular.module('worker').run([
             $rootScope.tabChage = [];
             $rootScope.tabChage[0] = true;
             //初始化角色
-            $rootScope.rootRole = window.localStorage.rootRole;
+            $rootScope.rootRole = window.extHeader.role;
             if(!$rootScope.rootRole ) {
                 $location.path('/index');
+            } else {
+                $location.path('/wantOffer');
             }
             weixinBrowser();
         }

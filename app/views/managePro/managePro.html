@@ -58,24 +58,29 @@
             </ul>
         </div>
         <div class="worker_submit" ng-if="pageType == 'worker'">
-            <h3>{{data.project.projectName}}</h3>
-            <div class="dateDiv">
-                <a>
-                    2016年11月3日
-                </a>
-            </div>
-            <div class="input_Detail">
-                <p class="inputPa">
-                    今日完成<input ng-model="workerSubmit.dayValue">㎡
-                </p>
-                <p class="noPa">
-                    当前项目累计完成<span>{{data.project.workerCount}}</span>㎡
-                </p>
+            <div ng-if="data.project">
+                <h3>{{data.project.projectName}}</h3>
+                <div class="dateDiv">
+                    <a>
+                        2016年11月3日
+                    </a>
+                </div>
+                <div class="input_Detail">
+                    <p class="inputPa">
+                        今日完成<input ng-model="workerSubmit.dayValue">㎡
+                    </p>
+                    <p class="noPa">
+                        当前项目累计完成<span>{{data.project.workerCount}}</span>㎡
+                    </p>
 
-                <button ng-click="workerSubmit()">
-                    立即提交
-                </button>
+                    <button ng-click="workerSubmit()">
+                        立即提交
+                    </button>
+                </div>
             </div>
+            <p class="tipNo" ng-if="!data.project">
+                暂时没有加入项目
+            </p>
         </div>
     </ion-content>
 </ion-view>
