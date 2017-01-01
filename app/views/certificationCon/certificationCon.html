@@ -9,10 +9,10 @@
                 <img src="./images/normal/defaultUser2.png">
             </div>
             <p class="peoName">
-                沟里有春天
+                {{post.nick}}
             </p>
             <p class="peoRole">
-                劳务员
+                {{post.role == 1 ? '劳务员' : '工人'}}
             </p>
         </div>
         <div class="formCon">
@@ -37,15 +37,26 @@
                         <input placeholder="请输入您的身份证号" ng-model="post.identy">
                     </li>
                     <li>
-                        <label>
+
+                        <label class="topLabel">
                             身份证照片
                         </label>
-                        <button>
+                        <span class="picCon">
+                            <img  ng-src="{{post.tempIdPicsArr[0]}}" ng-if="post.tempIdPicsArr[0]">
+                            <span class="textHolder" ng-if="!post.tempIdPicsArr[0]">点击<br>上传</span>
+                            <input type="file" class="hiddeInput" file-model export-src="post.tempIdPicsArr[0]">
+                        </span>
+                        <span class="picCon">
+                            <img ng-src="{{post.tempIdPicsArr[1]}}" ng-if="post.tempIdPicsArr[1]">
+                            <span class="textHolder" ng-if="!post.tempIdPicsArr[1]">点击<br>上传</span>
+                            <input type="file" class="hiddeInput" file-model export-src="post.tempIdPicsArr[1]">
+                        </span>
+                        <!-- <button>
                             点击上传
                         </button>
                         <button>
                             点击上传
-                        </button>
+                        </button> -->
                     </li>
                     <li>
                         <label>
@@ -66,15 +77,19 @@
                         <input placeholder="非必填" ng-model="post.caNum">
                     </li>
                     <li>
-                        <label>
+                        <label class="topLabel">
                             职业资格证书照片
                         </label>
-                        <button>
-                            点击上传
-                        </button>
-                        <button>
-                            点击上传
-                        </button>
+                        <span class="picCon">
+                            <img  ng-if="post.tempCaPicsArr[0]" ng-src="{{post.tempCaPicsArr[0]}}" ng-if="post.tempCaPicsArr[0]">
+                            <span class="textHolder" ng-if="!post.tempCaPicsArr[0]">点击<br>上传</span>
+                            <input type="file" class="hiddeInput" file-model export-src="post.tempCaPicsArr[0]">
+                        </span>
+                        <span class="picCon">
+                            <img src="" ng-src="{{post.tempCaPicsArr[1]}}" ng-if="post.tempCaPicsArr[1]">
+                            <span class="textHolder" ng-if="!post.tempCaPicsArr[1]">点击<br>上传</span>
+                            <input type="file" class="hiddeInput" file-model export-src="post.tempCaPicsArr[1]">
+                        </span>
                     </li>
                 </ul>
             </div>

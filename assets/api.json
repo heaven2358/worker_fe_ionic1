@@ -122,10 +122,10 @@
     //个人认证
     "userImproveMeApi":{
         "serve": "userImproveMe.json",
-        "dev": "http://www.whatsmax.com/user/improveMe",
-        "test": "http://www.whatsmax.com/user/improveMe",
-        "beta": "http://www.whatsmax.com/user/improveMe",
-        "prod": "http://api.whatsmax.com/user/improveMe"
+        "dev": "http://www.whatsmax.com/user/saveadd",
+        "test": "http://www.whatsmax.com/user/saveadd",
+        "beta": "http://www.whatsmax.com/user/saveadd",
+        "prod": "http://api.whatsmax.com/user/saveadd"
     },
     //评价
     "commentSaveaddCommentApi":{
@@ -166,5 +166,15 @@
         "test": "http://www.whatsmax.com/project/inviteU",
         "beta": "http://www.whatsmax.com/project/inviteU",
         "prod": "http://api.whatsmax.com/project/inviteU"
+    },
+    //跳转认证时init
+    "userSelfInitApi":{
+        "serve": "userSelfInit.json",
+        "dev": "http://www.whatsmax.com/user/add",
+        "test": "http://www.whatsmax.com/user/add",
+        "beta": "http://www.whatsmax.com/user/add",
+        "prod": "http://api.whatsmax.com/user/add"
     }
+
+
 }

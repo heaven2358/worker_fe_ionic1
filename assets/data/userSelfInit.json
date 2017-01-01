@@ -1,0 +1,20 @@
+{
+    "curPage": 0,
+    "code": 1,
+    "msg": "get data success",
+    "user": {
+        "userName":"234--小汤奎",
+        "state": 0,
+        "score": 0,
+        "workType": 1,
+        "projectId": 0,
+        "id": 44478873670148,
+        "hasDays": 0,
+        "nick": "hahah",
+        "authState": 0,
+        "hasQuantity": 0,
+        "role": 0,
+        "hasProjects": 0,
+        "head": "http://api.whatsmax.com:8081/171/1/1212123.jpgl"
+    }
+}

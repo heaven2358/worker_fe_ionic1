@@ -60,6 +60,7 @@
     require('./controllers/finishPro.controller.js');
     require('./controllers/evaluWorker.controller.js');
     require('./controllers/applyWork.controller.js');
+    require('./controllers/inviteSuc.controller.js');
 
     /* controllers end*/
     require('./directive/fileModel.directive.js');

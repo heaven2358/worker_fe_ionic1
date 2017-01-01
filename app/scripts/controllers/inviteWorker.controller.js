@@ -50,6 +50,10 @@ angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$
             }
             // console.log(data);
             // $scope.data = data;
+            $location.path('/inviteSuc')
+                .search({
+                    phone: data.phone
+                });
             window.toastSuccess('邀请成功');
         });
     }

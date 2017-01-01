@@ -1,11 +1,9 @@
 angular.module('worker').directive('fileModel', ['$parse', 'apiService', function($parse, apiService) {
     return {
         restrict: 'AE',
+        transclude: true,
         scope: {
-            imgList: '=',
-            imgIndex: '=',
-            imgSrc: '=',
-            defaultImg: '='
+            exportSrc: '='
         },
         link: function(scope, element, attrs, ngModel) {
             var model = $parse(attrs.fileModel);
@@ -31,10 +29,12 @@ angular.module('worker').directive('fileModel', ['$parse', 'apiService', functio
                         image: tempReader.result
                     }).success(function(resObj) {
                         console.log(resObj);
+                        console.log(scope.exportSrc);
+                        scope.exportSrc = resObj.picurl;
+                        // scope.$digest();
                     });
                 };
                 tempReader.readAsDataURL(file);
-
 
             };
         }

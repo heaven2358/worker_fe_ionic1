@@ -55,9 +55,15 @@ angular.module('worker').run([
             //初始化角色
             $rootScope.rootRole = window.extHeader.role;
             if(!$rootScope.rootRole ) {
+                console.log(234);
                 $location.path('/index');
             } else {
-                $location.path('/wantOffer');
+                if(!location.hash) {
+                    $location.path('/wantOffer');
+                    console.log();
+                    // $location.path(location.hash);
+                }
+
             }
             weixinBrowser();
         }
