@@ -24,10 +24,16 @@
 
             if(!window.extHeader.weixinId){
                 window.extHeader = {};
+                if(window.navigator.userAgent.indexOf('MicroMessenger') > -1) {
+                    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.whatsmax.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
+                }
             }
 
         }catch(e) {
             window.extHeader = {};
+            if(window.navigator.userAgent.indexOf('MicroMessenger') > -1) {
+                window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.whatsmax.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
+            }
             console.log(e);
         }
 

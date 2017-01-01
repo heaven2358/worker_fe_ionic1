@@ -1,6 +1,8 @@
 angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$location','$state','apiService', function($scope, $rootScope, $location, $state, apiService) {
     $scope.busy = false;
     console.log($rootScope.rootRole);
+    $scope.workerSubmit = {};
+    $scope.workerSubmit.addTimeShow = new Date().getTime();
     $scope.pageType = $rootScope.rootRole ? 'laborSupervision' : 'worker';
 
     $scope.$on( '$ionicView.afterEnter', function(event, data){
@@ -18,6 +20,7 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
     $scope.init = function() {
         $rootScope.rootTap = true;
         $scope.pageType = $rootScope.rootRole * 1 == 1 ? 'laborSupervision' : 'worker';
+        $scope.workerSubmit.addTimeShow = new Date().getTime();
         var initUrl = '{{workerManaInitApi}}';
         if($rootScope.rootRole * 1 == 1) {
             initUrl = '{{bossManaInitApi}}';
@@ -37,6 +40,7 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
     $scope.toFinishPro = function(item) {
         console.log(item);
         $location.path('/finishPro').search({
+            projectName: item.projectName,
             projectId: item.id
         });
     }
@@ -44,7 +48,7 @@ angular.module('worker').controller('manageProCtrl',['$scope','$rootScope','$loc
     $scope.workerSubmit = function() {
         $scope.workerSubmit.userId = window.extHeader.userId;
         $scope.workerSubmit.projectId = $scope.data.project.id;
-        $scope.workerSubmit.addTime = new Date().getTime();
+        $scope.workerSubmit.addTime = new Date($scope.workerSubmit.addTimeShow).getTime();
         apiService.getData( '{{workerSubmitProApi}}', $scope.workerSubmit )
             .success( function( data ) {
                 if( data.code * 1 != 1 ) {

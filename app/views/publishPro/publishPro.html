@@ -26,8 +26,12 @@
 
                             </label>
                             <span class="inputItem">
-                                <input placeholder="请选择项目地区" readonly="true" value="重庆市-江北区">
+                                <input placeholder="请选择项目地区" readonly="true" value="{{data.allAddress}}">
+                                <select ng-model="data.allAddress" class="addresSelect" >
 
+                                    <option  ng-repeat = "item in cityList" value="{{ '重庆市-' + item.name}}">{{item.name}}</option>
+
+                                </select>
                             </span>
                         </div>
                     </li>
@@ -88,10 +92,10 @@
                 </h3>
                 <div class="imgsCon">
                     <!-- <input type="file" style="border: 1px solid red;" file-model="" > -->
-                    <!-- ng-change = "testChange($event)" ng-model="data.testFile" -->
-                    <img  ng-repeat="item in data.picsArr" ng-src="{{item}}">
+                    <!-- ng-change = "testChange($event)" ng-model="data.testFile"  capture="camera" accept="image/*" -->
+                    <img  ng-repeat="item in data.picsArr track by $index" ng-src="{{item}}">
                     <button class="addImg">
-                        <input type="file" class="hiddeInput" file-model export-src="data.tempImg">
+                        <input type="file" class="hiddeInput" file-model export-src="data.tempImg" accept="image/*"  >
                     </button>
                 </div>
             </div>

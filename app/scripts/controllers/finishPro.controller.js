@@ -1,6 +1,7 @@
 angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$location','$state','apiService', function($scope, $rootScope, $location, $state, apiService) {
     $scope.busy = false;
-
+    $scope.showdata = {};
+    $scope.project = {};
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         $scope.init();
     } );
@@ -15,6 +16,7 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
 
     $scope.init = function() {
         $rootScope.rootTap = false;
+        $scope.project.projectName = $location.search().projectName;
         apiService.getData( '{{projectFinInitApi}}', {
             userId: window.extHeader.userId,
             projectId: $location.search().projectId
@@ -27,11 +29,6 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
                 $scope.changeShow(new Date().getDay());
         });
     };
-
-    $scope.roleChoose = function(ret) {
-        // ret 1 劳务员 0 砖工
-        $location.path('wantOffer');
-    }
 
 
     $scope.projectBudget = function(id) {
