@@ -1,28 +1,27 @@
-
-angular.module('worker').controller('applyWorkCtrl',['$scope','$rootScope','$location','$state','apiService', function($scope, $rootScope, $location, $state, apiService) {
+angular.module('worker').controller('applyWorkCtrl', ['$scope', '$rootScope', '$location', '$state', 'apiService','$ionicModal',  function($scope, $rootScope, $location, $state, apiService, $ionicModal) {
     $scope.busy = false;
     console.log(12344);
-    $scope.$on( '$ionicView.afterEnter', function(event, data){
+    $scope.$on('$ionicView.afterEnter', function(event, data) {
         $scope.init();
     });
 
-    $scope.$on( '$ionicView.leave', function(event, data) {
+    $scope.$on('$ionicView.leave', function(event, data) {
         $rootScope.bottomBtnType = 0;
     });
 
-    $scope.$on( '$ionicView.loaded', function(event, data){
+    $scope.$on('$ionicView.loaded', function(event, data) {
         //$scope.init();
     });
 
     $scope.init = function() {
         $rootScope.rootTap = false;
         console.log($location.search());
-        apiService.getData( '{{projectDetailApi}}', {
+        apiService.getData('{{projectDetailApi}}', {
             pId: $location.search().pid
-        } ).success( function( data ) {
-            if( data.code * 1 != 1) {
+        }).success(function(data) {
+            if (data.code * 1 != 1) {
                 console.log('error');
-                window.toastError( data.msg || '数据错误');
+                window.toastError(data.msg || '数据错误');
                 return;
             }
             console.log(data);
@@ -46,16 +45,15 @@ angular.module('worker').controller('applyWorkCtrl',['$scope','$rootScope','$loc
 
     $scope.applySubmit = function() {
         console.log('applySubmiting');
-
-        apiService.getData( '{{projectWantedApi}}', {
+        apiService.getData('{{projectWantedApi}}', {
             projectId: $location.search().pid
-        } ).success( function( data ) {
-            if( data.code * 1 != 1) {
+        }).success(function(data) {
+            if (data.code * 1 != 1) {
                 console.log('error');
-                window.toastError( data.msg || '数据错误');
+                window.toastError(data.msg || '数据错误');
                 return;
             }
-            window.toastError( '求职成功');
+            window.toastError('求职成功');
             $location.path('/applyWorkSuc');
             // $scope.status = resObj.status;
 
@@ -64,9 +62,24 @@ angular.module('worker').controller('applyWorkCtrl',['$scope','$rootScope','$loc
             //     $rootScope.saveStatusToDevice( angular.extend( {}, resObj ) );
             // }
 
-
-
         });
-
     }
+
+    $scope.showShareModal = function() {
+        $ionicModal.fromTemplateUrl('views/applyWork/shareModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+        });
+        $scope.closeModal = function(e) {
+            if ($scope.modal) {
+                $scope.modal.hide();
+                $scope.modal.remove();
+            }
+        }
+        $scope.$on('closeLargeImg', $scope.closeModal);
+    }
+
 }]);

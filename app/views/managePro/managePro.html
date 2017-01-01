@@ -62,7 +62,7 @@
                 <h3>{{data.project.projectName}}</h3>
                 <div class="dateDiv">
                     <a>
-                        {{ workerSubmit.addTimeShow }}<i></i>
+                        {{ workerSubmit.addTimeShow | timeMiSecFilter}}<i></i>
                         <input type="date" ng-model="workerSubmit.addTimeShow">
                     </a>
                 </div>

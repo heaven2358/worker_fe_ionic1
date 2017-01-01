@@ -10,12 +10,6 @@ angular.module('worker').run([
         //初始化获取localStorge存储状态
         //处理老板机滑动不能问题
         $rootScope.fixCantScroll = function() {
-                /*if($('ion-content').hasClass('overflow-scroll')) {
-                    $('ion-content').removeClass('overflow-scroll');
-                    setTimeout(function() {
-                        $('ion-content').addClass('overflow-scroll');
-                    }, 20);
-                }*/
                 if ($('ion-content').hasClass('scroll-content')) {
                     $('ion-content').removeClass('scroll-content');
                     setTimeout(function() {
@@ -32,15 +26,6 @@ angular.module('worker').run([
                 $rootScope.rootTap = true;
             }
             var backView = $ionicHistory.backView();
-            // if( window.ShowCloseButton ) {
-            //     if( $rootScope.closeBtnShown && !backView ) {
-            //         ShowCloseButton.showCloseButton( '0', function(){}, function(){} );
-            //         $rootScope.closeBtnShown = !$rootScope.closeBtnShown;
-            //     } else if( !$rootScope.closeBtnShown && backView ) {
-            //         ShowCloseButton.showCloseButton( '1', function(){}, function(){} );
-            //         $rootScope.closeBtnShown = !$rootScope.closeBtnShown;
-            //     }
-            // }
             //移除弹窗相关dom
             $rootScope.$broadcast('closeLargeImg');
         });
@@ -63,7 +48,6 @@ angular.module('worker').run([
                     console.log();
                     // $location.path(location.hash);
                 }
-
             }
             weixinBrowser();
         }
@@ -136,10 +120,10 @@ angular.module('worker').run([
                     });
                     window.wx.ready(function(res) {
                         console.log(res);
-
                         $rootScope.$broadcast('wx_js_ready');
                         $rootScope.wx_js_ready = true;
-
+                        var firstShareConfig = require('./common/wxShare.js');
+                        firstShareConfig();
                         // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
                     });
                     window.wx.error(function(e) {

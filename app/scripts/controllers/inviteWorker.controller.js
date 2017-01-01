@@ -1,7 +1,6 @@
 
-angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$location','$state','apiService', function($scope, $rootScope, $location, $state, apiService) {
+angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$location','$state','apiService', '$ionicModal', function($scope, $rootScope, $location, $state, apiService, $ionicModal) {
     $scope.busy = false;
-    console.log(12344);
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         window.tools.setNativeTitle( '人人催' );
         $scope.init();
@@ -56,6 +55,23 @@ angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$
                 });
             window.toastSuccess('邀请成功');
         });
+    }
+
+    $scope.showShareModal = function() {
+        $ionicModal.fromTemplateUrl('views/applyWork/shareModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+        });
+        $scope.closeModal = function(e) {
+            if ($scope.modal) {
+                $scope.modal.hide();
+                $scope.modal.remove();
+            }
+        }
+        $scope.$on('closeLargeImg', $scope.closeModal);
     }
 
 }]);

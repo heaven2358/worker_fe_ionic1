@@ -128,3 +128,22 @@
     text-align: center;
     color: #6c6c6c;
 }
+.shareMoal{
+    background: rgba(16,16,16, 0.8);
+    .imgBackground{
+        position: relative;
+        img{
+            width: 180px;
+            float: right;
+        }
+        .shareMessage{
+            color: #fdfbfb;
+            font-size: 15px;
+            width: 120px;
+            line-height: 20px;
+            position: absolute;
+            right: 28px;
+            top: 111px;
+        }
+    }
+}

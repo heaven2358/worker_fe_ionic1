@@ -1,4 +1,4 @@
-angular.module('worker').controller('publishProCtrl', ['$scope', '$rootScope', '$location', '$state', 'apiService', function($scope, $rootScope, $location, $state, apiService) {
+angular.module('worker').controller('publishProCtrl', ['$scope', '$rootScope', '$location', '$state', 'apiService','$ionicModal', function($scope, $rootScope, $location, $state, apiService, $ionicModal) {
     $scope.busy = false;
     $scope.data = {};
     $scope.data.workType = '砌砖工';
@@ -58,5 +58,20 @@ angular.module('worker').controller('publishProCtrl', ['$scope', '$rootScope', '
         }
 
     });
-
+    $scope.showShareModal = function() {
+        $ionicModal.fromTemplateUrl('views/applyWork/shareModal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+            $scope.modal.show();
+        });
+        $scope.closeModal = function(e) {
+            if ($scope.modal) {
+                $scope.modal.hide();
+                $scope.modal.remove();
+            }
+        }
+        $scope.$on('closeLargeImg', $scope.closeModal);
+    }
 }]);
