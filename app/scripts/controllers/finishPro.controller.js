@@ -24,6 +24,7 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
                     return;
                 }
                 $scope.listArr = data.list;
+                $scope.changeShow(new Date().getDay());
         });
     };
 
@@ -36,6 +37,7 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
     $scope.projectBudget = function(id) {
         apiService.getData( '{{projectBudgetApi}}', {
             userId: window.extHeader.userId,
+            id: id,
             projectId: $location.search().projectId
         }).success( function( data ) {
             if( data.code * 1 != 1 ) {

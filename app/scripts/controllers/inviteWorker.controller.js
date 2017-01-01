@@ -20,6 +20,7 @@ angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$
         $rootScope.rootTap = false;
         apiService.getData( '{{workerDetailApi}}', {
             pId: $location.search().uid,
+            userId : $location.search().uid,
             nick:   $location.search().nick,
             userName:   $location.search().userName
         }).success( function( data ) {
@@ -35,6 +36,22 @@ angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$
 
     $scope.toCertification = function() {
         $location.path('/toCertification');
+    }
+
+    $scope.inviteSubmit = function() {
+
+        apiService.getData( '{{projectInviteUApi}}', {
+            toUserId : $location.search().uid
+        }).success( function( data ) {
+            if( data.code * 1 != 1) {
+                console.log('error');
+                window.toastError( data.msg || '数据错误');
+                return;
+            }
+            // console.log(data);
+            // $scope.data = data;
+            window.toastSuccess('邀请成功');
+        });
     }
 
 }]);

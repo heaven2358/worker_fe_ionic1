@@ -158,5 +158,13 @@
         "test": "http://www.whatsmax.com/pic/upload",
         "beta": "http://www.whatsmax.com/pic/upload",
         "prod": "http://api.whatsmax.com/pic/upload"
+    },
+    //邀请工人
+    "projectInviteUApi":{
+        "serve": "projectInviteU.json",
+        "dev": "http://www.whatsmax.com/project/inviteU",
+        "test": "http://www.whatsmax.com/project/inviteU",
+        "beta": "http://www.whatsmax.com/project/inviteU",
+        "prod": "http://api.whatsmax.com/project/inviteU"
     }
 }

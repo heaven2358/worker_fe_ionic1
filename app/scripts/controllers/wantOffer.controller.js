@@ -17,7 +17,7 @@ angular.module('worker').controller('wantOfferCtrl',['$scope','$rootScope','$loc
 
     $scope.init = function() {
         $rootScope.rootTap = true;
-
+        console.log(apiService.getRegion().cities[21]);
         // $scope.data = apiService.getCache('tempRes');
         var initUrl = '{{projectListApi}}';
         // alert($rootScope.rootRole);

@@ -23,7 +23,7 @@
                         职业道德
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.moralScore}}分
                     </span>
                 </li>
                 <li>
@@ -32,7 +32,7 @@
                         干活速度
                     </span>
                     <span class="countNo">
-                        5分
+                    {{data.uex.workScore}}分
                     </span>
                 </li>
                 <li>
@@ -41,7 +41,7 @@
                         诚信评分
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.honestScore}}分
                     </span>
                 </li>
                 <li>
@@ -50,7 +50,7 @@
                         质量评分
                     </span>
                     <span class="countNo">
-                        5分
+                        {{data.uex.qualityScore}}分
                     </span>
                 </li>
             </ul>
@@ -66,7 +66,7 @@
 
     </ion-content>
     <div class="tabs bottomButton">
-        <button class="yellow">立即邀请</button>
+        <button class="yellow" ng-click="inviteSubmit()">立即邀请</button>
         <button class="share">分享</button>
     </div>
 </ion-view>

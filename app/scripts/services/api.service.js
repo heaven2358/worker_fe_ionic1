@@ -3,7 +3,7 @@ angular.module('worker').service('apiService', [
     function($http, $rootScope, $location, storageService, $q) {
     ///var apiConfig = require('../assets/api.json');
 
-        // var new_region = require('./../common/new_region.js');
+        var new_region = require('./../common/new_region.js');
 
         function getHttpData(url, postDataStr) {
             // var cachePromise = $q.when(function() {

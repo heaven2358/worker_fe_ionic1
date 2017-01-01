@@ -38,10 +38,11 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
     $scope.roleChoose = function(ret) {
         // ret 1 劳务员 0 砖工
         //角色，1=劳务员 2=工人
-        console.log(ret);
+        // console.log(ret);
         apiService.getData('{{chooseRoleApi}}', {
             weixinId: window.extHeader.weixinId || '234',
-            weixinNick:window.extHeader.userNick || 'seser',
+            weixinNick: window.extHeader.userNick || 'seser',
+            headImag: window.extHeader.headimgUrl,
             role: ret * 1 == 1 ? 1 : 2
         }).success(function(res) {
             console.log(res);

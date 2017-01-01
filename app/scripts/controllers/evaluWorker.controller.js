@@ -32,6 +32,7 @@ angular.module('worker').controller('evaluWorkerCtrl', ['$scope', '$rootScope', 
 
     $scope.submitData = function() {
         // $scope.post.userId =
+        $scope.post.type = $rootScope.rootRole * 1 == 1 ? 2 : 3;
         apiService.getData('{{commentSaveaddCommentApi}}', $scope.post)
             .success(function(data) {
                 if (data.code * 1 != 1) {
