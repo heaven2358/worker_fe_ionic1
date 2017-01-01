@@ -3,6 +3,8 @@ angular.module('worker').controller('publishProCtrl',['$scope','$rootScope','$lo
     $scope.busy = false;
     $scope.data = {};
     $scope.data.workType = '砌砖工';
+    $scope.data.pics = [];
+    // $scope.data.tempImg = '';
     // console.log(12344);
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         $scope.init();
@@ -28,7 +30,7 @@ angular.module('worker').controller('publishProCtrl',['$scope','$rootScope','$lo
         // $location.path('/publishPro');
         console.log($scope.data);
 
-        $scope.data.pics = $scope.data.pics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
+        $scope.data.pics = $scope.data.picsArr.join(',') || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
         $scope.data.address1 = $scope.data.address1 || '重庆市';
         $scope.data.address2 = $scope.data.address2 || '江北区';
         console.log($scope.pics);
@@ -48,6 +50,12 @@ angular.module('worker').controller('publishProCtrl',['$scope','$rootScope','$lo
     $scope.testChange = function(e) {
         console.log(files[0]);
     }
+    $scope.$watch('data.tempImg', function(value) {
+        console.log(value);
+        if(value) {
+            $scope.data.picsArr.push(value);
+        }
 
+    });
 
 }]);

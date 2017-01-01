@@ -89,8 +89,9 @@
                 <div class="imgsCon">
                     <!-- <input type="file" style="border: 1px solid red;" file-model="" > -->
                     <!-- ng-change = "testChange($event)" ng-model="data.testFile" -->
-                    <img  ng-repeat="item in data.pics" ng-src="item">
+                    <img  ng-repeat="item in data.picsArr" ng-src="{{item}}">
                     <button class="addImg">
+                        <input type="file" class="hiddeInput" file-model export-src="data.tempImg">
                     </button>
                 </div>
             </div>
