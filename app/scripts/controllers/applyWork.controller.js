@@ -15,16 +15,13 @@ angular.module('worker').controller('applyWorkCtrl', ['$scope', '$rootScope', '$
 
     $scope.init = function() {
         $rootScope.rootTap = false;
-        console.log($location.search());
         apiService.getData('{{projectDetailApi}}', {
             pId: $location.search().pid
         }).success(function(data) {
             if (data.code * 1 != 1) {
-                console.log('error');
                 window.toastError(data.msg || '数据错误');
                 return;
             }
-            console.log(data);
             $scope.data = data;
             // $scope.status = resObj.status;
 
@@ -44,12 +41,10 @@ angular.module('worker').controller('applyWorkCtrl', ['$scope', '$rootScope', '$
 
 
     $scope.applySubmit = function() {
-        console.log('applySubmiting');
         apiService.getData('{{projectWantedApi}}', {
             projectId: $location.search().pid
         }).success(function(data) {
             if (data.code * 1 != 1) {
-                console.log('error');
                 window.toastError(data.msg || '数据错误');
                 return;
             }

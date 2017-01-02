@@ -53,6 +53,7 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
                     window.toastError( data.msg );
                     return;
                 }
+                $scope.init();
                 window.toastSuccess('操作成功');
             });
     }

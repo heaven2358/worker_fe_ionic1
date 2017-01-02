@@ -10,9 +10,7 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
     $scope.config.pageSize = 10;
 
     $scope.$on('$ionicView.afterEnter', function(event, data) {
-        window.tools.setNativeTitle('人人催');
         $scope.init();
-
     });
 
     $scope.$on('$ionicView.leave', function(event, data) {
@@ -47,7 +45,6 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
 
         }).success(function(data) {
             if (data.code * 1 != 1) {
-                console.log('error');
                 window.toastError(data.msg || '数据错误');
                 return;
             }
@@ -78,8 +75,6 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
     }
 
     $scope.nextPage = function() {
-        console.log('initList next');
-        console.log($scope.data.listBlock);
         initList();
     }
 
@@ -107,14 +102,12 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
             pageSize: $scope.config.pageSize
         }).success(function(data) {
             if (data.code * 1 != 1) {
-                console.log('error');
                 window.toastError(data.msg || '数据错误');
                 commonExit();
                 return;
             }
             $scope.data.curentPa = data.curPage;
             $scope.data.totalPa = data.totalCount;
-
             if ($rootScope.rootRole * 1 == 1 && data.userList && data.userList.length > 0) {
                 $scope.data.wList = $scope.data.wList.concat(data.userList);
             }
@@ -122,7 +115,6 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
                 $scope.data.pList = $scope.data.pList.concat(data.pList);
             }
             commonExit();
-
             // commonExit();
         });
     }

@@ -48,7 +48,6 @@ angular.module('worker').run([
             if(!$rootScope.rootRole ) {
                 $location.path('/index');
             } else {
-                console.log();
                 if($rootScope.rootRole * 1 == 1) {
                     $rootScope.tabShowText = $rootScope.tabTextConfig['boss'];
                 }else {
@@ -66,7 +65,6 @@ angular.module('worker').run([
         $rootScope.changeTab = function(viewState, index) {
             $location.path(viewState);
             angular.forEach($rootScope.tabChage, function(item, index) {
-                console.log(index);
                 $rootScope.tabChage[index] = false;
             });
             $rootScope.tabChage[index] = true;
@@ -83,7 +81,6 @@ angular.module('worker').run([
                     if (!window.wx) {
                         return;
                     }
-                    console.log(resData);
                     window.wx.config({
                         debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                         appId: 'wx674a699ec9961b33', // 必填，公众号的唯一标识
@@ -142,12 +139,10 @@ angular.module('worker').run([
 
                     });
                 });
-                console.log($location);
             };
 
         }
-
-
         appRunInit();
+        
     }
 ]);

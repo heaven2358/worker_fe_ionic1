@@ -3,7 +3,6 @@ angular.module('worker').controller('certificationConCtrl',['$scope','$rootScope
     $scope.post = {};
     $scope.post.tempIdPicsArr = ['123123',''];
     $scope.post.tempCaPicsArr = [];
-    console.log(12344);
     $scope.$on( '$ionicView.afterEnter', function(event, data){
         window.tools.setNativeTitle( '人人催' );
         $scope.init();
@@ -44,7 +43,6 @@ angular.module('worker').controller('certificationConCtrl',['$scope','$rootScope
     $scope.submitData = function() {
 
         // $scope.post.idPics = $scope.post.idPics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
-        console.log($scope.post.tempIdPicsArr);
         $scope.post.idPics = joinStr($scope.post.tempIdPicsArr, ',');
         // $scope.post.caPics = $scope.post.caPics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
         $scope.post.caPics = joinStr($scope.post.tempCaPicsArr, ',');
@@ -63,9 +61,7 @@ angular.module('worker').controller('certificationConCtrl',['$scope','$rootScope
     function joinStr(obj, para) {
         //默认要么obj,要么array
         var tempArr = [];
-        console.log(obj);
         for(var i in obj) {
-            console.log(obj);
             if(obj[i]) {
                 tempArr.push(obj[i]);
             }

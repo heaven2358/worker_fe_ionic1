@@ -53,7 +53,6 @@ angular.module('worker').controller('finishProCtrl',['$scope','$rootScope','$loc
                 $scope.showdata.workerList = item.list;
             }
         });
-        console.log($scope.showdata);
     }
 
 }]);
