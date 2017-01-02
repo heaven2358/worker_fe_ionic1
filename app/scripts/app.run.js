@@ -6,7 +6,10 @@ angular.module('worker').run([
         var tabConfig = require('./common/showTab.config.js');
         $rootScope.rootTap = false;
         $rootScope.rootRole = 0; //1 默认为劳务员，2 默认为工人
-
+        $rootScope.tabTextConfig = {
+            'boss':['招工', '项目管理', '我'],
+            'worker':['求职', '项目管理', '我']
+        }
         //初始化获取localStorge存储状态
         //处理老板机滑动不能问题
         $rootScope.fixCantScroll = function() {
@@ -24,6 +27,8 @@ angular.module('worker').run([
             window.scrollTo(0, 0);
             if (tabConfig.indexOf($location['$$path']) > -1) {
                 $rootScope.rootTap = true;
+            }else {
+                $rootScope.rootTap = false;
             }
             var backView = $ionicHistory.backView();
             //移除弹窗相关dom
@@ -31,6 +36,7 @@ angular.module('worker').run([
         });
 
         function appRunInit() {
+
             if (tabConfig.indexOf($location['$$path']) > -1) {
                 $rootScope.rootTap = true;
             }
@@ -40,12 +46,17 @@ angular.module('worker').run([
             //初始化角色
             $rootScope.rootRole = window.extHeader.role;
             if(!$rootScope.rootRole ) {
-                console.log(234);
                 $location.path('/index');
             } else {
+                console.log();
+                if($rootScope.rootRole * 1 == 1) {
+                    $rootScope.tabShowText = $rootScope.tabTextConfig['boss'];
+                }else {
+                    $rootScope.tabShowText = $rootScope.tabTextConfig['worker'];
+                }
+
                 if(!location.hash) {
                     $location.path('/wantOffer');
-                    console.log();
                     // $location.path(location.hash);
                 }
             }
@@ -119,7 +130,6 @@ angular.module('worker').run([
                             ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
                     });
                     window.wx.ready(function(res) {
-                        console.log(res);
                         $rootScope.$broadcast('wx_js_ready');
                         $rootScope.wx_js_ready = true;
                         var firstShareConfig = require('./common/wxShare.js');

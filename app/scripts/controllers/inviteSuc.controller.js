@@ -14,7 +14,7 @@ angular.module('worker').controller('inviteSucCtrl',['$scope','$rootScope','$loc
     } );
 
     $scope.init = function() {
-        $rootScope.rootTap = true;
+        $rootScope.rootTap = false;
         $scope.data.phone = $location.search().phone;
         // $scope.pageType = $rootScope.rootRole * 1 == 1 ? 'laborSupervision' : 'worker';
         // apiService.getData( '{{userMyApi}}', {

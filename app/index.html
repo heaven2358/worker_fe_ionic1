@@ -21,7 +21,7 @@
                     <img src="./images/normal/offer22.png">
                 </span>
             </i>
-            求职
+            {{tabShowText[0]}}
           </a>
           <a class="tab-item" ng-click="changeTab('/managePro', 1)" ng-class="{true:'active_worker'}[tabChage[1]]">
             <i class="icon ion-porject">
@@ -29,7 +29,7 @@
                     <img src="./images/normal/project2.png">
                 </span>
             </i>
-            项目管理
+            {{tabShowText[1]}}
           </a>
           <a class="tab-item" ng-click="changeTab('/user', 2)" ng-class="{true:'active_worker'}[tabChage[2]]">
             <i class="icon ion-user">
@@ -37,7 +37,7 @@
                     <img src="./images/normal/user2.png">
                 </span>
             </i>
-            我的
+            {{tabShowText[2]}}
           </a>
         </div>
         <!-- <div ng-show="bottomBtnType && bottomBtnType != 0" class="bottom-bar ng-hide"> -->

@@ -154,10 +154,10 @@
     //图片上传
     "picUploadApi":{
         "serve": "picUpload.json",
-        "dev": "http://www.whatsmax.com/pic/upload",
-        "test": "http://www.whatsmax.com/pic/upload",
-        "beta": "http://www.whatsmax.com/pic/upload",
-        "prod": "http://api.whatsmax.com/pic/upload"
+        "dev": "http://image.huoerdangjia.com/pic/upload",
+        "test": "http://image.huoerdangjia.com/pic/upload",
+        "beta": "http://image.huoerdangjia.com/pic/upload",
+        "prod": "http://image.huoerdangjia.com/pic/upload"
     },
     //邀请工人
     "projectInviteUApi":{

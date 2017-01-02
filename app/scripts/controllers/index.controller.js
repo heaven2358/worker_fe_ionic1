@@ -55,6 +55,11 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
             $rootScope.rootRole = ret;
             window.localStorage.rootRole = $rootScope.rootRole;
             $location.path('wantOffer');
+            if($rootScope.rootRole * 1 == 1) {
+                $rootScope.tabShowText = $rootScope.tabTextConfig['boss'];
+            }else {
+                $rootScope.tabShowText = $rootScope.tabTextConfig['worker'];
+            }
         });
 
     }

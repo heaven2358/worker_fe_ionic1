@@ -1,7 +1,7 @@
 angular.module('worker').service('apiService', [
-    '$http', '$rootScope', '$location','storageService', '$q',
+    '$http', '$rootScope', '$location', 'storageService', '$q',
     function($http, $rootScope, $location, storageService, $q) {
-    ///var apiConfig = require('../assets/api.json');
+        ///var apiConfig = require('../assets/api.json');
 
         var new_region = require('./../common/new_region.js');
 
@@ -26,7 +26,7 @@ angular.module('worker').service('apiService', [
                 return {
                     success: function(callback) {
                         callback && callback(tempCache.dataCatch);
-                        if(callback) {
+                        if (callback) {
                             return this;
                         }
                     }
@@ -53,12 +53,12 @@ angular.module('worker').service('apiService', [
             url = changeUrl(url);
             opt.method = opt.method.toLowerCase();
             //很low，先这么处理本地 post 404吧
-            if(window.location.href.indexOf(':8080') > -1 ) {
+            if (window.location.href.indexOf(':8080') > -1) {
                 opt.method = 'get';
             }
 
             if (opt.method == 'get') {
-                if(data.headimgUrl) {
+                if (data.headimgUrl) {
                     delete data.headimgUrl;
                 }
                 return $http.get(
@@ -74,7 +74,7 @@ angular.module('worker').service('apiService', [
                 if (extHeader) {
                     data = angular.extend({}, extHeader, data);
                 }
-                if(data.headimgUrl) {
+                if (data.headimgUrl) {
                     delete data.headimgUrl;
                 }
                 if (opt.dataCache) {
@@ -94,7 +94,7 @@ angular.module('worker').service('apiService', [
                 // //处理响应失败
                 // });
                 return $http.post(url, data).success(function(res) {
-                     ajaxCommonLogic(res);
+                    ajaxCommonLogic(res);
                 }).error(function(e) {
                     window.toastError('请求接口出现错误，请稍后再试！');
                 });
@@ -104,40 +104,50 @@ angular.module('worker').service('apiService', [
         this.getUrl = changeUrl;
 
         function ajaxCommonLogic(result) {
-            if (result.error && result.error.returnCode != 0) {
-                switch (parseInt(result.error.returnCode)) {
-                case 10003: { //用户未登录
-                    window.toastError('用户未登录或登录状态已过期，请重新登录!', function() {
-                        window.CloseWindow.closeWindow(function() {}, function() {});
-                    }, 3000);
-                    break;
+            try {
+                if (typeof result == 'string') {
+                    result = JSON.parse(result);
                 }
-                case 10504: { //用户非法访问，状态不对
-                    window.applyStatus = result.data;
-                    window.toastError($rootScope.changeStatusMsg, function($rootScope) {
-                        return function() {
-                            $rootScope.rrcPage();
-                            $rootScope.$digest();
-                        }
-                    }($rootScope), 3000);
-                    break;
+
+                if (typeof result.code != 'undefined' && result.code != null && result.code * 1 != 1) {
+                    switch (parseInt(result.code )) {
+                        case 10003:
+                            { //用户未登录
+                                window.toastError('用户未登录或登录状态已过期，请重新登录!', function() {
+                                    window.CloseWindow.closeWindow(function() {}, function() {});
+                                }, 3000);
+                                break;
+                            }
+                        case 10504:
+                            { //用户非法访问，状态不对
+                                window.applyStatus = result.data;
+                                window.toastError($rootScope.changeStatusMsg, function($rootScope) {
+                                    return function() {
+                                        $rootScope.rrcPage();
+                                        $rootScope.$digest();
+                                    }
+                                }($rootScope), 3000);
+                                break;
+                            }
+                        case 10901:
+                            { //有一笔正在进行的支付订单, 无需再次支付
+                                $location.path('/paying');
+                                break;
+                            }
+                        case 20000:
+                            { //停服
+                                $location.path('/stopService');
+                                break;
+                            }
+                    }
+
                 }
-                case 10901: {//有一笔正在进行的支付订单, 无需再次支付
-                    $location.path('/paying');
-                    break;
-                }
-                case 20000: { //停服
-                    $location.path('/stopService');
-                    break;
-                }
-                }
-            } else {
-                //处理翻页导致老板机不滑动问题
-                // if (result.data.pager && result.data.pager.pn && result.data.pager.pn > 1) {
-                //     $rootScope.fixCantScroll();
-                // }
-                // window.toastError('请求接口出现错误，请稍后再试！');
+
+
+            } catch (e) {
+                console.log(e);
             }
+
         }
 
         function json2url(json) {
@@ -171,7 +181,7 @@ angular.module('worker').service('apiService', [
 
         this.openUrl = function(url, dataObj, callback, errorCallback) {
             var querryString = '';
-            if(dataObj) {
+            if (dataObj) {
                 querryString = '?';
                 querryString += json2url(dataObj);
             }

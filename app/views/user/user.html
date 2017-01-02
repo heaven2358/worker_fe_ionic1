@@ -35,7 +35,7 @@
             </h3>
             <ul>
                 <li ng-repeat="item in showdata.bossUserList">
-                    {{item.userName}}
+                    {{item.userName || item.nick}}
                     <button class="pingjia_button" ng-click="pingjia(item);">
                         点击评价
                     </button>
@@ -48,7 +48,9 @@
             </h3>
             <ul>
                 <li ng-repeat="item in showdata.bossLikeUserList">
-                    <img  ng-src="{{item.head}}">
+                    <!-- <img  ng-src="{{item.head}}"> -->
+                    <jdb-img-view img-src="{'url':item.head}" default-img="'./images/normal/96Z58PICUJ4_1024.png'">
+                    </jdb-img-view>
                     <div class="info">
                         <p class="name">
                             {{item.userName || item.nick || '暂无姓名'}}
@@ -79,7 +81,9 @@
             </h3>
             <ul>
                 <li >
-                    <img  ng-src="{{showdata.user.head}}">
+                    <!-- <img  ng-src="{{showdata.user.head}}"> -->
+                    <jdb-img-view img-src="{'url':showdata.user.head}" default-img="'./images/normal/96Z58PICUJ4_1024.png'">
+                    </jdb-img-view>
                     <div class="info">
                         <p class="name">
                             {{showdata.user.userName || showdata.user.nick || '暂无姓名'}}

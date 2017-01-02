@@ -9,7 +9,9 @@
             </h3>
             <ul>
                 <li ng-repeat="item in data.pList" ng-click="toFinishPro(item)" >
-                    <img  ng-src="{{item.pic.split(',')[0]}}">
+                    <!-- <img  ng-src="{{item.pic.split(',')[0]}}"> -->
+                    <jdb-img-view img-src="{'url':item.pic.split(',')[0]}" default-img="'./images/normal/96Z58PICUJ4_1024.png'">
+                    </jdb-img-view>
                     <div class="info">
                         <p class="name">
                             {{item.projectName}}
@@ -34,7 +36,9 @@
             </h3>
             <ul>
                 <li ng-repeat="item in data.uList">
-                    <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.head}}">
+                    <!-- <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.head}}"> -->
+                    <jdb-img-view img-src="{'url':item.head}" default-img="'./images/normal/96Z58PICUJ4_1024.png'">
+                    </jdb-img-view>
                     <div class="info">
                         <p class="name">
                             {{item.userName}}

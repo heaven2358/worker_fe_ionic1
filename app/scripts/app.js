@@ -15,6 +15,7 @@
             //     }
             // }
 
+            var redirect_uri = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.huoerdangjia.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
             if(window.tools.getCookie('auth_resp')) {
                 window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
                 // alert(JSON.stringify(window.extHeader));
@@ -25,14 +26,14 @@
             if(!window.extHeader.weixinId){
                 window.extHeader = {};
                 if(window.navigator.userAgent.indexOf('MicroMessenger') > -1) {
-                    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.whatsmax.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
+                    window.location.href = redirect_uri;
                 }
             }
 
         }catch(e) {
             window.extHeader = {};
             if(window.navigator.userAgent.indexOf('MicroMessenger') > -1) {
-                window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.whatsmax.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
+                window.location.href = redirect_uri;
             }
             console.log(e);
         }
@@ -67,6 +68,7 @@
     require('./controllers/evaluWorker.controller.js');
     require('./controllers/applyWork.controller.js');
     require('./controllers/inviteSuc.controller.js');
+    require('./controllers/applyWorkSuc.controller.js');
 
     /* controllers end*/
     require('./directive/fileModel.directive.js');
@@ -75,7 +77,7 @@
     // require('./directive/jdbScrollPicker.directive.js');
     // require('./directive/jdbScrollSelector.directive.js');
     // require('./directive/ngTap.directive.js');
-    // require('./directive/jdbImgView.directive.js');
+    require('./directive/jdbImgView.directive.js');
     // require('./directive/moneyFmt.directive.js');
     // require('./directive/regionSelect.directive.js');
     // require('./directive/inputPhone.directive.js');

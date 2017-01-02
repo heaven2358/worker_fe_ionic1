@@ -70,6 +70,7 @@ angular.module('worker').config(['$stateProvider', '$urlRouterProvider', '$ionic
         //申请上工成功
         .state('applyWorkSuc', {
             url: '/applyWorkSuc',
+            controller: 'applyWorkSucCtrl',
             templateUrl: 'views/applyWorkSuc/applyWorkSuc.html'
         })
         //邀请工人成功

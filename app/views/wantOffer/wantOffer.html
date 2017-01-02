@@ -35,7 +35,9 @@
             </h3>
             <ul>
                 <li ng-repeat = "item in data.wList track by $index">
-                    <img  ng-src="{{item.head}}">
+                    <jdb-img-view img-src="{'url':item.head}" default-img="'./images/normal/96Z58PICUJ4_1024.png'">
+                    </jdb-img-view>
+                    <!-- <img  ng-src="{{item.head}}"> -->
                     <!-- <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.head}}"> -->
                     <div class="info">
                         <p class="name">
@@ -55,9 +57,9 @@
 
             </ul>
             <p class="tipNo" ng-if=" data.wList.length == 0">
-                暂时没有加入项目
+                暂时更多求职人员
             </p>
-            <ion-infinite-scroll ng-if="!(data.curentPa > data.totalPa)" on-infinite="nextPage()" class="active" distance="1%" ></ion-infinite-scroll>
+            <ion-infinite-scroll ng-if="data.curentPa!=0 &&!(data.curentPa > data.totalPa)" on-infinite="nextPage()" class="active" distance="1%" ></ion-infinite-scroll>
         </div>
         <div class="worker_list project_list" ng-if="rootRole * 1 == 2">
             <h3>
@@ -65,7 +67,9 @@
             </h3>
             <ul>
                 <li ng-repeat = "item in data.pList track by $index">
-                    <img src="./images/tempSrc/temp_pro.png" ng-src="{{item.pic}}">
+
+                    <jdb-img-view img-src="{'url':item.pic}" default-img="'./images/tempSrc/temp_pro.png'">
+                    </jdb-img-view>
                     <div class="info">
                         <p class="name">
                             <!-- 东方不败 -->{{item.projectName}}
@@ -83,10 +87,13 @@
                 </li>
 
             </ul>
-            <p class="tipNo" ng-if=" data.wList.length == 0">
-                暂时招工项目
+            <p class="tipNo" ng-if=" data.pList.length == 0">
+                没有招工项目
             </p>
-            <ion-infinite-scroll ng-if="!(data.curentPa > data.totalPa)" on-infinite="nextPage()" class="active" distance="1%" ></ion-infinite-scroll>
+            <p class="tipNo" ng-if=" data.curentPa >= data.totalPa">
+                没有更多招工项目
+            </p>
+            <ion-infinite-scroll ng-if="data.curentPa!=0 && (data.curentPa < data.totalPa)" on-infinite="nextPage()" class="active" distance="1%" ></ion-infinite-scroll>
         </div>
         <div class="publishProBut" ng-click="toPublishPro()">
             <button>

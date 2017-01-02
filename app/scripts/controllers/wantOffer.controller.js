@@ -25,7 +25,11 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
 
     $scope.init = function() {
         $rootScope.rootTap = true;
-        console.log(apiService.getRegion().cities[21].elements[0].elements);
+        $scope.data.curentPa = 0;
+        $scope.data.listBlock = false;
+        $scope.data.totalPa = 1; //先写个10
+        $scope.data.wList = [];
+        $scope.data.pList = [];
         $scope.cityList = apiService.getRegion().cities[21].elements[0].elements;
         $scope.data.address2 = '江北区';
         initList()
@@ -74,8 +78,11 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
     }
 
     $scope.nextPage = function() {
+        console.log('initList next');
+        console.log($scope.data.listBlock);
         initList();
     }
+
     function initList() {
         // $scope.data = apiService.getCache('tempRes');
         function commonExit() {
@@ -107,7 +114,6 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
             }
             $scope.data.curentPa = data.curPage;
             $scope.data.totalPa = data.totalCount;
-            commonExit();
 
             if ($rootScope.rootRole * 1 == 1 && data.userList && data.userList.length > 0) {
                 $scope.data.wList = $scope.data.wList.concat(data.userList);
@@ -115,6 +121,7 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
             if(data.pList && data.pList.length > 0){
                 $scope.data.pList = $scope.data.pList.concat(data.pList);
             }
+            commonExit();
 
             // commonExit();
         });

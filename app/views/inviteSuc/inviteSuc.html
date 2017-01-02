@@ -5,7 +5,7 @@
             <div class="textCon">
                 <h2><span></span>邀请成功</h2>
                 <p>请主动联系工人</p>
-                <p class="phoneNo">电话：{{data.phone}}</p>
+                <p class="phoneNo">电话：<a  href="tel:{{data.phone}}">{{data.phone|| '该工人没有上传电话'}}</a></p>
             </div>
         </div>
     </ion-content>
