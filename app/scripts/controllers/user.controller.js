@@ -23,7 +23,6 @@ angular.module('worker').controller('userCtrl',['$scope','$rootScope','$location
                 window.toastError( data.msg);
                 return;
             }
-            console.log(data);
             $scope.showdata = data;
         });
     };

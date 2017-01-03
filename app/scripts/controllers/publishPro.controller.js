@@ -48,9 +48,6 @@ angular.module('worker').controller('publishProCtrl', ['$scope', '$rootScope', '
         });
     }
 
-    $scope.testChange = function(e) {
-        console.log(files[0]);
-    }
     $scope.$watch('data.tempImg', function(value) {
         console.log(value);
         if (value) {

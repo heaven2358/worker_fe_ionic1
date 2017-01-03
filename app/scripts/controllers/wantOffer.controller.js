@@ -94,7 +94,6 @@ angular.module('worker').controller('wantOfferCtrl', ['$scope', '$rootScope', '$
         if ($rootScope.rootRole * 1 == 1) {
             initUrl = '{{workerListApi}}';
         }
-        console.log(initUrl);
         apiService.getData(initUrl, {
             address1: '重庆市',
             address2: $scope.data.address2,

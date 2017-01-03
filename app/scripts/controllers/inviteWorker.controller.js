@@ -28,7 +28,6 @@ angular.module('worker').controller('inviteWorkerCtrl',['$scope','$rootScope','$
                 window.toastError( data.msg || '数据错误');
                 return;
             }
-            console.log(data);
             $scope.data = data;
         });
     };

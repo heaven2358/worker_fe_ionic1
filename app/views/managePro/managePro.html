@@ -24,7 +24,7 @@
                         </p>
                     </div>
                     <span class="countNo">
-                        {{item.quantity}} m^2
+                        {{item.quantity}} m³
                     </span>
                 </li>
             </ul>
@@ -72,10 +72,10 @@
                 </div>
                 <div class="input_Detail">
                     <p class="inputPa">
-                        今日完成<input ng-model="workerSubmit.dayValue">㎡
+                        今日完成<input ng-model="workerSubmit.dayValue">m³
                     </p>
                     <p class="noPa">
-                        当前项目累计完成<span>{{data.project.workerCount}}</span>㎡
+                        当前项目累计完成<span>{{data.project.workerCount}}</span>m³
                     </p>
 
                     <button ng-click="workerSubmit()">
