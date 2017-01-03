@@ -81,7 +81,6 @@ angular.module('worker').service('apiService', [
                     return getHttpData(url, data);
                 }
 
-                console.log(data);
                 // return $http({
                 //     url:url,
                 //     method:'POST',
@@ -110,40 +109,17 @@ angular.module('worker').service('apiService', [
                 }
 
                 if (typeof result.code != 'undefined' && result.code != null && result.code * 1 != 1) {
-                    switch (parseInt(result.code )) {
-                        case 10003:
+                    switch (parseInt(result.code)) {
+                        case 9999:
                             { //用户未登录
                                 window.toastError('用户未登录或登录状态已过期，请重新登录!', function() {
-                                    window.CloseWindow.closeWindow(function() {}, function() {});
+                                    // window.CloseWindow.closeWindow(function() {}, function() {});
+                                    window.location.href = window.config.redirect_uri;
                                 }, 3000);
                                 break;
                             }
-                        case 10504:
-                            { //用户非法访问，状态不对
-                                window.applyStatus = result.data;
-                                window.toastError($rootScope.changeStatusMsg, function($rootScope) {
-                                    return function() {
-                                        $rootScope.rrcPage();
-                                        $rootScope.$digest();
-                                    }
-                                }($rootScope), 3000);
-                                break;
-                            }
-                        case 10901:
-                            { //有一笔正在进行的支付订单, 无需再次支付
-                                $location.path('/paying');
-                                break;
-                            }
-                        case 20000:
-                            { //停服
-                                $location.path('/stopService');
-                                break;
-                            }
                     }
-
                 }
-
-
             } catch (e) {
                 console.log(e);
             }
@@ -168,7 +144,6 @@ angular.module('worker').service('apiService', [
         var cachePool = {};
 
         this.setCache = function(key, value) {
-
             cachePool[key] = value;
         }
 

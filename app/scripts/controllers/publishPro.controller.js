@@ -29,12 +29,12 @@ angular.module('worker').controller('publishProCtrl', ['$scope', '$rootScope', '
 
     $scope.publishPro = function() {
         // $location.path('/publishPro');
-        console.log($scope.data);
-
+        if(!checkData()) {
+            return
+        }
         $scope.data.pics = $scope.data.picsArr.join(',') || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
         $scope.data.address1 = $scope.data.allAddress.split('-')[0] || '重庆市';
         $scope.data.address2 = $scope.data.allAddress.split('-')[1] || '江北区';
-        console.log($scope.pics);
         apiService.getData('{{projectSubmitApi}}', $scope.data).success(function(data) {
             if (data.code * 1 != 1) {
                 console.log('error');
@@ -74,4 +74,30 @@ angular.module('worker').controller('publishProCtrl', ['$scope', '$rootScope', '
         }
         $scope.$on('closeLargeImg', $scope.closeModal);
     }
+
+    function checkData() {
+        if(!$scope.data.projectName) {
+            window.toastError( '项目名称不可为空');
+            return false;
+        }
+
+        if(!$scope.data.workerCount) {
+            window.toastError( '项目人数不可为空');
+            return false;
+        }
+
+        if(!$scope.data.quantity) {
+            window.toastError( '单位总量不可为空');
+            return false;
+        }
+
+        if(!$scope.data.price) {
+            window.toastError( '项目单价不可为空');
+            return false;
+        }
+
+        return true;
+    }
+
+
 }]);

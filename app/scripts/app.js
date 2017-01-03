@@ -3,6 +3,8 @@
     require('./common/dialog');
     require('./common/toast');
     document.documentElement.style.fontSize = (document.documentElement.offsetWidth / 10) + 'px';
+    window.config = {};
+    
     angular.element(document).ready(function () {
         try{
             // if(window.localStorage.worker_app_userinfo ) {
@@ -15,7 +17,7 @@
             //     }
             // }
 
-            var redirect_uri = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.huoerdangjia.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
+            window.config.redirect_uri = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx674a699ec9961b33&redirect_uri=http%3A%2F%2Fapi.huoerdangjia.com%2Fweixin%2Fauth&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
             if(window.tools.getCookie('auth_resp')) {
                 window.extHeader = JSON.parse(JSON.parse(window.tools.getCookie('auth_resp').split('').join('')));
                 // alert(JSON.stringify(window.extHeader));
@@ -26,14 +28,14 @@
             if(!window.extHeader.weixinId){
                 window.extHeader = {};
                 if(window.navigator.userAgent.indexOf('MicroMessenger') > -1) {
-                    window.location.href = redirect_uri;
+                    window.location.href = window.config.redirect_uri ;
                 }
             }
 
         }catch(e) {
             window.extHeader = {};
             if(window.navigator.userAgent.indexOf('MicroMessenger') > -1) {
-                window.location.href = redirect_uri;
+                window.location.href = window.config.redirect_uri ;
             }
         }
 
