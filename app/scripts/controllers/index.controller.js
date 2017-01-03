@@ -45,7 +45,6 @@ angular.module('worker').controller('indexCtrl',['$scope','$rootScope','$locatio
             headImag: window.extHeader.headimgUrl,
             role: ret * 1 == 1 ? 1 : 2
         }).success(function(res) {
-            console.log(res);
             if(res.code * 1 != 1) {
                 window.toastError(res.msg);
                 return;
