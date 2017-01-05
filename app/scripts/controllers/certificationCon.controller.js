@@ -42,6 +42,9 @@ angular.module('worker').controller('certificationConCtrl',['$scope','$rootScope
 
     $scope.submitData = function() {
 
+        if(!checkData()) {
+            return
+        }
         // $scope.post.idPics = $scope.post.idPics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
         $scope.post.idPics = joinStr($scope.post.tempIdPicsArr, ',');
         // $scope.post.caPics = $scope.post.caPics || 'http://api.whatsmax.com:8081/1612/17/20161218181200.png';
@@ -72,4 +75,7 @@ angular.module('worker').controller('certificationConCtrl',['$scope','$rootScope
         return tempArr.join(para);
     }
 
+    function checkData() {
+        return true
+    }
 }]);

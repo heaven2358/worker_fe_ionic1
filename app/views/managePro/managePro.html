@@ -3,7 +3,7 @@
         <div class="worker_topTitle">
             项目管理
         </div>
-        <div class="worker_list" ng-if="pageType == 'laborSupervision'">
+        <div class="worker_list" ng-if="pageType == 'laborSupervision' && data.pList.length != 0">
             <h3>
                 项目列表
             </h3>
@@ -30,7 +30,7 @@
             </ul>
         </div>
 
-        <div class="worker_list" ng-if="pageType == 'laborSupervision'">
+        <div class="worker_list" ng-if="pageType == 'laborSupervision' && data.uList.length != 0">
             <h3>
                 意向工人
             </h3>
