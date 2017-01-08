@@ -4,7 +4,7 @@
     require('./common/toast');
     document.documentElement.style.fontSize = (document.documentElement.offsetWidth / 10) + 'px';
     window.config = {};
-    
+
     angular.element(document).ready(function () {
         try{
             // if(window.localStorage.worker_app_userinfo ) {

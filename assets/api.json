@@ -9,147 +9,147 @@
     },
     //获取用户状态
     "weixin_jsconfigApi": {
-        "serve": "http://www.whatsmax.com:3001/getWeixinConfig.data",
-        "dev": "http://www.whatsmax.com:3001/getWeixinConfig.data",
-        "test": "http://www.whatsmax.com:3001/getWeixinConfig.data",
-        "beta": "http://www.whatsmax.com:3001/getWeixinConfig.data",
-        "prod": "http://www.whatsmax.com:3001/getWeixinConfig.data"
+        "serve": "http://www.huoerdangjia.com:3001/getWeixinConfig.data",
+        "dev": "http://www.huoerdangjia.com:3001/getWeixinConfig.data",
+        "test": "http://www.huoerdangjia.com:3001/getWeixinConfig.data",
+        "beta": "http://www.huoerdangjia.com:3001/getWeixinConfig.data",
+        "prod": "http://www.huoerdangjia.com:3001/getWeixinConfig.data"
     },
     //角色选择
     "chooseRoleApi":{
         "serve": "chooseRole.json",
-        "dev": "http://www.whatsmax.com/mhome",
-        "test": "http://www.whatsmax.com/mhome",
-        "beta": "http://www.whatsmax.com/mhome",
-        "prod": "http://api.whatsmax.com/mhome"
+        "dev": "http://api.huoerdangjia.com/mhome",
+        "test": "http://api.huoerdangjia.com/mhome",
+        "beta": "http://api.huoerdangjia.com/mhome",
+        "prod": "http://api.huoerdangjia.com/mhome"
     },
     //项目列表
     "projectListApi":{
         "serve": "projectList.json",
-        "dev": "http://www.whatsmax.com/project/plist",
-        "test": "http://www.whatsmax.com/project/plist",
-        "beta": "http://www.whatsmax.com/project/plist",
-        "prod": "http://api.whatsmax.com/project/plist"
+        "dev": "http://www.huoerdangjia.com/project/plist",
+        "test": "http://www.huoerdangjia.com/project/plist",
+        "beta": "http://www.huoerdangjia.com/project/plist",
+        "prod": "http://api.huoerdangjia.com/project/plist"
     },
     //项目详情
     "projectDetailApi":{
         "serve": "projectDetail.json",
-        "dev": "http://www.whatsmax.com/project/pdetail",
-        "test": "http://www.whatsmax.com/project/pdetail",
-        "beta": "http://www.whatsmax.com/project/pdetail",
-        "prod": "http://api.whatsmax.com/project/pdetail"
+        "dev": "http://www.huoerdangjia.com/project/pdetail",
+        "test": "http://www.huoerdangjia.com/project/pdetail",
+        "beta": "http://www.huoerdangjia.com/project/pdetail",
+        "prod": "http://api.huoerdangjia.com/project/pdetail"
     },
     //发布项目
     "projectSubmitApi":{
         "serve": "projectSubmit.json",
-        "dev": "http://www.whatsmax.com/project/fabu",
-        "test": "http://www.whatsmax.com/project/fabu",
-        "beta": "http://www.whatsmax.com/project/fabu",
-        "prod": "http://api.whatsmax.com/project/fabu"
+        "dev": "http://www.huoerdangjia.com/project/fabu",
+        "test": "http://www.huoerdangjia.com/project/fabu",
+        "beta": "http://www.huoerdangjia.com/project/fabu",
+        "prod": "http://api.huoerdangjia.com/project/fabu"
     },
     //工人列表
     "workerListApi":{
         "serve": "workerList.json",
-        "dev": "http://www.whatsmax.com/user/list",
-        "test": "http://www.whatsmax.com/user/wlist",
-        "beta": "http://www.whatsmax.com/user/wlist",
-        "prod": "http://api.whatsmax.com/user/list"
+        "dev": "http://www.huoerdangjia.com/user/list",
+        "test": "http://www.huoerdangjia.com/user/wlist",
+        "beta": "http://www.huoerdangjia.com/user/wlist",
+        "prod": "http://api.huoerdangjia.com/user/list"
     },
     //工人详情
     "workerDetailApi":{
         "serve": "workerDetail.json",
-        "dev": "http://www.whatsmax.com/user/detail",
-        "test": "http://www.whatsmax.com/user/detail",
-        "beta": "http://www.whatsmax.com/user/detail",
-        "prod": "http://api.whatsmax.com/user/detail"
+        "dev": "http://www.huoerdangjia.com/user/detail",
+        "test": "http://www.huoerdangjia.com/user/detail",
+        "beta": "http://www.huoerdangjia.com/user/detail",
+        "prod": "http://api.huoerdangjia.com/user/detail"
     },
     //工人提交单日工作量
     "workerSubmitProApi":{
         "serve": "workerSubmitProApi.json",
-        "dev": "http://www.whatsmax.com/project/makeRecord",
-        "test": "http://www.whatsmax.com/project/makeRecord",
-        "beta": "http://www.whatsmax.com/project/makeRecord",
-        "prod": "http://api.whatsmax.com/project/makeRecord"
+        "dev": "http://www.huoerdangjia.com/project/makeRecord",
+        "test": "http://www.huoerdangjia.com/project/makeRecord",
+        "beta": "http://www.huoerdangjia.com/project/makeRecord",
+        "prod": "http://api.huoerdangjia.com/project/makeRecord"
     },
     //老板管理项目init
     "bossManaInitApi":{
         "serve": "bossManaInit.json",
-        "dev": "http://www.whatsmax.com/project/bossmanage",
-        "test": "http://www.whatsmax.com/project/bossmanage",
-        "beta": "http://www.whatsmax.com/project/bossmanage",
-        "prod": "http://api.whatsmax.com/project/bossmanage"
+        "dev": "http://www.huoerdangjia.com/project/bossmanage",
+        "test": "http://www.huoerdangjia.com/project/bossmanage",
+        "beta": "http://www.huoerdangjia.com/project/bossmanage",
+        "prod": "http://api.huoerdangjia.com/project/bossmanage"
     },
     //工人管理项目init
     "workerManaInitApi":{
         "serve": "workerManaInit.json",
-        "dev": "http://www.whatsmax.com/project/workermanage",
-        "test": "http://www.whatsmax.com/project/workermanage",
-        "beta": "http://www.whatsmax.com/project/workermanage",
-        "prod": "http://api.whatsmax.com/project/workermanage"
+        "dev": "http://www.huoerdangjia.com/project/workermanage",
+        "test": "http://www.huoerdangjia.com/project/workermanage",
+        "beta": "http://www.huoerdangjia.com/project/workermanage",
+        "prod": "http://api.huoerdangjia.com/project/workermanage"
     },
     //上工接受或者拒绝
     "workerDoitApi":{
         "serve": "workerDoit.json",
-        "dev": "http://www.whatsmax.com/project/doit",
-        "test": "http://www.whatsmax.com/project/doit",
-        "beta": "http://www.whatsmax.com/project/doit",
-        "prod": "http://api.whatsmax.com/project/doit"
+        "dev": "http://www.huoerdangjia.com/project/doit",
+        "test": "http://www.huoerdangjia.com/project/doit",
+        "beta": "http://www.huoerdangjia.com/project/doit",
+        "prod": "http://api.huoerdangjia.com/project/doit"
     },
     //项目详情,完成项目
     "projectFinInitApi":{
         "serve": "projectFinInit.json",
-        "dev": "http://www.whatsmax.com/project/finishStats",
-        "test": "http://www.whatsmax.com/project/finishStats",
-        "beta": "http://www.whatsmax.com/project/finishStats",
-        "prod": "http://api.whatsmax.com/project/finishStats"
+        "dev": "http://www.huoerdangjia.com/project/finishStats",
+        "test": "http://www.huoerdangjia.com/project/finishStats",
+        "beta": "http://www.huoerdangjia.com/project/finishStats",
+        "prod": "http://api.huoerdangjia.com/project/finishStats"
     },
     //工程决算
     "projectBudgetApi":{
         "serve": "projectBudget.json",
-        "dev": "http://www.whatsmax.com/project/budget",
-        "test": "http://www.whatsmax.com/project/budget",
-        "beta": "http://www.whatsmax.com/project/budget",
-        "prod": "http://api.whatsmax.com/project/budget"
+        "dev": "http://www.huoerdangjia.com/project/budget",
+        "test": "http://www.huoerdangjia.com/project/budget",
+        "beta": "http://www.huoerdangjia.com/project/budget",
+        "prod": "http://api.huoerdangjia.com/project/budget"
     },
     //个人用户详情
     "userMyApi":{
         "serve": "bossUser.json",
-        "dev": "http://www.whatsmax.com/user/my",
-        "test": "http://www.whatsmax.com/user/my",
-        "beta": "http://www.whatsmax.com/user/my",
-        "prod": "http://api.whatsmax.com/user/my"
+        "dev": "http://www.huoerdangjia.com/user/my",
+        "test": "http://www.huoerdangjia.com/user/my",
+        "beta": "http://www.huoerdangjia.com/user/my",
+        "prod": "http://api.huoerdangjia.com/user/my"
     },
     //个人认证
     "userImproveMeApi":{
         "serve": "userImproveMe.json",
-        "dev": "http://www.whatsmax.com/user/saveadd",
-        "test": "http://www.whatsmax.com/user/saveadd",
-        "beta": "http://www.whatsmax.com/user/saveadd",
-        "prod": "http://api.whatsmax.com/user/saveadd"
+        "dev": "http://www.huoerdangjia.com/user/saveadd",
+        "test": "http://www.huoerdangjia.com/user/saveadd",
+        "beta": "http://www.huoerdangjia.com/user/saveadd",
+        "prod": "http://api.huoerdangjia.com/user/saveadd"
     },
     //评价
     "commentSaveaddCommentApi":{
         "serve": "commentSaveaddComment.json",
-        "dev": "http://www.whatsmax.com/comment/saveaddComment",
-        "test": "http://www.whatsmax.com/comment/saveaddComment",
-        "beta": "http://www.whatsmax.com/comment/saveaddComment",
-        "prod": "http://api.whatsmax.com/comment/saveaddComment"
+        "dev": "http://www.huoerdangjia.com/comment/saveaddComment",
+        "test": "http://www.huoerdangjia.com/comment/saveaddComment",
+        "beta": "http://www.huoerdangjia.com/comment/saveaddComment",
+        "prod": "http://api.huoerdangjia.com/comment/saveaddComment"
     },
     //工人。发布求职信息
     "userFabuApi":{
         "serve": "userFabu.json",
-        "dev": "http://www.whatsmax.com/user/fabu",
-        "test": "http://www.whatsmax.com/user/fabu",
-        "beta": "http://www.whatsmax.com/user/fabu",
-        "prod": "http://api.whatsmax.com/user/fabu"
+        "dev": "http://www.huoerdangjia.com/user/fabu",
+        "test": "http://www.huoerdangjia.com/user/fabu",
+        "beta": "http://www.huoerdangjia.com/user/fabu",
+        "prod": "http://api.huoerdangjia.com/user/fabu"
     },
     //工人请求上工
     "projectWantedApi":{
         "serve": "projectWanted.json",
-        "dev": "http://www.whatsmax.com/project/wanted",
-        "test": "http://www.whatsmax.com/project/wanted",
-        "beta": "http://www.whatsmax.com/project/wanted",
-        "prod": "http://api.whatsmax.com/project/wanted"
+        "dev": "http://www.huoerdangjia.com/project/wanted",
+        "test": "http://www.huoerdangjia.com/project/wanted",
+        "beta": "http://www.huoerdangjia.com/project/wanted",
+        "prod": "http://api.huoerdangjia.com/project/wanted"
     },
     //图片上传
     "picUploadApi":{
@@ -162,18 +162,18 @@
     //邀请工人
     "projectInviteUApi":{
         "serve": "projectInviteU.json",
-        "dev": "http://www.whatsmax.com/project/inviteU",
-        "test": "http://www.whatsmax.com/project/inviteU",
-        "beta": "http://www.whatsmax.com/project/inviteU",
-        "prod": "http://api.whatsmax.com/project/inviteU"
+        "dev": "http://www.huoerdangjia.com/project/inviteU",
+        "test": "http://www.huoerdangjia.com/project/inviteU",
+        "beta": "http://www.huoerdangjia.com/project/inviteU",
+        "prod": "http://api.huoerdangjia.com/project/inviteU"
     },
     //跳转认证时init
     "userSelfInitApi":{
         "serve": "userSelfInit.json",
-        "dev": "http://www.whatsmax.com/user/add",
-        "test": "http://www.whatsmax.com/user/add",
-        "beta": "http://www.whatsmax.com/user/add",
-        "prod": "http://api.whatsmax.com/user/add"
+        "dev": "http://www.huoerdangjia.com/user/add",
+        "test": "http://www.huoerdangjia.com/user/add",
+        "beta": "http://www.huoerdangjia.com/user/add",
+        "prod": "http://api.huoerdangjia.com/user/add"
     }
 
 
